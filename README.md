@@ -21,7 +21,7 @@
 - Tablet
 - Mobile
 ## The relationship database diagram
-- [Database diagram](https://app.diagrams.net/#G1E0WQpWWwLUjNias5CujEvv-BhqwTEgNp#%7B%22pageId%22%3A%22jreipgokvIhl94KR2oCs%22%7D)
+- [Database diagram](https://drive.google.com/drive/folders/13UJgB82MHC9Aes-CEPKtDF4rLQdAlagT)
 ## Getting started
 - Step 01: Clone repository with HTTPS:
 ```
