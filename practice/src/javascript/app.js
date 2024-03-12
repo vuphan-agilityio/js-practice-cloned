@@ -1,5 +1,8 @@
-import Model from './models/sign-in.js';
-import View from './view/sign-in.js';
-import Controller from './controllers/sign-in.js';
+import UserModel from "./models/UserModel.js";
+import UserView from "./view/UserView.js";
+import UserController from "./controllers/UserController.js";
 
-const app = new Controller(new Model(), new View());
+window.addEventListener("load", () => {
+  const app = new UserController(new UserModel(), new UserView());
+  app.init();
+});
