@@ -5,6 +5,9 @@ export default class UserView {
     this.signInFormEl = document.getElementById("form-sign-in");
     this.emailEl = document.getElementById("email");
     this.pwdEl = document.getElementById("password");
+    this.nameEl = document.getElementById("username");
+    this.comfirmPwdEl = document.getElementById("password-comfim")
+
   }
 
   bindCallback = (event, handler) => {
@@ -12,7 +15,8 @@ export default class UserView {
       case "signIn":
         bindEvent(this.signInFormEl, "submit", this.signIn(handler));
         break;
-      default:
+      case "signUp":
+        this.bindCallback(this.signUp, "submit", this.signUp(handler));
         break;
     }
   };
@@ -24,7 +28,18 @@ export default class UserView {
     };
   };
 
-  redirectPage = (page) => {
-    window.location.replace(`http://localhost:1234/${page}`);
+  redirectPage = () => {
+    window.location.replace(`/home`);
+  };
+
+  signUp = (handler) => {
+    return (event) => {
+      event.preventDefault();
+      handler(this.emailEl.value, this.pwdEl.value, this.nameEl.value, this.comfirmPwdEl.value);
+    };
+  };
+
+  redirectPage = () => {
+    window.location.replace(`/logIn`);
   };
 }

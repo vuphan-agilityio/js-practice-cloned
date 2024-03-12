@@ -19,13 +19,24 @@
       </div>
 
       <div class="form__group">
+        <label for="username" class="form__label">username</label>
+        <input id="username" name="username" type="text" class="form__control">
+        <span class="form__message"></span>
+      </div>
+
+      <div class="form__group">
         <label for="password" class="form__label">Password</label>
         <input id="password" name="password" type="password" class="form__control">
         <span class="form__message"></span>
       </div>
 
-      <button type="submit" class="form__submit btn-sign-in">Sign In</button>
-      <a href="register.html" class="form__register">Create New Account</a>
+      <div class="form__group">
+        <label for="comfirmPassword" class="form__label">Comfirm password</label>
+        <input id="comfirmPassword" name="comfirmPassword" type="password" class="form__control">
+        <span class="form__message"></span>
+      </div>
+
+      <button type="submit" class="form__submit btn-sign-in">Sign Up</button>
       <div id="display-data"></div>
     </form>
   </div>
