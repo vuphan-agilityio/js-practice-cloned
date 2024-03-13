@@ -1,9 +1,19 @@
 export default class UserModel {
-  constructor(email, password) {
+  constructor(
+    email,
+    password,
+    emailRegister,
+    username,
+    passwordRegister,
+    confirmPassword
+  ) {
     this.email = email;
     this.password = password;
-    this.username = this.username;
-    this.confirmPassword = this.confirmPassword;
+    this.emailRegister = emailRegister;
+    this.username = username;
+    this.passwordRegister = passwordRegister;
+    this.confirmPassword = confirmPassword;
+    this.users = [];
   }
 
   signIn = (email, password) => {
@@ -24,49 +34,59 @@ export default class UserModel {
     }
   };
 
-  validateEmail(email) {
+  validateEmail(emailRegister) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email.trim());
+    return emailRegex.test(emailRegister.trim());
   }
 
-  validatePasswordLength(password, length) {
-    return password.trim().length >= length;
+  validateUsernameLength(username, minLength) {
+    return username.trim().length >= minLength;
   }
 
-  isUserExists(email) {
-    return this.users.some((user) => user.email === email);
+  validatePasswordLength(passwordRegister, length) {
+    return passwordRegister.trim().length >= length;
   }
 
-  signUp = (email, username, password, confirmPassword) => {
-    if (!this.validateEmail(email)) {
-      return { success: false, message: "Please enter a valid email address" };
+  isUserExists(emailRegister) {
+    return this.users.some((user) => user.email === emailRegister);
+  }
+
+  signUp(emailRegister, username, passwordRegister, confirmPassword) {
+    console.log("emailRegister: ", emailRegister);
+    console.log("username:", username);
+    console.log("passwordRegister:", passwordRegister);
+    console.log("confirmPassword:", confirmPassword);
+
+    if (!this.validateEmail(emailRegister)) {
+      return false;
+    }
+    if (username.trim().length < 2) {
+      return false;
     }
 
-    if (!this.validatePasswordLength(password, 8)) {
-      return {
-        success: false,
-        message: "Password must be at least 8 characters long",
-      };
-    }
-    if (!this.validateUsername(username)) {
-      return {
-        success: false,
-        message: "Username must be at least 2 characters long",
-      };
+    if (!this.validatePasswordLength(passwordRegister, 8)) {
+      return false;
     }
 
-    if (password !== confirmPassword) {
-      return {
-        success: false,
-        message: "Password and Confirm Password do not match",
-      };
+    if (passwordRegister !== confirmPassword) {
+      return false;
     }
 
-    if (this.isUserExists(email)) {
-      return { success: false, message: "Email is already registered" };
+    if (this.isUserExists(emailRegister)) {
+      console.log("Email is already registered.", emailRegister);
+      return false;
     }
 
-    this.users.push({ email: email, password: password });
-    return { success: true, message: "Sign up successful" };
-  };
+    this.users.push({ email: emailRegister, password: passwordRegister });
+    console.log("this.emailRegister", emailRegister);
+    console.log("this.passwordRegister", passwordRegister);
+
+    console.log("New user added:", {
+      email: emailRegister,
+      password: passwordRegister,
+    });
+
+    console.log("Updated user list:");
+    console.log(this.users);
+  }
 }
