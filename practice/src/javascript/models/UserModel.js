@@ -1,3 +1,5 @@
+import UserService from "../services/user.js";
+
 export default class UserModel {
   constructor(
     email,
@@ -16,77 +18,27 @@ export default class UserModel {
     this.users = [];
   }
 
-  signIn = (email, password) => {
-    const users = [
-      { email: "user1@example.com", password: "password1" },
-      { email: "user2@example.com", password: "password2" },
-      { email: "user@example.com", password: "12345678" },
-    ];
+  findUserByEmail = async (email) => {
+    const { result } = await UserService.findUserByEmail(email);
 
-    const user = users.find(
-      (item) => item.email === email && item.password === password
-    );
-
-    if (user) {
-      return true;
-    } else {
-      return false;
-    }
+    return !!result?.length;
   };
 
-  validateEmail(emailRegister) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(emailRegister.trim());
+  signIn = async (email, password) => {
+    const { result } = await UserService.signIn(email, password);
+
+    return !!result?.length;
   }
 
-  validateUsernameLength(username, minLength) {
-    return username.trim().length >= minLength;
-  }
+  createUser = async ({ email, username, password, passwordConfirm }) => {
 
-  validatePasswordLength(passwordRegister, length) {
-    return passwordRegister.trim().length >= length;
-  }
-
-  isUserExists(emailRegister) {
-    return this.users.some((user) => user.email === emailRegister);
-  }
-
-  signUp(emailRegister, username, passwordRegister, confirmPassword) {
-    console.log("emailRegister: ", emailRegister);
-    console.log("username:", username);
-    console.log("passwordRegister:", passwordRegister);
-    console.log("confirmPassword:", confirmPassword);
-
-    if (!this.validateEmail(emailRegister)) {
-      return false;
-    }
-    if (username.trim().length < 2) {
-      return false;
-    }
-
-    if (!this.validatePasswordLength(passwordRegister, 8)) {
-      return false;
-    }
-
-    if (passwordRegister !== confirmPassword) {
-      return false;
-    }
-
-    if (this.isUserExists(emailRegister)) {
-      console.log("Email is already registered.", emailRegister);
-      return false;
-    }
-
-    this.users.push({ email: emailRegister, password: passwordRegister });
-    console.log("this.emailRegister", emailRegister);
-    console.log("this.passwordRegister", passwordRegister);
-
-    console.log("New user added:", {
-      email: emailRegister,
-      password: passwordRegister,
+    const response = await UserService.createUser({
+      email,
+      username,
+      password,
+      passwordConfirm,
     });
 
-    console.log("Updated user list:");
-    console.log(this.users);
-  }
+    console.log('response', response)
+  };
 }

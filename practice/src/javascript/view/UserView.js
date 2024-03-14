@@ -5,11 +5,9 @@ export default class UserView {
     this.signInFormEl = document.getElementById("form-sign-in");
     this.signUpFormEl = document.getElementById("form-sign-up");
     this.emailEl = document.getElementById("email");
-    this.pwdEl = document.getElementById("password");
-    this.emailRgtEl = document.getElementById("emailRegister");
-    this.nameEl = document.getElementById("username");
-    this.pwdRgtEl = document.getElementById("passwordRegister");
-    this.confirmPwdEl = document.getElementById("confirmPassword");
+    this.passwordEl = document.getElementById("password");
+    this.userNameEl = document.getElementById("username");
+    this.passwordConfirmEl = document.getElementById("confirmPassword");
   }
 
   bindCallback = (event, handler) => {
@@ -28,24 +26,23 @@ export default class UserView {
   signIn = (handler) => {
     return (event) => {
       event.preventDefault();
-      handler(this.emailEl.value, this.pwdEl.value);
+      handler(this.emailEl.value, this.passwordEl.value);
     };
   };
 
   redirectPage = (page) => {
-    console.log("page", page);
     window.location.replace(page);
   };
 
   signUp = (handler) => {
     return (event) => {
       event.preventDefault();
-      handler(
-        this.emailRgtEl.value,
-        this.nameEl.value,
-        this.pwdRgtEl.value,
-        this.confirmPwdEl.value
-      );
+      handler({
+        email: this.emailEl.value,
+        username: this.userNameEl.value,
+        password: this.passwordEl.value,
+        passwordConfirm: this.passwordConfirmEl.value,
+      });
     };
   };
 }

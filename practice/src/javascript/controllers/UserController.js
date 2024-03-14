@@ -1,3 +1,9 @@
+import {
+  inValidEmail,
+  inValidUsername,
+  inValidPassword
+} from '../helpers';
+
 export default class UserController {
   constructor(model, view) {
     this.model = model;
@@ -9,8 +15,8 @@ export default class UserController {
     this.view.bindCallback("signUp", this.signUp);
   };
 
-  signIn = (email, password) => {
-    const result = this.model.signIn(email, password);
+  signIn = async (email, password) => {
+    const result = await this.model.signIn(email, password);
 
     if (result) {
       this.view.redirectPage("index.html");
@@ -19,28 +25,50 @@ export default class UserController {
     }
   };
 
-  signUp = (emailRegister, username, passwordRegister, confirmPassword) => {
-    const signUpResult = this.model.signUp(
-      emailRegister,
-      username,
-      passwordRegister,
-      confirmPassword
-    );
+  signUp = async ({
+    email,
+    username,
+    password,
+    passwordConfirm
+  }) => {
+    if (!inValidEmail(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
 
-    if (signUpResult) {
+    if (!inValidUsername(username, 2)) {
+      alert("Username must be at least 2 characters long.");
+      return;
+    }
+
+    if (!inValidPassword(password, 8)) {
+      alert("Password must be at least 8 characters long.");
+      return;
+    }
+
+    if (password !== passwordConfirm) {
+      alert("Password and Confirm Password do not match.");
+      return;
+    }
+
+    const isExits = await this.model.findUserByEmail(email)
+
+    if (isExits) {
+      alert("Email is already registered.");
+      return;
+    }
+
+    const response = this.model.createUser({
+      email,
+      username,
+      password,
+      passwordConfirm,
+    });
+
+    if (!response.error) {
       this.view.redirectPage("login.html");
     } else {
-      if (!this.model.validateEmail(emailRegister)) {
-        alert("Please enter a valid email address.");
-      } else if (!this.model.validateUsernameLength(username, 2)) {
-        alert("Username must be at least 2 characters long.");
-      } else if (!this.model.validatePasswordLength(passwordRegister, 8)) {
-        alert("Password must be at least 8 characters long.");
-      } else if (passwordRegister !== confirmPassword) {
-        alert("Password and Confirm Password do not match.");
-      } else if (this.model.isUserExists(emailRegister)) {
-        alert("Email is already registered.");
-      }
+      alert("Something went wrong!");
     }
   };
 }

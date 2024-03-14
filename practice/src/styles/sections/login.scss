@@ -27,8 +27,7 @@
     flex-direction: column;
   }
 
-  &__label,
-  &__message {
+  &__label {
     text-align: left;
   }
 
@@ -60,20 +59,6 @@
       padding: toRem(10) toRem(14);
       font-size: $fs-xl-large;
     }
-  }
-
-  &__group.invalid &__control {
-    border-color: #f33a58;
-  }
-
-  &__group.invalid &__message {
-    color: #f33a58;
-  }
-
-  &__message {
-    font-size: 18px;
-    line-height: $lh-xs-medium;
-    padding: toRem(4) 0 0;
   }
 
   &__submit {
