@@ -1,31 +1,48 @@
 .btn {
-	border: none;
+  border: none;
 
-	&__subs {
-		color: #ffffff;
-		border: toRem(1) solid $bg-color-secondary;
-		background-color: $bg-color-secondary;
-		text-transform: uppercase;
-		height: toRem(48);
-		border-radius: toRem(4);
-		@include cursor;
+  &__subs {
+    color: #ffffff;
+    border: toRem(1) solid $bg-color-secondary;
+    background-color: $bg-color-secondary;
+    text-transform: uppercase;
+    height: toRem(48);
+    border-radius: toRem(4);
+    @include cursor;
 
-		&:hover {
-			background-color: #fd4c0c;
-		}
+    &:hover {
+      background-color: #fd4c0c;
+    }
 
-		@include tablet {
-			width: toRem(129);
-			height: toRem(68);
-			border-radius: 0 toRem(4) toRem(4) 0;
-		}
-	}
+    @include tablet {
+      width: toRem(129);
+      height: toRem(68);
+      border-radius: 0 toRem(4) toRem(4) 0;
+    }
+  }
 
   &__favorite {
     width: toRem(16);
     height: toRem(16);
-    border: toRem(1)  solid #000000;
+    border: toRem(1) solid #000000;
     background-color: #fff;
+    @include cursor;
+  }
+
+  &__drawer {
+    @include flex-row;
+    align-items: center;
+    justify-content: center;
+    gap: toRem(5);
+    width: toRem(150);
+    height: toRem(32);
+    background-color: #1ca1c1;
+    border: toRem(1) solid #139dc0;
+    border-radius: toRem(3);
+    color: #fff;
+    font-size: $fs-x-large;
+    font-family: $font-secondary;
+    font-weight: 600;
     @include cursor;
   }
 }

@@ -1,0 +1,25 @@
+.toolbar {
+  position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ccd7e6;
+    border-bottom: none;
+    padding: 12px 10px;
+    overflow: hidden;
+
+    &__title {
+      font-size: $fs-x-medium;
+      font-weight: 600;
+      color: #475466;
+    }
+
+    &__icon {
+      background-image: url("../assets/images/user/search.svg");
+      background-repeat: no-repeat;
+      width: toRem(30);
+      height: toRem(30);
+      @include cursor;
+    }
+}

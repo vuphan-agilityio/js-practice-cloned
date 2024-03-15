@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="./assets/images/logo/icon-logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="./styles/index.scss" />
+  <title>User manager-Food Blog</title>
+</head>
+
+<body>
+  <header>
+    <div class="navbar-user__wrapper">
+      <div class="navbar-user__item">
+        <span class="navbar-user__icon-menu drawer__user-icon"></span>
+        <h1 class="navbar-user__title">User Manager</h1>
+      </div>
+    </div>
+
+  </header>
+  <!-- END HEADER -->
+
+  <!-- START MAIN -->
+  <main class=" main-body">
+    <div class="drawer">
+      <div class="drawer__wrapper">
+        <button class="btn__drawer">
+          <span class="drawer__icon-new drawer__user-icon"></span>
+          New
+        </button>
+      </div>
+
+      <ul>
+        <li class="drawer__item">
+          <span class="drawer__icon-user drawer__user-icon"></span>
+          <p class="drawer__title">Users</p>
+        </li>
+        <li class="drawer__item">
+          <span class="drawer__icon-roles drawer__user-icon"></span>
+          <p class="drawer__title">Roles</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <div class="toolbar">
+        <p class="toolbar__title">User</p>
+        <span class="toolbar__icon"></span>
+      </div>
+
+      <div class="table">
+        <table class="table__wrapper toolbar__title">
+          <thead class="table__head">
+            <tr class="table__header">
+              <th class="table__header__cell"></th>
+              <th class="table__header__cell">Full name</th>
+              <th class="table__header__cell">Status</th>
+              <th class="table__header__cell">Email</th>
+            </tr>
+          </thead>
+
+          <tbody class="table-body">
+            <tr class="table__row">
+              <td class="table__row__cell">
+                <div class="table__profile">
+                  <img class="table__avata">
+                </div>
+              </td>
+              <td class="table__row__cell">
+                <div class="table__profile">
+                  <img class="table__avata">
+                </div>
+              </td>
+              <td class="table__row__cell">
+                <div class="table__profile">
+                  <img class="table__avata">
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </main>
+  <!-- END MAIN -->
+
+</body>
