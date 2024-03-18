@@ -44,4 +44,45 @@
     font-weight: 600;
     @include cursor;
   }
+
+  &__save {
+    border: none;
+    border-radius: toRem(3);
+    outline: none;
+    padding: 0 toRem(30);
+    color: #1ca1c1;
+    background-color: #f4f5f9;
+    font-weight: 700;
+
+    &:hover {
+      color: #fff;
+      background-color: #1ca1c1;
+    }
+  }
+
+  &__delete {
+    padding: toRem(7) toRem(27);
+    color: #1ca1c1;
+    background-color: #f4f5f9;
+
+    &:hover {
+      color: #fff;
+      background-color: #1ca1c1;
+    }
+  }
+
+  &__general {
+    border: none;
+    background-color: #fff;
+    color: #17839d;
+    min-width: toRem(260);
+    padding: toRem(12) 0;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+      border-bottom: toRem(2) solid #17839d;
+    }
+  }
 }
