@@ -1,0 +1,37 @@
+.navbar-user {
+  @include flex-row;
+
+  &__wrapper {
+    @include flex-row;
+    color: #475466;
+    font-weight: 600;
+    align-content: center;
+    width: 100%;
+    height: toRem(47);
+    border: toRem(1) solid #ccd7e6;
+    background-color: $bg-color-primary;
+    border-radius: toRem(20) toRem(20) 0 0;
+    padding: toRem(20);
+  }
+
+  &__item {
+    @include flex-row;
+    gap: toRem(20);
+    align-items: center;
+    @include cursor;
+  }
+
+  &__icon-menu {
+    display: block;
+    background-image: url("../assets/images/user/menu.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    width: toRem(30);
+    height: toRem(30);
+
+    @include tablet {
+      display: none;
+    }
+  }
+}
