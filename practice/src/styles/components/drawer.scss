@@ -61,12 +61,4 @@
       background-image: url("../assets/images/user/user-icon-selected.svg");
     }
   }
-
-  &__icon-roles {
-    background-image: url("../assets/images/user/icon-role.svg");
-
-    &:hover {
-      background-image: url("../assets/images/user/shield-icon-selected.svg");
-    }
-  }
 }
