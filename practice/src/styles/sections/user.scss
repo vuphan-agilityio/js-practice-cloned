@@ -1,0 +1,7 @@
+.main-body {
+  @include flex-row;
+  font-family: $font-secondary;
+  font-size: $fs-small;
+  font-weight: 400;
+  background-color: #ebedf0;
+}
