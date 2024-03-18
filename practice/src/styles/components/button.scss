@@ -28,4 +28,20 @@
     background-color: #fff;
     @include cursor;
   }
+
+  &__drawer {
+    @include flex-row;
+    align-items: center;
+    justify-content: center;
+    gap: toRem(5);
+    width: toRem(150);
+    height: toRem(32);
+    background-color: #1ca1c1;
+    border: toRem(1) solid #139dc0;
+    border-radius: toRem(3);
+    color: #fff;
+    font-size: $fs-x-large;
+    font-weight: 600;
+    @include cursor;
+  }
 }
