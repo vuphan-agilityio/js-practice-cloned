@@ -7,14 +7,10 @@
 }
 
 .content {
-  display: none;
-
-  @include tablet {
     display: block;
     width: 100%;
     padding: toRem(10);
     font-family: $font-secondary;
     background-color: #ebedf0;
-  }
 }
 

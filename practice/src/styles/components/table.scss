@@ -13,7 +13,7 @@
     width: 100%;
 
     &__cell {
-      font-weight: 500;
+      font-weight: 600;
       color: $color-primary;
       padding: toRem(20) 0;
       text-align: left;
@@ -21,15 +21,15 @@
     }
 
     &__cell:nth-child(1) {
-      width: toRem(70);
+      width: 15%;
     }
 
     &__cell:nth-child(2) {
-      width: toRem(400);
+      width: 35%;
     }
 
     &__cell:nth-child(3) {
-      width: toRem(160);
+      width: 25%;
     }
   }
 
