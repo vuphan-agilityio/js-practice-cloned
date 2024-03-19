@@ -1,4 +1,8 @@
-import { inValidEmail, inValidUsername, inValidPassword } from "../helpers";
+import {
+  inValidEmail,
+  inValidUsername,
+  inValidPassword
+} from "../helpers";
 
 export default class UserController {
   constructor(model, view) {
@@ -22,7 +26,12 @@ export default class UserController {
     }
   };
 
-  signUp = async ({ email, username, password, passwordConfirm }) => {
+  signUp = async ({
+    email,
+    username,
+    password,
+    passwordConfirm
+  }) => {
     if (!inValidEmail(email)) {
       alert("Please enter a valid email address.");
       return;

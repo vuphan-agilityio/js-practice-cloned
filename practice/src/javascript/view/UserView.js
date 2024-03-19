@@ -40,7 +40,6 @@ export default class UserView {
     } else {
       this.drawerEl.classList.add("show")
     }
-
   }
 
   signIn = (handler) => {
