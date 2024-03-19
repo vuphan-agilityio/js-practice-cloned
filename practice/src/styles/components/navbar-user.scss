@@ -29,6 +29,7 @@
     cursor: pointer;
     width: toRem(30);
     height: toRem(30);
+    position: relative;
 
     @include tablet {
       display: none;
