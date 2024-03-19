@@ -2,7 +2,7 @@ import {
   inValidEmail,
   inValidUsername,
   inValidPassword
-} from '../helpers';
+} from "../helpers";
 
 export default class UserController {
   constructor(model, view) {
@@ -13,6 +13,7 @@ export default class UserController {
   init = () => {
     this.view.bindCallback("signIn", this.signIn);
     this.view.bindCallback("signUp", this.signUp);
+    this.view.bindCallback("menuToggle");
   };
 
   signIn = async (email, password) => {
@@ -51,7 +52,7 @@ export default class UserController {
       return;
     }
 
-    const isExits = await this.model.findUserByEmail(email)
+    const isExits = await this.model.findUserByEmail(email);
 
     if (isExits) {
       alert("Email is already registered.");

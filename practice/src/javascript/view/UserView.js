@@ -8,6 +8,11 @@ export default class UserView {
     this.passwordEl = document.getElementById("password");
     this.userNameEl = document.getElementById("username");
     this.passwordConfirmEl = document.getElementById("confirmPassword");
+
+    // Toggle menu
+    this.selectEl = document.querySelector(".navbar-user__icon-menu");
+    this.drawerEl = document.querySelector(".drawer");
+    this.isShowDrawer = false;
   }
 
   bindCallback = (event, handler) => {
@@ -18,10 +23,24 @@ export default class UserView {
       case "signUp":
         bindEvent(this.signUpFormEl, "submit", this.signUp(handler));
         break;
+      case "menuToggle":
+        bindEvent(this.selectEl, "click", this.menuToggle); // Toggle menu
+        break;
       default:
         break;
     }
   };
+
+  // Toggle menu
+  menuToggle = (event) => {
+    event.preventDefault();
+
+    if (this.drawerEl.classList.contains("show")) {
+      this.drawerEl.classList.remove("show")
+    } else {
+      this.drawerEl.classList.add("show")
+    }
+  }
 
   signIn = (handler) => {
     return (event) => {
