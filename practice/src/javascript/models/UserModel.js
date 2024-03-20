@@ -1,5 +1,3 @@
-import UserService from "../services/user.js";
-
 export default class UserModel {
   constructor(
     email,
@@ -17,28 +15,4 @@ export default class UserModel {
     this.confirmPassword = confirmPassword;
     this.users = [];
   }
-
-  findUserByEmail = async (email) => {
-    const { result } = await UserService.findUserByEmail(email);
-
-    return !!result?.length;
-  };
-
-  signIn = async (email, password) => {
-    const { result } = await UserService.signIn(email, password);
-
-    return !!result?.length;
-  }
-
-  createUser = async ({ email, username, password, passwordConfirm }) => {
-
-    const response = await UserService.createUser({
-      email,
-      username,
-      password,
-      passwordConfirm,
-    });
-
-    console.log('response', response)
-  };
 }
