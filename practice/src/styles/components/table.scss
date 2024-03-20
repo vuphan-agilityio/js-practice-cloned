@@ -21,7 +21,7 @@
     }
 
     &__cell:nth-child(1) {
-      width: 15%;
+      width: 12%;
     }
 
     &__cell:nth-child(2) {
@@ -33,7 +33,31 @@
     }
   }
 
+  &__title {
+    font-size: $fs-small;
+    font-weight: 500;
+
+    @include tablet {
+      font-size: $fs-x-medium;
+    }
+  }
+
+  &__avata {
+    width: toRem(40);
+    height: toRem(40);
+    margin: toRem(10);
+
+    @include tablet {
+      width: toRem(50);
+      height: toRem(50);
+    }
+  }
+
   &__row {
     border-bottom: toRem(1) solid #edeff0;
+
+    &__cell {
+      vertical-align: middle;
+    }
   }
 }
