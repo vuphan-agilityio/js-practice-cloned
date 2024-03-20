@@ -16,6 +16,7 @@ export default class UserController {
     this.view.bindCallback("signIn", this.signIn);
     this.view.bindCallback("signUp", this.signUp);
     this.view.bindCallback("menuToggle");
+    this.handleGetUsers();
   };
 
   signIn = async (email, password) => {
@@ -28,12 +29,19 @@ export default class UserController {
     }
   };
 
-  signUp = async ({
-    email,
-    username,
-    password,
-    passwordConfirm
-  }) => {
+  // Get data
+  handleGetUsers = async () => {
+    const { users }  = await this.getUsers();
+    this.model.setUsers(users);
+    this.view.renderTables(users);
+}
+
+  // Get data UserService
+  getUsers = async () => {
+    return await UserService.fetchUsers();
+  }
+
+  signUp = async ({ email, username, password, passwordConfirm }) => {
     if (!inValidEmail(email)) {
       alert("Please enter a valid email address.");
       return;
@@ -85,10 +93,9 @@ export default class UserController {
     const { result } = await UserService.signIn(email, password);
 
     return !!result?.length;
-  }
+  };
 
   createUser = async ({ email, username, password, passwordConfirm }) => {
-
     const response = await UserService.createUser({
       email,
       username,
@@ -96,6 +103,6 @@ export default class UserController {
       passwordConfirm,
     });
 
-    console.log('response', response)
+    console.log("response", response);
   };
 }

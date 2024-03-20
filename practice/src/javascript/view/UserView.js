@@ -1,4 +1,5 @@
 import { bindEvent } from "../helpers";
+import { userRowTemplate } from '../templates/user'
 
 export default class UserView {
   constructor() {
@@ -13,6 +14,9 @@ export default class UserView {
     this.selectEl = document.querySelector(".navbar-user__icon-menu");
     this.drawerEl = document.querySelector(".drawer");
     this.isShowDrawer = false;
+
+    // Tables
+    this.tableBodyEl = document.querySelector(".table-body")
   }
 
   bindCallback = (event, handler) => {
@@ -52,6 +56,11 @@ export default class UserView {
   redirectPage = (page) => {
     window.location.replace(page);
   };
+
+  renderTables = (users) => {
+    console.log("users", users)
+    this.tableBodyEl.innerHTML = userRowTemplate(users);
+  }
 
   signUp = (handler) => {
     return (event) => {
