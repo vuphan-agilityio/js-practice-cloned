@@ -47,6 +47,7 @@
     align-items: center;
     gap: toRem(10);
     padding: toRem(10);
+    margin-top: toRem(40);
 
     &:hover {
       border-left: toRem(3) solid #1ca1c1;
