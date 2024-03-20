@@ -15,4 +15,8 @@ export default class UserModel {
     this.confirmPassword = confirmPassword;
     this.users = [];
   }
+
+  setUsers = (data) => {
+    this.users = data;
+  }
 }
