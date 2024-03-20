@@ -1,3 +1,5 @@
+import UserService from "../services/user.js";
+
 import {
   inValidEmail,
   inValidUsername,
@@ -71,5 +73,29 @@ export default class UserController {
     } else {
       alert("Something went wrong!");
     }
+  };
+
+  findUserByEmail = async (email) => {
+    const { result } = await UserService.findUserByEmail(email);
+
+    return !!result?.length;
+  };
+
+  signIn = async (email, password) => {
+    const { result } = await UserService.signIn(email, password);
+
+    return !!result?.length;
+  }
+
+  createUser = async ({ email, username, password, passwordConfirm }) => {
+
+    const response = await UserService.createUser({
+      email,
+      username,
+      password,
+      passwordConfirm,
+    });
+
+    console.log('response', response)
   };
 }
