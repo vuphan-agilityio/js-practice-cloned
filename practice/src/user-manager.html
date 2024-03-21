@@ -24,10 +24,23 @@
   <!-- START MAIN -->
   <main class=" main-body">
     <div class="drawer show">
-      <div class="drawer__item">
-        <span class="drawer__icon-user drawer__user-icon"></span>
-        <p class="drawer__title">Users</p>
+      <div class="drawer__wrapper">
+        <button class="btn__drawer">
+          <span class="drawer__icon-new drawer__user-icon"></span>
+          New recipes
+        </button>
       </div>
+
+      <ul>
+        <li class="drawer__item user">
+          <span class="drawer__icon-user drawer__user-icon"></span>
+          <p class="drawer__title">Users</p>
+        </li>
+        <li class="drawer__item product">
+          <img class="drawer__img" src="./assets/images/products/product-preview.png" alt="Icon product">
+          <p class="drawer__title">Products</p>
+        </li>
+      </ul>
     </div>
 
     <div class="content">
@@ -36,7 +49,7 @@
         <span class="toolbar__icon"></span>
       </div>
 
-      <div class="table">
+      <div class="table show-user">
         <table class="table__wrapper toolbar__title">
           <thead class="table__head">
             <tr class="table__header">
@@ -46,6 +59,26 @@
           </thead>
 
           <tbody class="table-body">
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-product show-product">
+        <table class="table__wrapper toolbar__title">
+          <thead class="table__head">
+            <tr class="table__header">
+              <th class="table__header__cell table-product__cell">Name</th>
+              <th class="table__header__cell">Creator</th>
+              <th class="table__header__cell">Collection</th>
+              <th class="table__header__cell">Category</th>
+              <th class="table__header__cell">Nutrition</th>
+              <th class="table__header__cell">Description</th>
+              <th class="table__header__cell">Ingredients</th>
+              <th class="table__header__cell">Intruction</th>
+            </tr>
+          </thead>
+
+          <tbody class="table-body__product">
           </tbody>
         </table>
       </div>
@@ -151,6 +184,19 @@
     </aside>
   </main>
   <!-- END MAIN -->
+
+  <!-- START MODAL -->
+  <form class="modal show-form">
+    <div class="modal__header">
+      <p class="modal__title">Enter products name</p>
+      <span class="modal__icon drawer__user-icon"></span>
+    </div>
+    <div class="modal__body">
+      <input class="modal__input" type="text">
+      <button class="btn__save modal__disabled">Save</button>
+    </div>
+  </form>
+  <!-- END MODAL -->
 
   <script type="module" src="./javascript/app.js"></script>
 </body>

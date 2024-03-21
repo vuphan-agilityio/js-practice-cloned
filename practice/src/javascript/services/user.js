@@ -69,4 +69,45 @@ export default class UserService {
       return this.handleError(err);
     }
   };
+
+  /**
+   * Handle API response
+   * @param {Response} resp The response object from the API
+   * @returns {object} An object containing the response product or error message
+   */
+  static handleResponse = async (resp) => {
+    if (resp.ok) {
+      const product = await resp.json();
+      return {
+        product,
+        errMsg: null,
+      };
+    } else {
+      return {
+        product: null,
+        errMsg: resp.statusText,
+      };
+    }
+  };
+
+  /**
+   * Handle API error
+   * @param {Error} err The error object
+   * @returns {object} An object containing the response product or error message
+   */
+  static handleError = (err) => {
+    return {
+      product: null,
+      errMsg: err.message,
+    };
+  };
+
+  static fetchProduct = async () => {
+    try {
+      const resp = await fetch(`${API.BASE_URL}${API.CREATE_PRODUCT}`);
+      return this.handleResponse(resp);
+    } catch (err) {
+      return this.handleError(err);
+    }
+  };
 }

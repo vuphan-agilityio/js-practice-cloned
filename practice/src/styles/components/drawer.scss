@@ -46,7 +46,6 @@
     align-items: center;
     gap: toRem(10);
     padding: toRem(10);
-    margin-top: toRem(40);
 
     &:hover {
       border-left: toRem(3) solid #1ca1c1;
@@ -60,6 +59,11 @@
     &:hover {
       background-image: url("../assets/images/user/user-icon-selected.svg");
     }
+  }
+
+  &__img {
+    width: toRem(30);
+   height: toRem(30);
   }
 }
 

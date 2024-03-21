@@ -16,7 +16,12 @@ export default class UserController {
     this.view.bindCallback("signIn", this.signIn);
     this.view.bindCallback("signUp", this.signUp);
     this.view.bindCallback("menuToggle");
+    this.view.bindCallback("newToggle");
+    this.view.bindCallback("closeToggle");
+    this.view.bindCallback("userToggle");
+    this.view.bindCallback("productToggle");
     this.handleGetUsers();
+    this.handleGetProduct();
   };
 
   signIn = async (email, password) => {
@@ -29,7 +34,7 @@ export default class UserController {
     }
   };
 
-  // Get data
+  // Get data user
   handleGetUsers = async () => {
     const { users }  = await this.getUsers();
     this.model.setUsers(users);
@@ -39,6 +44,17 @@ export default class UserController {
   // Get data UserService
   getUsers = async () => {
     return await UserService.fetchUsers();
+  }
+
+  // Get data product
+  handleGetProduct = async () => {
+    const { product } = await this.getProduct();
+    this.model.setProduct(product);
+    this.view.renderTableProduct(product);
+  }
+
+  getProduct = async () => {
+    return await UserService.fetchProduct();
   }
 
   signUp = async ({ email, username, password, passwordConfirm }) => {

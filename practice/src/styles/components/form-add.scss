@@ -1,15 +1,21 @@
+
+
 .modal {
   display: none;
   font-family: $font-secondary;
   font-size: $fs-small;
-  min-width: toRem(351);
-  min-height: toRem(108);
+  width: toRem(300);
+  height: toRem(120);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  position: fixed;
-  background-color: #ececec80;
-  z-index: 1;
+  position: absolute;
+  background-color: #ececec;
+
+  @include tablet {
+    width: toRem(351);
+    height: toRem(120);
+  }
 
   &__header {
     justify-content: space-between;
@@ -19,7 +25,6 @@
     display: flex;
     justify-content: space-between;
   }
-
   &__title {
     color: #475466;
     font-weight: 600;
@@ -38,14 +43,30 @@
   &__input {
     border: toRem(1) solid #ccd7e6;
     border-radius: toRem(3);
-    width: toRem(220);
+    width: toRem(180);
     margin-left: toRem(20);
     padding: toRem(8);
     outline: none;
     @include cursor;
 
+    @include tablet {
+      width: toRem(220);
+    }
+
     &:hover {
       border-color: #1ca1c1;
     }
   }
+
+  &__disabled {
+    cursor: not-allowed;
+    color: #94a1b3;
+  }
 }
+
+.show-form {
+  display: block;
+}
+
+
+
