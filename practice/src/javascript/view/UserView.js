@@ -1,6 +1,6 @@
-import { bindEvent } from "../helpers";
-import { userRowTemplate } from '../templates/user';
-import { productRowTemplateProduct } from '../templates/product';
+import { bindEvent, delegate } from "../helpers";
+import { renderUserTableTemplate } from '../templates/user';
+import { renderProductTableTemplate } from '../templates/product';
 
 export default class UserView {
   constructor() {
@@ -27,20 +27,20 @@ export default class UserView {
     this.isShowForm = false;
 
     // Toggle item product
-    this.selectProcudtEl = document.querySelector(".product")
+    this.navigationEl = document.querySelector(".navigation")
     this.toolEl = document.querySelector(".toolbar__title");
-    this.tablePdEl = document.querySelector(".table-product");
 
     // Toggle item user
-    this.selectUserEl = document.querySelector(".user")
-    this.toolUsEl = document.querySelector(".toolbar__title");
-    this.tableUsEl = document.querySelector(".table");
 
-    // Tables user
-    this.tableBodyEl = document.querySelector(".table-body");
 
-    // Table product
-    this.tableBodyPdEl = document.querySelector(".table-body__product");
+    // Table
+    this.tableWrapperEl = document.getElementById("table-wrapper");
+
+    // Add
+    this.selectAddEl = document.getElementById("form-add-product")
+    this.nameEl = document.getElementById("name");
+
+
   }
 
   bindCallback = (event, handler) => {
@@ -60,12 +60,12 @@ export default class UserView {
       case "closeToggle":
         bindEvent(this.selectCloseEl, "click", this.closeToggle); // Toggle icon close
         break;
-      case "userToggle":
-        bindEvent(this.selectUserEl, "click", this.userToggle); // Toggle item users
+      case "navigationItem":
+        delegate(this.navigationEl, ".navigation__item", "click", this.navToggle(handler));// Toggle icon products
           break;
-      case "productToggle":
-          bindEvent(this.selectProcudtEl, "click", this.productToggle); // Toggle icon products
-          break;
+      case "addProduct":
+        bindEvent(this.selectAddEl, "submit", this.addProduct(handler)); // Toggle icon products
+        break;
       default:
         break;
     }
@@ -84,7 +84,6 @@ export default class UserView {
   //Toggle button new
   newToggle = (event) => {
     event.preventDefault();
-
     if (this.formEl.classList.contains("show-form")) {
       this.formEl.classList.remove("show-form")
     } else {
@@ -102,26 +101,40 @@ export default class UserView {
     }
   };
 
-  // Change toolbar title product
-  productToggle = (event) => {
-    event.preventDefault();
-    this.toolEl.textContent = "Product";
-    if (this.tablePdEl.classList.contains("show-product")) {
-      this.tablePdEl.classList.remove("show-product");
-    } else {
-      this.tablePdEl.classList.add("show-product")
+  setNavigationActive = (type) => {
+    document.querySelector(".navigation__item.active")?.classList.remove("active");
+
+    switch(type) {
+      case "users":
+        document.querySelector(".navigation__item[data-id='users']").classList.add("active");
+        this.urlParams = new URLSearchParams(window.location.search)
+        this.urlParams.set("nav", "users");
+
+        console.log("this.urlParams.toString()", this.urlParams.toString())
+        // window.location.replace(this.urlParams.toString())
+        break;
+      case "products":
+        document.querySelector(".navigation__item[data-id='products']").classList.add("active");
+        break;
+      default:
+        break;
     }
-  };
+  }
 
   // Change toolbar title user
-  userToggle = (event) => {
+  navToggle = (handler) => (event) => {
     event.preventDefault();
-    this.toolUsEl.textContent = "User";
-    if (this.tableUsEl.classList.contains("show-user")) {
-      this.tableUsEl.classList.remove("show-user");
+    const type = event.target.closest(".navigation__item").dataset.id;
+
+    this.setNavigationActive(type);
+
+    if (type === "users") {
+      this.toolEl.textContent = "User";
     } else {
-      this.tableUsEl.classList.add("show-user")
+      this.toolEl.textContent = "Products";
     }
+
+    handler(type);
   };
 
   signIn = (handler) => {
@@ -137,13 +150,12 @@ export default class UserView {
 
   // Render table user
   renderTables = (users) => {
-    this.tableBodyEl.innerHTML = userRowTemplate(users);
+    this.tableWrapperEl.innerHTML = renderUserTableTemplate(users);
   }
 
   // Render table product
-  renderTableProduct = (product) => {
-    console.log("product", product)
-    this.tableBodyPdEl.innerHTML = productRowTemplateProduct(product);
+  renderTableProducts = (data) => {
+    this.tableWrapperEl.innerHTML = renderProductTableTemplate(data);
   }
 
   signUp = (handler) => {
@@ -157,4 +169,13 @@ export default class UserView {
       });
     };
   };
+
+  addProduct = (handler) => {
+    return (event) => {
+      event.preventDefault();
+      handler({
+        name: this.nameEl.value,
+      });
+    };
+  }
 }

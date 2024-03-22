@@ -32,7 +32,6 @@
     font-weight: 500;
 
     &:hover {
-      color: #1ca1c1;
       font-weight: 600;
     }
   }
@@ -41,15 +40,20 @@
     background-image: url("../assets/images/user/plus-icon.svg");
   }
 
-  &__item {
+  &__item,.navigation__item {
     @include flex-row;
     align-items: center;
     gap: toRem(10);
     padding: toRem(10);
 
-    &:hover {
+    &:hover,&.active {
       border-left: toRem(3) solid #1ca1c1;
       background-color: #3b3e46;
+      color: #1ca1c1;
+
+      .drawer__title {
+        color: #1ca1c1;
+      }
     }
   }
 

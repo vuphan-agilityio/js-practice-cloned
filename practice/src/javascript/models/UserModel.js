@@ -21,7 +21,7 @@ export default class UserModel {
     this.passwordRegister = passwordRegister;
     this.confirmPassword = confirmPassword;
     this.users = [];
-    this.product = [];
+    this.products = [];
     this.name = name;
     this.description = description;
     this.ingredients = ingredients;
@@ -35,7 +35,7 @@ export default class UserModel {
     this.users = data;
   }
 
-  setProduct = (data) => {
-    this.product = data;
+  setProducts = (data) => {
+    this.products = data;
   }
 }

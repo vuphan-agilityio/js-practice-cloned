@@ -36,14 +36,14 @@ export default class UserService {
    */
   static handleResponse = async (res) => {
     if (res.ok) {
-      const users = await res.json();
+      const data = await res.json();
       return {
-        users,
+        data,
         errMsg: null,
       };
     } else {
       return {
-        users: null,
+        data: null,
         errMsg: res.statusText,
       };
     }
@@ -56,7 +56,7 @@ export default class UserService {
    */
   static handleError = (err) => {
     return {
-      users: null,
+      data: null,
       errMsg: err.message,
     };
   };
@@ -70,44 +70,21 @@ export default class UserService {
     }
   };
 
-  /**
-   * Handle API response
-   * @param {Response} resp The response object from the API
-   * @returns {object} An object containing the response product or error message
-   */
-  static handleResponse = async (resp) => {
-    if (resp.ok) {
-      const product = await resp.json();
-      return {
-        product,
-        errMsg: null,
-      };
-    } else {
-      return {
-        product: null,
-        errMsg: resp.statusText,
-      };
-    }
-  };
-
-  /**
-   * Handle API error
-   * @param {Error} err The error object
-   * @returns {object} An object containing the response product or error message
-   */
-  static handleError = (err) => {
-    return {
-      product: null,
-      errMsg: err.message,
-    };
-  };
-
-  static fetchProduct = async () => {
+  static fetchProducts = async () => {
     try {
       const resp = await fetch(`${API.BASE_URL}${API.CREATE_PRODUCT}`);
       return this.handleResponse(resp);
     } catch (err) {
       return this.handleError(err);
     }
+  };
+
+  // Add product
+  static createProduct = async ({ name }) => {
+    return await APIHelper.createRequest(
+      `${API.BASE_URL}${API.CREATE_PRODUCT}`,
+      "POST",
+      { name }
+    );
   };
 }

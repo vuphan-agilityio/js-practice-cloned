@@ -43,11 +43,15 @@
       vertical-align: middle;
       padding: toRem(20);
     }
+
+    &__cell:nth-child(1) {
+      width: 0;
+    }
   }
 
 }
 
-.show-user {
+.show {
   display: block;
 }
 

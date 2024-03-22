@@ -1,7 +1,6 @@
 
 
 .modal {
-  display: none;
   font-family: $font-secondary;
   font-size: $fs-small;
   width: toRem(300);
@@ -11,6 +10,7 @@
   transform: translate(-50%, -50%);
   position: absolute;
   background-color: #ececec;
+  display: block;
 
   @include tablet {
     width: toRem(351);
@@ -65,7 +65,7 @@
 }
 
 .show-form {
-  display: block;
+  display: none;
 }
 
 

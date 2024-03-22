@@ -18,10 +18,20 @@ export default class UserController {
     this.view.bindCallback("menuToggle");
     this.view.bindCallback("newToggle");
     this.view.bindCallback("closeToggle");
-    this.view.bindCallback("userToggle");
-    this.view.bindCallback("productToggle");
-    this.handleGetUsers();
-    this.handleGetProduct();
+    this.view.bindCallback("navigationItem", this.handlerViewTable);
+
+    this.urlParams = new URLSearchParams(window.location.search);
+    console.log("test", this.urlParams.get("abc"))
+
+    if (this.urlParams.get("nav") === "products") {
+      this.handleViewProducts();
+      this.view.setNavigationActive("products");
+    } else {
+      this.handleViewUsers();
+      this.view.setNavigationActive("users");
+    }
+
+    this.view.bindCallback("addProduct", this.handleAddProduct);
   };
 
   signIn = async (email, password) => {
@@ -34,11 +44,13 @@ export default class UserController {
     }
   };
 
-  // Get data user
-  handleGetUsers = async () => {
-    const { users }  = await this.getUsers();
-    this.model.setUsers(users);
-    this.view.renderTables(users);
+  handleAddProduct = (params) => {
+  }
+
+  handleViewUsers = async () => {
+    const { data }  = await this.getUsers();
+    this.model.setUsers(data);
+    this.view.renderTables(data);
 }
 
   // Get data UserService
@@ -47,14 +59,27 @@ export default class UserController {
   }
 
   // Get data product
-  handleGetProduct = async () => {
-    const { product } = await this.getProduct();
-    this.model.setProduct(product);
-    this.view.renderTableProduct(product);
+  handleViewProducts = async () => {
+    const { data } = await this.getProducts();
+    this.model.setProducts(data);
+    this.view.renderTableProducts(data);
   }
 
-  getProduct = async () => {
-    return await UserService.fetchProduct();
+  getProducts = async () => {
+    return await UserService.fetchProducts();
+  }
+
+  handlerViewTable = (type) => {
+    switch(type) {
+      case "users":
+        this.handleViewUsers();
+        break;
+      case "products":
+        this.handleViewProducts();
+        break;
+      default:
+        break;
+    }
   }
 
   signUp = async ({ email, username, password, passwordConfirm }) => {
@@ -118,7 +143,9 @@ export default class UserController {
       password,
       passwordConfirm,
     });
+  };
 
-    console.log("response", response);
+  createProduct = async ({name}) => {
+    const response = await UserService.createProduct({name});
   };
 }

@@ -15,9 +15,24 @@ const inValidPassword = (password, length) => {
   return password.trim().length >= length;
 };
 
-export {
-  bindEvent,
-  inValidEmail,
-  inValidUsername,
-  inValidPassword
+const delegate = (target, selector, type, handler) => {
+  const dispatchEvent = (event) => {
+    const targetElement = event.target;
+
+    const potentialElements = querySelectorAll(selector, target);
+    const hasMatch =
+      Array.prototype.indexOf.call(
+        potentialElements,
+        targetElement.closest(selector)
+      ) >= 0;
+    if (hasMatch) handler.call(targetElement, event);
+  };
+
+  bindEvent(target, type, dispatchEvent);
 };
+
+const querySelectorAll = (selector, scope) => {
+  return (scope || document).querySelectorAll(selector);
+};
+
+export { bindEvent, inValidEmail, inValidUsername, inValidPassword, delegate };

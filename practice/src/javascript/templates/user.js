@@ -13,4 +13,21 @@ const userRowTemplate = (data) => {
   }).join("") : "";
 };
 
-export { userRowTemplate };
+const renderUserTableTemplate = (data) => {
+  return `
+    <table class="table__wrapper toolbar__title">
+      <thead class="table__head">
+        <tr class="table__header">
+          <th class="table__header__cell">Full name</th>
+          <th class="table__header__cell">Email</th>
+        </tr>
+      </thead>
+
+      <tbody class="table-body">
+        ${userRowTemplate(data)}
+      </tbody>
+    </table>
+  `
+};
+
+export { renderUserTableTemplate };
