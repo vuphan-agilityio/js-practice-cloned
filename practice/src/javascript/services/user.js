@@ -79,6 +79,14 @@ export default class UserService {
     }
   };
 
+  static editUsers = async (username) => {
+    try {
+      const res = await fetch(`${API.BASE_URL}${API.CREATE_USER}`);
+    } catch {
+
+    }
+  }
+
   // Add product
   static createProduct = async ({ name }) => {
     return await APIHelper.createRequest(

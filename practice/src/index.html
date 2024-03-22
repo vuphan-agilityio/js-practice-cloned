@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="./assets/images/logo/icon-logo.png" type="image/x-icon" />
   <link rel="stylesheet" href="./styles/index.scss" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <title>Food Blog</title>
 </head>
 
@@ -19,20 +20,29 @@
           <img src="./assets/images/logo/logo.svg" class="navbar__logo" alt="Logo" />
         </h1>
         <ul class="navbar__navigation">
-          <li class="navbar__navigation__item">
-            <a href="category.html" class="navbar__navigation__link">Home page</a>
+          <li class="navbar__navigation__item ">
+            <a href="index.html" class="navbar__navigation__link ">Home page</a>
+          </li>
+          <li class="navbar__navigation__item ">
+            <a href="recipe.html" class="navbar__navigation__link ">Recipe Page</a>
+          </li>
+          <li class="navbar__navigation__item dropdown">
+            <p href="#" class="navbar__navigation__link ">Pages</p>
+            <div class="dropdown-content">
+              <a href="category.html">Category</a>
+              <a href="favorites.html">Favorites</a>
+              <a href="archive.html">Archive</a>
+            </div>
+          </li>
+          <li class="navbar__navigation__item dropdown">
+            <p href="#" class="navbar__navigation__link ">Elements</p>
+            <div class="dropdown-content">
+              <a href="about.html">About</a>
+              <a href="#">Blog</a>
+            </div>
           </li>
           <li class="navbar__navigation__item">
-            <a href="about.html" class="navbar__navigation__link">Recipe Page</a>
-          </li>
-          <li class="navbar__navigation__item">
-            <a href="search.html" class="navbar__navigation__link">Pages</a>
-          </li>
-          <li class="navbar__navigation__item">
-            <a href="archive.html" class="navbar__navigation__link">Elements</a>
-          </li>
-          <li class="navbar__navigation__item">
-            <a href="favorites.html" class="navbar__navigation__link">Buy</a>
+            <a href="login.html" class="navbar__navigation__link">Login</a>
           </li>
         </ul>
 
@@ -47,16 +57,25 @@
 
           <ul class="navbar__navigation navbar__navigation--mobile">
             <li class="navbar__navigation__item">
-              <a href="category.html" class="navbar__navigation__link">Home page</a>
+              <a href="index.html" class="navbar__navigation__link ">Home page</a>
             </li>
             <li class="navbar__navigation__item">
-              <a href="about.html" class="navbar__navigation__link">Recipe Page</a>
+              <a href="recipe.html" class="navbar__navigation__link ">Recipe Page</a>
             </li>
-            <li class="navbar__navigation__item">
-              <a href="search.html" class="navbar__navigation__link">Pages</a>
+            <li class="navbar__navigation__item dropdown">
+              <p href="#" class="navbar__navigation__link ">Pages</p>
+              <div class="dropdown-content">
+                <a href="category.html">Category</a>
+                <a href="favorites.html">Favorites</a>
+                <a href="archive.html">Archive</a>
+              </div>
             </li>
-            <li class="navbar__navigation__item">
-              <a href="archive.html" class="navbar__navigation__link">Elements</a>
+            <li class="navbar__navigation__item dropdown">
+              <p href="#" class="navbar__navigation__link ">Elements</p>
+              <div class="dropdown-content">
+                <a href="about.html">About</a>
+                <a href="#">Blog</a>
+              </div>
             </li>
             <li class="navbar__navigation__item">
               <a href="favorites.html" class="navbar__navigation__link">Buy</a>

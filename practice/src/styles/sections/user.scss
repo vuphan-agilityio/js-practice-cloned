@@ -7,10 +7,14 @@
 }
 
 .content {
-    display: block;
+    @include flex-row;
     width: 100%;
     padding: toRem(10);
     font-family: $font-secondary;
     background-color: #ebedf0;
+
+    &__wrapper {
+      width: 100%;
+    }
 }
 

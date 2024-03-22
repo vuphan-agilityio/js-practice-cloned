@@ -44,16 +44,40 @@
     </div>
 
     <div class="content">
-      <div class="toolbar">
-        <p class="toolbar__title">User</p>
-        <span class="toolbar__icon"></span>
-      </div>
+      <div class="content__wrapper">
+        <div class="toolbar">
+          <p class="toolbar__title">User</p>
+          <span class="toolbar__icon"></span>
+        </div>
 
-      <div class="table show" id="table-wrapper">
+        <div class="table show" id="table-wrapper">
+        </div>
 
       </div>
+      <aside class="panel user">
+        <div class="panel__edit">
+          <span class="panel__icon-back drawer__user-icon"></span>
+          <button class="btn__general">General</button>
+        </div>
 
-      </div>
+        <div class="panel__confirm">
+          <button class="btn__delete btn__save">Delete</button>
+          <button class="btn__save">Save</button>
+        </div>
+
+        <forrm class="panel__edit-profile">
+          <div class="panel__item">
+            <label class="panel__label">Full Name</label>
+            <input id="name-input" type="text" class="panel__input" value="">
+          </div>
+
+          <div class="panel__item">
+            <label class="panel__label">Email</label>
+            <input id="mail-input" type="text" class="panel__input" value="">
+          </div>
+        </forrm>
+      </aside>
+
     </div>
 
     <aside class="sidebar">
@@ -85,75 +109,7 @@
       </div>
     </aside>
 
-    <aside class="panel">
-      <div class="panel__edit">
-        <span class="panel__icon-back drawer__user-icon"></span>
-        <button class="btn__general">General</button>
-      </div>
 
-      <div class="panel__confirm">
-        <button class="btn__delete btn__save">Delete</button>
-        <button class="btn__save">Save</button>
-      </div>
-
-      <forrm class="panel__edit-profile">
-        <div class="panel__item">
-          <label class="panel__label">Full Name</label>
-          <input type="text" class="panel__input" value="">
-        </div>
-
-        <div class="panel__item">
-          <label class="panel__label">Email</label>
-          <input type="text" class="panel__input" value="">
-        </div>
-
-        <div class="panel__item">
-          <label class="panel__label">Avata</label>
-
-          <div class="panel__upload">
-            <div class="panel__upload-wrapper">
-              <label class="panel__upload-btn" for="btn-upload-image">
-                <div class="panel__upload-img">
-                  <span class="panel__icon-upload drawer__user-icon"></span>
-                  <p>
-                    Upload new photo
-                  </p>
-                </div>
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <div class="panel__item-status">
-          <label class="panel__label-status">Status</label>
-          <div>
-            <label class="panel__switch">
-              <input type="checkbox" class="panel__input-toggle">
-              <span class="panel__slider"></span>
-            </label>
-          </div>
-
-          <div>
-            <span class="sidebar__status">Not active</span>
-          </div>
-        </div>
-
-        <div class="panel__item">
-          <label class="panel__label">Register</label>
-          <p></p>
-        </div>
-
-        <div class="panel__item">
-          <label class="panel__label">Last visited</label>
-          <p></p>
-        </div>
-
-        <div class="panel__item">
-          <label class="panel__label">Details</label>
-          <textarea name="name" id="id" class="panel__area"></textarea>
-        </div>
-      </forrm>
-    </aside>
   </main>
   <!-- END MAIN -->
 

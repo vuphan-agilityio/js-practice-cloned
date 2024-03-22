@@ -10,7 +10,7 @@ export default class UserView {
     this.passwordEl = document.getElementById("password");
     this.userNameEl = document.getElementById("username");
     this.passwordConfirmEl = document.getElementById("confirmPassword");
-
+    this.idUserEl = document.getElementById("id-user");
     // Toggle menu
     this.selectEl = document.querySelector(".navbar-user__icon-menu");
     this.drawerEl = document.querySelector(".drawer");
@@ -40,6 +40,10 @@ export default class UserView {
     this.selectAddEl = document.getElementById("form-add-product")
     this.nameEl = document.getElementById("name");
 
+    // Edit users
+    this.rowEl = document.querySelectorAll(".table__row");
+    this.emailInput = document.getElementById("name-input");
+    this.userNameInput = document.getElementById("mail-input")
 
   }
 
@@ -65,6 +69,9 @@ export default class UserView {
           break;
       case "addProduct":
         bindEvent(this.selectAddEl, "submit", this.addProduct(handler)); // Toggle icon products
+        break;
+     case "showRow":
+        bindEvent(this.rowEl, "click", this.showRow); // Toggle icon products
         break;
       default:
         break;
@@ -156,6 +163,12 @@ export default class UserView {
   // Render table product
   renderTableProducts = (data) => {
     this.tableWrapperEl.innerHTML = renderProductTableTemplate(data);
+  }
+
+  // Show row
+  showEditForm = ({username, email}) => {
+    this.emailInput.value = email;
+    this.userNameInput.value = username;
   }
 
   signUp = (handler) => {
