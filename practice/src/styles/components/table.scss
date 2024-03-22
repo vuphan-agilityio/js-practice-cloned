@@ -4,6 +4,7 @@
   overflow: auto;
   background-color: #fff;
   border: toRem(1) solid #ccd7e6;
+  display: none;
 
   &__wrapper {
     width: 100%;
@@ -15,10 +16,9 @@
     &__cell {
       font-weight: 600;
       color: $color-primary;
-      padding: toRem(20) 0;
       text-align: left;
       background-color: #f4f5f9;
-      padding-left: toRem(30);
+      padding: toRem(20);
     }
 
     &__cell:nth-child(1) {
@@ -40,8 +40,20 @@
     height: toRem(45);
 
     &__cell {
-      padding-left: toRem(30);
       vertical-align: middle;
+      padding: toRem(20);
+    }
+
+    &__cell:nth-child(1) {
+      width: 0;
     }
   }
+
 }
+
+.show {
+  display: block;
+}
+
+
+

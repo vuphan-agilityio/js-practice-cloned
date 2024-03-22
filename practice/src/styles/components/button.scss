@@ -49,10 +49,14 @@
     border: none;
     border-radius: toRem(3);
     outline: none;
-    padding: 0 toRem(30);
+    padding: 0 toRem(20);
     color: #1ca1c1;
     background-color: #f4f5f9;
     font-weight: 700;
+
+    @include tablet {
+      padding: 0 toRem(30);
+    }
 
     &:hover {
       color: #fff;
@@ -107,5 +111,23 @@
   &__not-active {
     background-color: #ffdedb;
     color: #ff6455;
+  }
+
+  &__drawer {
+    &__drawer {
+      @include flex-row;
+      align-items: center;
+      justify-content: center;
+      gap: toRem(5);
+      width: toRem(150);
+      height: toRem(32);
+      background-color: #1ca1c1;
+      border: toRem(1) solid #139dc0;
+      border-radius: toRem(3);
+      color: #fff;
+      font-size: $fs-small;
+      font-weight: 500;
+      @include cursor;
+    }
   }
 }

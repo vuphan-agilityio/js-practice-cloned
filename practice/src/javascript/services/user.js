@@ -36,14 +36,14 @@ export default class UserService {
    */
   static handleResponse = async (res) => {
     if (res.ok) {
-      const users = await res.json();
+      const data = await res.json();
       return {
-        users,
+        data,
         errMsg: null,
       };
     } else {
       return {
-        users: null,
+        data: null,
         errMsg: res.statusText,
       };
     }
@@ -56,7 +56,7 @@ export default class UserService {
    */
   static handleError = (err) => {
     return {
-      users: null,
+      data: null,
       errMsg: err.message,
     };
   };
@@ -68,5 +68,23 @@ export default class UserService {
     } catch (err) {
       return this.handleError(err);
     }
+  };
+
+  static fetchProducts = async () => {
+    try {
+      const resp = await fetch(`${API.BASE_URL}${API.CREATE_PRODUCT}`);
+      return this.handleResponse(resp);
+    } catch (err) {
+      return this.handleError(err);
+    }
+  };
+
+  // Add product
+  static createProduct = async ({ name }) => {
+    return await APIHelper.createRequest(
+      `${API.BASE_URL}${API.CREATE_PRODUCT}`,
+      "POST",
+      { name }
+    );
   };
 }

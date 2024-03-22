@@ -16,7 +16,22 @@ export default class UserController {
     this.view.bindCallback("signIn", this.signIn);
     this.view.bindCallback("signUp", this.signUp);
     this.view.bindCallback("menuToggle");
-    this.handleGetUsers();
+    this.view.bindCallback("newToggle");
+    this.view.bindCallback("closeToggle");
+    this.view.bindCallback("navigationItem", this.handlerViewTable);
+
+    this.urlParams = new URLSearchParams(window.location.search);
+    console.log("test", this.urlParams.get("abc"))
+
+    if (this.urlParams.get("nav") === "products") {
+      this.handleViewProducts();
+      this.view.setNavigationActive("products");
+    } else {
+      this.handleViewUsers();
+      this.view.setNavigationActive("users");
+    }
+
+    this.view.bindCallback("addProduct", this.handleAddProduct);
   };
 
   signIn = async (email, password) => {
@@ -29,16 +44,42 @@ export default class UserController {
     }
   };
 
-  // Get data
-  handleGetUsers = async () => {
-    const { users }  = await this.getUsers();
-    this.model.setUsers(users);
-    this.view.renderTables(users);
+  handleAddProduct = (params) => {
+  }
+
+  handleViewUsers = async () => {
+    const { data }  = await this.getUsers();
+    this.model.setUsers(data);
+    this.view.renderTables(data);
 }
 
   // Get data UserService
   getUsers = async () => {
     return await UserService.fetchUsers();
+  }
+
+  // Get data product
+  handleViewProducts = async () => {
+    const { data } = await this.getProducts();
+    this.model.setProducts(data);
+    this.view.renderTableProducts(data);
+  }
+
+  getProducts = async () => {
+    return await UserService.fetchProducts();
+  }
+
+  handlerViewTable = (type) => {
+    switch(type) {
+      case "users":
+        this.handleViewUsers();
+        break;
+      case "products":
+        this.handleViewProducts();
+        break;
+      default:
+        break;
+    }
   }
 
   signUp = async ({ email, username, password, passwordConfirm }) => {
@@ -102,7 +143,9 @@ export default class UserController {
       password,
       passwordConfirm,
     });
+  };
 
-    console.log("response", response);
+  createProduct = async ({name}) => {
+    const response = await UserService.createProduct({name});
   };
 }
