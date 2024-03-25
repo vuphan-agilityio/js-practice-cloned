@@ -13,6 +13,7 @@ export default class UserModel {
     nutrition,
     creator,
     category,
+    id,
   ) {
     this.email = email;
     this.password = password;
@@ -29,10 +30,15 @@ export default class UserModel {
     this.nutrition = nutrition;
     this.creator = creator;
     this.category = category;
+    this.id = id;
   }
 
   setUsers = (data) => {
     this.users = data;
+  }
+
+  getUserById = (id) => {
+    return this.users.find((user) => user.id === id);
   }
 
   setProducts = (data) => {

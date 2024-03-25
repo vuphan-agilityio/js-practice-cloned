@@ -31,3 +31,17 @@ export default class APIHelper {
     }
   };
 }
+
+/**
+ * The template of user table content item
+ *  @param {object} data The user's data
+ */
+export const usersTableTemplate = (data) => {
+  let users = "";
+  if (data && data.length) {
+    data.forEach((user) => {
+      users += userTemplate(user);
+    });
+  }
+  return users;
+};

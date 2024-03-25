@@ -1,6 +1,6 @@
 import { bindEvent, delegate } from "../helpers";
-import { renderUserTableTemplate } from '../templates/user';
-import { renderProductTableTemplate } from '../templates/product';
+import { renderUserTableTemplate, renderUserDetails } from "../templates/user";
+import { renderProductTableTemplate } from "../templates/product";
 
 export default class UserView {
   constructor() {
@@ -26,25 +26,25 @@ export default class UserView {
     this.formEl = document.querySelector(".modal");
     this.isShowForm = false;
 
+    // Display panel
+
     // Toggle item product
-    this.navigationEl = document.querySelector(".navigation")
+    this.navigationEl = document.querySelector(".navigation");
     this.toolEl = document.querySelector(".toolbar__title");
-
-    // Toggle item user
-
+    this.panelEl = document.querySelector(".panel");
 
     // Table
     this.tableWrapperEl = document.getElementById("table-wrapper");
 
     // Add
-    this.selectAddEl = document.getElementById("form-add-product")
+    this.selectAddEl = document.getElementById("form-add-product");
     this.nameEl = document.getElementById("name");
 
     // Edit users
     this.rowEl = document.querySelectorAll(".table__row");
     this.emailInput = document.getElementById("name-input");
-    this.userNameInput = document.getElementById("mail-input")
-
+    this.userNameInput = document.getElementById("mail-input");
+    this.userDetailsContainerEl = document.querySelector(".panel");
   }
 
   bindCallback = (event, handler) => {
@@ -64,15 +64,30 @@ export default class UserView {
       case "closeToggle":
         bindEvent(this.selectCloseEl, "click", this.closeToggle); // Toggle icon close
         break;
+      case "displayPanel":
+        const selectPanelEl = document.getElementById("user-body");
+
+        bindEvent(selectPanelEl, "click", this.displayPanel); // DisplayPanel
+        break;
       case "navigationItem":
-        delegate(this.navigationEl, ".navigation__item", "click", this.navToggle(handler));// Toggle icon products
-          break;
+        delegate(
+          this.navigationEl,
+          ".navigation__item",
+          "click",
+          this.navToggle(handler)
+        ); // Toggle icon products
+        break;
       case "addProduct":
         bindEvent(this.selectAddEl, "submit", this.addProduct(handler)); // Toggle icon products
         break;
-     case "showRow":
-        bindEvent(this.rowEl, "click", this.showRow); // Toggle icon products
-        break;
+      case "userRowClick":
+        this.tBodyEl = document.querySelector(".table__body");
+        delegate(
+          this.tBodyEl,
+          ".table__row",
+          "click",
+          this.showUserById(handler)
+        );
       default:
         break;
     }
@@ -82,9 +97,9 @@ export default class UserView {
   menuToggle = (event) => {
     event.preventDefault();
     if (this.drawerEl.classList.contains("show")) {
-      this.drawerEl.classList.remove("show")
+      this.drawerEl.classList.remove("show");
     } else {
-      this.drawerEl.classList.add("show")
+      this.drawerEl.classList.add("show");
     }
   };
 
@@ -92,9 +107,9 @@ export default class UserView {
   newToggle = (event) => {
     event.preventDefault();
     if (this.formEl.classList.contains("show-form")) {
-      this.formEl.classList.remove("show-form")
+      this.formEl.classList.remove("show-form");
     } else {
-      this.formEl.classList.add("show-form")
+      this.formEl.classList.add("show-form");
     }
   };
 
@@ -102,31 +117,42 @@ export default class UserView {
   closeToggle = (event) => {
     event.preventDefault();
     if (this.formEl.classList.contains("show-form")) {
-      this.formEl.classList.remove("show-form")
+      this.formEl.classList.remove("show-form");
     } else {
-      this.formEl.classList.add("show-form")
+      this.formEl.classList.add("show-form");
     }
   };
 
+  // Display panel
+  displayPanel = (event) => {
+    event.preventDefault();
+    const detailPanel = document.getElementById("panel-details");
+    detailPanel.classList.toggle("show-panel");
+  };
+
   setNavigationActive = (type) => {
-    document.querySelector(".navigation__item.active")?.classList.remove("active");
+    document
+      .querySelector(".navigation__item.active")
+      ?.classList.remove("active");
 
-    switch(type) {
+    switch (type) {
       case "users":
-        document.querySelector(".navigation__item[data-id='users']").classList.add("active");
-        this.urlParams = new URLSearchParams(window.location.search)
+        document
+          .querySelector(".navigation__item[data-id='users']")
+          .classList.add("active");
+        this.urlParams = new URLSearchParams(window.location.search);
         this.urlParams.set("nav", "users");
-
-        console.log("this.urlParams.toString()", this.urlParams.toString())
-        // window.location.replace(this.urlParams.toString())
+        // console.log("this.urlParams.toString()", this.urlParams.toString());
         break;
       case "products":
-        document.querySelector(".navigation__item[data-id='products']").classList.add("active");
+        document
+          .querySelector(".navigation__item[data-id='products']")
+          .classList.add("active");
         break;
       default:
         break;
     }
-  }
+  };
 
   // Change toolbar title user
   navToggle = (handler) => (event) => {
@@ -158,18 +184,31 @@ export default class UserView {
   // Render table user
   renderTables = (users) => {
     this.tableWrapperEl.innerHTML = renderUserTableTemplate(users);
-  }
+  };
 
   // Render table product
   renderTableProducts = (data) => {
     this.tableWrapperEl.innerHTML = renderProductTableTemplate(data);
   }
 
+  showUserDetails = ({ username, email }) => {
+    this.panelEl.innerHTML = renderUserDetails({
+      username,
+      email,
+    });
+  };
+
   // Show row
-  showEditForm = ({username, email}) => {
+  showEditForm = ({ username, email }) => {
     this.emailInput.value = email;
     this.userNameInput.value = username;
-  }
+  };
+
+  // Show id user
+  showUserById = (handler) => (event) => {
+    const userId = event.target.closest(".table__row").dataset.id;
+    handler(userId);
+  };
 
   signUp = (handler) => {
     return (event) => {
@@ -190,5 +229,5 @@ export default class UserView {
         name: this.nameEl.value,
       });
     };
-  }
+  };
 }

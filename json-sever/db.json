@@ -50,7 +50,6 @@
       "passwordConfirm": "DiepPhan"
     }
   ],
-
   "product": [
     {
       "name": "Vegan Cauliflower Salad",
@@ -60,7 +59,7 @@
       "nutrition": "Calories 219.9",
       "description": "Enjoy my restaurant-inspired recipe!",
       "ingredients": "150g unsalted butters, melted",
-      "intruction": "Add 1/3 of the mixture to a mixing bowl"        
+      "intruction": "Add 1/3 of the mixture to a mixing bowl"
     },
     {
       "name": "Birthday Cupcakes",
@@ -80,7 +79,7 @@
       "nutrition": "Calories 119.9",
       "description": "Enjoy my restaurant-inspired recipe!",
       "ingredients": "3 tbsp powdered gelatin + 3 tbsp water",
-      "intruction": " Microwave for 30 seconds and mix to combine. Set aside."  
+      "intruction": " Microwave for 30 seconds and mix to combine. Set aside."
     },
     {
       "name": "Mighty ",
@@ -90,7 +89,7 @@
       "nutrition": "Calories 11.9",
       "description": "",
       "ingredients": "3 tbsp water",
-      "intruction": ""  
+      "intruction": ""
     }
   ]
 }

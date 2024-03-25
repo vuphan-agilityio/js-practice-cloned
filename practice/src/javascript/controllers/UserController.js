@@ -8,27 +8,27 @@ export default class UserController {
     this.view = view;
   }
 
-  init = () => {
+  init = async () => {
     this.view.bindCallback("signIn", this.signIn);
     this.view.bindCallback("signUp", this.signUp);
     this.view.bindCallback("menuToggle");
     this.view.bindCallback("newToggle");
     this.view.bindCallback("closeToggle");
     this.view.bindCallback("navigationItem", this.handlerViewTable);
-    this.view.bindCallback("showRow");
     this.view.bindCallback("editUsers", this.handerEditusers);
+    this.view.bindCallback(this.handleClickUser);
 
     this.urlParams = new URLSearchParams(window.location.search);
-    console.log("test", this.urlParams.get("abc"));
 
     if (this.urlParams.get("nav") === "products") {
       this.handleViewProducts();
       this.view.setNavigationActive("products");
     } else {
-      this.handleViewUsers();
+      await this.handleViewUsers();
       this.view.setNavigationActive("users");
     }
 
+    this.view.bindCallback("displayPanel");
     this.view.bindCallback("addProduct", this.handleAddProduct);
   };
 
@@ -42,13 +42,21 @@ export default class UserController {
     }
   };
 
-  handleAddProduct = (params) => {};
-
   handleViewUsers = async () => {
     const { data } = await this.getUsers();
     this.model.setUsers(data);
     this.view.renderTables(data);
+    this.view.bindCallback("userRowClick", this.handleShowUserDetails);
   };
+
+  handleShowUserDetails = (userId) => {
+    console.log("handleShowUserDetails Test", userId);
+    const user = this.model.getUserById(userId);
+    this.view.showUserDetails({
+      username: user.username,
+      email: user.email
+    })
+  }
 
   // Get data UserService
   getUsers = async () => {
@@ -71,6 +79,7 @@ export default class UserController {
     const res = await this.UserService.editUsers();
   };
 
+  //Get data for produt to the UserService
   getProducts = async () => {
     return await UserService.fetchProducts();
   };
@@ -88,14 +97,7 @@ export default class UserController {
     }
   };
 
-  // showRow = () => {
-  //   this.rowEl.forEach () => {
-  //     this.emailEl.textContent;
-  //     this.username.textContent;
-  //     this.view.showEditForm({username, email});
-  //   }
-  // }
-
+  // Valiation for sign up
   signUp = async ({ email, username, password, passwordConfirm }) => {
     if (!inValidEmail(email)) {
       alert("Please enter a valid email address.");
@@ -157,9 +159,5 @@ export default class UserController {
       password,
       passwordConfirm,
     });
-  };
-
-  createProduct = async ({ name }) => {
-    const response = await UserService.createProduct({ name });
   };
 }

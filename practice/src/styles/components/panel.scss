@@ -1,16 +1,17 @@
 .panel {
-  // display: none;
-  margin-left: toRem(10);
-  width: 96%;
   border: toRem(1) solid #ccd7e6;
   background-color: #fff;
-
-  @include tablet {
-    width: toRem(400);
-  }
+  position: absolute;
+  height: 100vh;
+  right: 0;
+  left: 0;
+  top: toRem(47);
+  width: 100%;
 
   @include desktop {
+    margin-left: toRem(10);
     width: toRem(500);
+    position: static;
   }
 
   &__edit {
@@ -21,6 +22,7 @@
     z-index: 1;
     background-color: #fff;
     border-bottom: toRem(1) solid #ccd7e6;
+    padding: toRem(7);
   }
 
   &__icon-back {
@@ -85,4 +87,8 @@
       border: toRem(1) solid #17839d;
     }
   }
+}
+
+.show-panel {
+  display: none;
 }
