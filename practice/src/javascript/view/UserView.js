@@ -1,6 +1,8 @@
 import { bindEvent, delegate } from "../helpers";
 import { renderUserTableTemplate, renderUserDetails } from "../templates/user";
 import { renderProductTableTemplate } from "../templates/product";
+// import { handleEditUser } from "../controllers/UserController/handleEditUser";
+
 
 export default class UserView {
   constructor() {
@@ -42,9 +44,9 @@ export default class UserView {
 
     // Edit users
     this.rowEl = document.querySelectorAll(".table__row");
-    this.emailInput = document.getElementById("name-input");
-    this.userNameInput = document.getElementById("mail-input");
     this.userDetailsContainerEl = document.querySelector(".panel");
+
+    // Save
   }
 
   bindCallback = (event, handler) => {
@@ -66,9 +68,12 @@ export default class UserView {
         break;
       case "displayPanel":
         const selectPanelEl = document.getElementById("user-body");
-
         bindEvent(selectPanelEl, "click", this.displayPanel); // DisplayPanel
         break;
+      // case "backToggle":
+      //   const selectBackEl = document.getElementById("icon-back");
+      //   bindEvent(selectBackEl, "click", this.backToggle);
+      //   break;
       case "navigationItem":
         delegate(
           this.navigationEl,
@@ -77,9 +82,9 @@ export default class UserView {
           this.navToggle(handler)
         ); // Toggle icon products
         break;
-      case "addProduct":
-        bindEvent(this.selectAddEl, "submit", this.addProduct(handler)); // Toggle icon products
-        break;
+      // case "addProduct":
+      //   bindEvent(this.selectAddEl, "submit", this.addProduct(handler)); // Toggle icon products
+      //   break;
       case "userRowClick":
         this.tBodyEl = document.querySelector(".table__body");
         delegate(
@@ -88,9 +93,39 @@ export default class UserView {
           "click",
           this.showUserById(handler)
         );
+        break;
+      case "saveUsers":
+        const saveEl = document.getElementById("save-edit");
+        console.log(saveEl);
+        bindEvent(saveEl, "click", () => {
+          const usernameInput = document.getElementById("name-input");
+          console.log("input", usernameInput.value);
+          if (usernameInput.value) {
+            console.log(saveEl.getAttribute("data-id"));
+            // this.controller.handleEditUser(
+            //   saveEl.getAttribute("data-id"),
+            //   usernameInput.value
+            // );
+            // cconsole.log("handler", this.controller.handleEditUser);
+          } else {
+            alert("Username cannot be empty!");
+          }
+        });
+
+        break;
       default:
         break;
     }
+  };
+
+  // Edit user name
+  saveUsers = (event) => {
+    event.preventDefault();
+    const usernameInput = document.getElementById("name-input");
+    console.log("input", usernameInput);
+    const username = usernameInput.value.trim();
+    console.log("Username:", username);
+    console.log(" input username:", usernameInput.value);
   };
 
   // Toggle menu
@@ -128,6 +163,17 @@ export default class UserView {
     event.preventDefault();
     const detailPanel = document.getElementById("panel-details");
     detailPanel.classList.toggle("show-panel");
+    this.bindCallback("saveUsers");
+  };
+
+  // Back toggle
+  backToggle = (event) => {
+    event.preventDefault();
+    if (this.detailPanel.classList.contains("hindder-panel")) {
+      this.detailPanel.classList.remove("hindder-panel");
+    } else {
+      this.detailPanel.classList.add("hindder-panel");
+    }
   };
 
   setNavigationActive = (type) => {
@@ -189,10 +235,11 @@ export default class UserView {
   // Render table product
   renderTableProducts = (data) => {
     this.tableWrapperEl.innerHTML = renderProductTableTemplate(data);
-  }
+  };
 
-  showUserDetails = ({ username, email }) => {
+  showUserDetails = ({ id, username, email }) => {
     this.panelEl.innerHTML = renderUserDetails({
+      id,
       username,
       email,
     });
@@ -222,12 +269,12 @@ export default class UserView {
     };
   };
 
-  addProduct = (handler) => {
-    return (event) => {
-      event.preventDefault();
-      handler({
-        name: this.nameEl.value,
-      });
-    };
-  };
+  // addProduct = (handler) => {
+  //   return (event) => {
+  //     event.preventDefault();
+  //     handler({
+  //       name: this.nameEl.value,
+  //     });
+  //   };
+  // };
 }

@@ -15,8 +15,8 @@ export default class UserController {
     this.view.bindCallback("newToggle");
     this.view.bindCallback("closeToggle");
     this.view.bindCallback("navigationItem", this.handlerViewTable);
-    this.view.bindCallback("editUsers", this.handerEditusers);
-    this.view.bindCallback(this.handleClickUser);
+
+    // this.view.bindCallback(this.handleClickUser);
 
     this.urlParams = new URLSearchParams(window.location.search);
 
@@ -28,8 +28,11 @@ export default class UserController {
       this.view.setNavigationActive("users");
     }
 
+    this.view.bindCallback("saveUsers", this.handleEditUser);
     this.view.bindCallback("displayPanel");
     this.view.bindCallback("addProduct", this.handleAddProduct);
+    this.view.bindCallback("backToggle");
+
   };
 
   signIn = async (email, password) => {
@@ -50,13 +53,9 @@ export default class UserController {
   };
 
   handleShowUserDetails = (userId) => {
-    console.log("handleShowUserDetails Test", userId);
     const user = this.model.getUserById(userId);
-    this.view.showUserDetails({
-      username: user.username,
-      email: user.email
-    })
-  }
+    this.view.showUserDetails(user)
+  };
 
   // Get data UserService
   getUsers = async () => {
@@ -70,13 +69,9 @@ export default class UserController {
     this.view.renderTableProducts(data);
   };
 
-  // Edit user
-  handerEditusers = async (userData) => {
-    const res = await this.model.handerEditusers();
-  };
-
-  editUsers = async (username) => {
-    const res = await this.UserService.editUsers();
+ handleEditUser = async (userId, newUsername) => {
+    const res = await UserService.editUsers(userId, newUsername);
+    this.view.bindCallback.handleEditUser();
   };
 
   //Get data for produt to the UserService

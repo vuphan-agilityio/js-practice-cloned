@@ -72,20 +72,30 @@ export default class UserService {
 
   static fetchProducts = async () => {
     try {
-      const resp = await fetch(`${API.BASE_URL}${API.CREATE_PRODUCT}`);
-      return this.handleResponse(resp);
+      const res = await fetch(`${API.BASE_URL}${API.CREATE_PRODUCT}`);
+      return this.handleResponse(res);
     } catch (err) {
       return this.handleError(err);
     }
   };
 
-  static editUsers = async (username) => {
+  //Edit user
+  static editUsers = async (userId, newUsername) => {
     try {
-      const res = await fetch(`${API.BASE_URL}${API.CREATE_USER}`);
-    } catch {
+      const res = await fetch(`${API.BASE_URL}${API.CREATE_USER}/${userId}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newUsername),
+      });
 
+      return this.handleResponse(res);
+    } catch (err) {
+      return this.handleError(err);
     }
-  }
+  };
+
 
   // Add product
   static createProduct = async ({ name }) => {

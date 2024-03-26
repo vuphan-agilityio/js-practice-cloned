@@ -7,9 +7,17 @@
   left: 0;
   top: toRem(47);
   width: 100%;
+  margin: 0;
+
+
+  @include tablet {
+    right: auto;
+    left: auto;
+  }
 
   @include desktop {
     margin-left: toRem(10);
+    margin-bottom: toRem(10);
     width: toRem(500);
     position: static;
   }
@@ -90,5 +98,9 @@
 }
 
 .show-panel {
+  display: none;
+}
+
+.hindden-back {
   display: none;
 }
