@@ -10,12 +10,13 @@
       "email": "user2@example.com",
       "password": "password2",
       "id": "7f20",
-      "username": "user2"
+      "username": "user22222333344"
     },
     {
       "email": "user@example.com",
       "password": "12345678",
-      "id": "e3f1"
+      "id": "e3f1",
+      "username": "undefined"
     },
     {
       "id": "ea6f",

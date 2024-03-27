@@ -43,6 +43,7 @@ export default class UserView {
     // Edit users
     this.rowEl = document.querySelectorAll(".table__row");
     this.userDetailsContainerEl = document.querySelector(".panel");
+
   }
 
   bindCallback = (event, handler) => {
@@ -90,30 +91,28 @@ export default class UserView {
           this.showUserById(handler)
         );
         break;
+      case "editUser":
+        this.sidebarDetailEl = document.getElementById("panel-details");
+        console.log("sidebar", this.sidebarDetailEl);
+        delegate(
+          this.sidebarDetailEl,
+          ".btn-edit-user",
+          "click",
+          this.editUser(handler)
+        );
+        break;
       default:
         break;
     }
   };
 
-  handleClickSaveUser = (handler) => {
-    const saveEl = document.getElementById("save-edit");
-    saveEl?.addEventListener("click", () => {
-      const usernameInput = document.getElementById("name-input").value.trim();
-      const userId = saveEl.getAttribute("data-id");
-      if (!usernameInput) {
-        alert("Username cannot be empty!");
-      } else {
-        const result = handler(userId, usernameInput);
-        console.log("user view", userId);
-        console.log("userinput", usernameInput);
-        if (result) {
-          alert("Edit successful!");
-        } else {
-          alert("Edit failed!");
-        }
-      }
-    });
-  };
+  editUser = (handler) => (event)  => {
+    const userName = document.getElementById("name-input").value.trim();
+    const userId = document.getElementById("save-edit").getAttribute("data-id");
+    console.log("save-edit", userId);
+    console.log("name input", userName);
+    handler(userId, userName)
+  }
 
   // Toggle menu
   menuToggle = (event) => {

@@ -15,6 +15,7 @@ export default class UserController {
     this.view.bindCallback("newToggle");
     this.view.bindCallback("closeToggle");
     this.view.bindCallback("navigationItem", this.handlerViewTable);
+    this.view.bindCallback("editUser", this.handleEditUser);
 
     this.urlParams = new URLSearchParams(window.location.search);
 
@@ -33,12 +34,18 @@ export default class UserController {
 
   signIn = async (email, password) => {
     const result = await this.model.signIn(email, password);
-
     if (result) {
       this.view.redirectPage("index.html");
     } else {
       alert("Invalid email or password. Please try again.");
     }
+  };
+
+  handleEditUser = async (userId, newUsername) => {
+    const user = this.model.getUserById(userId);
+    console.log("")
+    await UserService.editUsers(userId, { ...user, username: newUsername });
+    this.handleViewUsers();
   };
 
   // Display a list of users and
@@ -53,11 +60,8 @@ export default class UserController {
   // Displays details of a user
   // Attach a listener event for saving edit
   handleShowUserDetails = (userId) => {
-    console.log("user ID controller", userId);
     const user = this.model.getUserById(userId);
-    console.log("usercontroller", user);
     this.view.showUserDetails(user);
-    this.view.handleClickSaveUser(this.handleEditUser);
   };
 
   // Get data UserService
@@ -70,12 +74,6 @@ export default class UserController {
     const { data } = await this.getProducts();
     this.model.setProducts(data);
     this.view.renderTableProducts(data);
-  };
-
-  handleEditUser = async (userId, newUsername) => {
-    const user = this.model.getUserById(userId);
-    await UserService.editUsers(userId, { ...user, username: newUsername });
-    this.handleViewUsers();
   };
 
   //Get data for produt to the UserService

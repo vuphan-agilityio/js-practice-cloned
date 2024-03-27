@@ -80,27 +80,21 @@ export default class UserService {
   };
 
   //Edit user
-  static editUsers = async (userId, newUsername) => {
+  static editUsers = async (userId, payload) => {
     try {
       const res = await fetch(`${API.BASE_URL}${API.CREATE_USER}/${userId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(newUsername),
+        body: JSON.stringify(payload),
       });
 
-      if (res.ok) {
-        return true; // Thành công
-      } else {
-        return false; // Thất bại
-      }
+      return this.handleResponse(res);
     } catch (err) {
-      console.error(err);
-      return false; // Thất bại
+      return this.handleError(err);
     }
   };
-
 
   // Add product
   static createProduct = async ({ name }) => {
