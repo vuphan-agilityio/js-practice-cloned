@@ -90,9 +90,14 @@ export default class UserService {
         body: JSON.stringify(newUsername),
       });
 
-      return this.handleResponse(res);
+      if (res.ok) {
+        return true; // Thành công
+      } else {
+        return false; // Thất bại
+      }
     } catch (err) {
-      return this.handleError(err);
+      console.error(err);
+      return false; // Thất bại
     }
   };
 

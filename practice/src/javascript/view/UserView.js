@@ -1,8 +1,6 @@
 import { bindEvent, delegate } from "../helpers";
 import { renderUserTableTemplate, renderUserDetails } from "../templates/user";
 import { renderProductTableTemplate } from "../templates/product";
-// import { handleEditUser } from "../controllers/UserController/handleEditUser";
-
 
 export default class UserView {
   constructor() {
@@ -45,8 +43,6 @@ export default class UserView {
     // Edit users
     this.rowEl = document.querySelectorAll(".table__row");
     this.userDetailsContainerEl = document.querySelector(".panel");
-
-    // Save
   }
 
   bindCallback = (event, handler) => {
@@ -94,38 +90,29 @@ export default class UserView {
           this.showUserById(handler)
         );
         break;
-      case "saveUsers":
-        const saveEl = document.getElementById("save-edit");
-        console.log(saveEl);
-        bindEvent(saveEl, "click", () => {
-          const usernameInput = document.getElementById("name-input");
-          console.log("input", usernameInput.value);
-          if (usernameInput.value) {
-            console.log(saveEl.getAttribute("data-id"));
-            // this.controller.handleEditUser(
-            //   saveEl.getAttribute("data-id"),
-            //   usernameInput.value
-            // );
-            // cconsole.log("handler", this.controller.handleEditUser);
-          } else {
-            alert("Username cannot be empty!");
-          }
-        });
-
-        break;
       default:
         break;
     }
   };
 
-  // Edit user name
-  saveUsers = (event) => {
-    event.preventDefault();
-    const usernameInput = document.getElementById("name-input");
-    console.log("input", usernameInput);
-    const username = usernameInput.value.trim();
-    console.log("Username:", username);
-    console.log(" input username:", usernameInput.value);
+  handleClickSaveUser = (handler) => {
+    const saveEl = document.getElementById("save-edit");
+    saveEl?.addEventListener("click", () => {
+      const usernameInput = document.getElementById("name-input").value.trim();
+      const userId = saveEl.getAttribute("data-id");
+      if (!usernameInput) {
+        alert("Username cannot be empty!");
+      } else {
+        const result = handler(userId, usernameInput);
+        console.log("user view", userId);
+        console.log("userinput", usernameInput);
+        if (result) {
+          alert("Edit successful!");
+        } else {
+          alert("Edit failed!");
+        }
+      }
+    });
   };
 
   // Toggle menu
@@ -188,7 +175,6 @@ export default class UserView {
           .classList.add("active");
         this.urlParams = new URLSearchParams(window.location.search);
         this.urlParams.set("nav", "users");
-        // console.log("this.urlParams.toString()", this.urlParams.toString());
         break;
       case "products":
         document
@@ -243,12 +229,8 @@ export default class UserView {
       username,
       email,
     });
-  };
-
-  // Show row
-  showEditForm = ({ username, email }) => {
-    this.emailInput.value = email;
-    this.userNameInput.value = username;
+    console.log("[view][showUserDetails] id", id);
+    console.log("[view][showUserDetails] username", username);
   };
 
   // Show id user

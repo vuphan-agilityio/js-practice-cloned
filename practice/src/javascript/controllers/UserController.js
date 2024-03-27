@@ -16,8 +16,6 @@ export default class UserController {
     this.view.bindCallback("closeToggle");
     this.view.bindCallback("navigationItem", this.handlerViewTable);
 
-    // this.view.bindCallback(this.handleClickUser);
-
     this.urlParams = new URLSearchParams(window.location.search);
 
     if (this.urlParams.get("nav") === "products") {
@@ -28,11 +26,9 @@ export default class UserController {
       this.view.setNavigationActive("users");
     }
 
-    this.view.bindCallback("saveUsers", this.handleEditUser);
     this.view.bindCallback("displayPanel");
     this.view.bindCallback("addProduct", this.handleAddProduct);
     this.view.bindCallback("backToggle");
-
   };
 
   signIn = async (email, password) => {
@@ -45,6 +41,8 @@ export default class UserController {
     }
   };
 
+  // Display a list of users and
+  // Attach listener events for handleShowUserDetails.
   handleViewUsers = async () => {
     const { data } = await this.getUsers();
     this.model.setUsers(data);
@@ -52,9 +50,14 @@ export default class UserController {
     this.view.bindCallback("userRowClick", this.handleShowUserDetails);
   };
 
+  // Displays details of a user
+  // Attach a listener event for saving edit
   handleShowUserDetails = (userId) => {
+    console.log("user ID controller", userId);
     const user = this.model.getUserById(userId);
-    this.view.showUserDetails(user)
+    console.log("usercontroller", user);
+    this.view.showUserDetails(user);
+    this.view.handleClickSaveUser(this.handleEditUser);
   };
 
   // Get data UserService
@@ -69,9 +72,10 @@ export default class UserController {
     this.view.renderTableProducts(data);
   };
 
- handleEditUser = async (userId, newUsername) => {
-    const res = await UserService.editUsers(userId, newUsername);
-    this.view.bindCallback.handleEditUser();
+  handleEditUser = async (userId, newUsername) => {
+    const user = this.model.getUserById(userId);
+    await UserService.editUsers(userId, { ...user, username: newUsername });
+    this.handleViewUsers();
   };
 
   //Get data for produt to the UserService
