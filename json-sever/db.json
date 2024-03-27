@@ -3,12 +3,14 @@
     {
       "email": "user1@example.com",
       "password": "password1",
-      "id": "ea50"
+      "id": "ea50",
+      "username": "user1"
     },
     {
       "email": "user2@example.com",
       "password": "password2",
-      "id": "7f20"
+      "id": "7f20",
+      "username": "user2"
     },
     {
       "email": "user@example.com",
@@ -25,21 +27,21 @@
     {
       "id": "80fb",
       "email": "test1@gmail.com",
-      "username": "test1@gmail.com",
+      "username": "test1@gmail.com123456",
       "password": "test1@gmail.com",
       "passwordConfirm": "test1@gmail.com"
     },
     {
       "id": "d6cd",
       "email": "test@gmail.com11",
-      "username": "test@gmail.com11",
+      "username": "test@gmail.com",
       "password": "test@gmail.com11",
       "passwordConfirm": "test@gmail.com11"
     },
     {
       "id": "fd47",
       "email": "nd@gmail.com",
-      "username": "DiepPhan",
+      "username": "DiepPhanDinh",
       "password": "DiepPhan",
       "passwordConfirm": "DiepPhan"
     },
@@ -47,7 +49,8 @@
       "email": "diep@gmail.com",
       "username": "phandiep",
       "password": "DiepPhan",
-      "passwordConfirm": "DiepPhan"
+      "passwordConfirm": "DiepPhan",
+      "id": "71db"
     }
   ],
   "product": [
@@ -59,7 +62,8 @@
       "nutrition": "Calories 219.9",
       "description": "Enjoy my restaurant-inspired recipe!",
       "ingredients": "150g unsalted butters, melted",
-      "intruction": "Add 1/3 of the mixture to a mixing bowl"
+      "intruction": "Add 1/3 of the mixture to a mixing bowl",
+      "id": "ddf8"
     },
     {
       "name": "Birthday Cupcakes",
@@ -69,7 +73,8 @@
       "nutrition": "Calories 200.2",
       "description": "Enjoy my restaurant-inspired recipe!",
       "ingredients": "300g marshmallows",
-      "intruction": " Add melted butter and pulse 3-4 times to coat crumbs with butter."
+      "intruction": " Add melted butter and pulse 3-4 times to coat crumbs with butter.",
+      "id": "238c"
     },
     {
       "name": "Mighty Cheesy Breakfast Burger",
@@ -79,7 +84,8 @@
       "nutrition": "Calories 119.9",
       "description": "Enjoy my restaurant-inspired recipe!",
       "ingredients": "3 tbsp powdered gelatin + 3 tbsp water",
-      "intruction": " Microwave for 30 seconds and mix to combine. Set aside."
+      "intruction": " Microwave for 30 seconds and mix to combine. Set aside.",
+      "id": "4cb8"
     },
     {
       "name": "Mighty ",
@@ -89,7 +95,8 @@
       "nutrition": "Calories 11.9",
       "description": "",
       "ingredients": "3 tbsp water",
-      "intruction": ""
+      "intruction": "",
+      "id": "28cb"
     }
   ]
 }
