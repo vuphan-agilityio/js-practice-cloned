@@ -16,6 +16,7 @@ export default class UserController {
     this.view.bindCallback("closeToggle");
     this.view.bindCallback("navigationItem", this.handlerViewTable);
     this.view.bindCallback("editUser", this.handleEditUser);
+    this.view.bindCallback("deleteUser", this.handleDeleteUser);
 
     this.urlParams = new URLSearchParams(window.location.search);
 
@@ -50,7 +51,6 @@ export default class UserController {
    * The handleEditUser function performs the process of editing user information.
    * @param {string} userId - ID of the user to edit.
    * @param {string} newUsername - New username.
-   *
    */
   handleEditUser = async (userId, newUsername) => {
     try {
@@ -65,6 +65,17 @@ export default class UserController {
     } catch (error) {
       alert("Failed to update user");
     }
+  };
+
+  /**
+   * The handleDeleteUser function initiates the deletion of a user from the server and updates the UI accordingly.
+   * @param {string} userId - The ID of the user to be deleted.
+   */
+  handleDeleteUser = async (userId) => {
+    const user = this.model.getUserById(userId);
+    await UserService.deleteUser(userId, { ...user });
+    alert("Delete successfully!");
+    this.handleViewUsers();
   };
 
   /**

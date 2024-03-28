@@ -96,7 +96,6 @@ export default class UserView {
         break;
       case "editUser":
         this.sidebarDetailEl = document.getElementById("panel-details");
-        console.log("sidebar", this.sidebarDetailEl);
         delegate(
           this.sidebarDetailEl,
           ".btn-edit-user",
@@ -104,6 +103,15 @@ export default class UserView {
           this.editUser(handler)
         );
         break;
+      case "deleteUser":
+        this.sidebarDetailEl = document.getElementById("panel-details");
+        delegate(
+          this.sidebarDetailEl,
+          ".btn__delete",
+          "click",
+          this.deleteUser(handler)
+          );
+          break;
       default:
         break;
     }
@@ -116,8 +124,13 @@ export default class UserView {
    */
   editUser = (handler) => (event) => {
     const userName = document.getElementById("name-input").value.trim();
-    const userId = document.getElementById("save-edit").getAttribute("data-id");
+    const userId = document.querySelector(".panel__confirm").getAttribute("data-id");
     handler(userId, userName);
+  };
+
+  deleteUser = (handler) => (event) => {
+    const userId = document.querySelector(".panel__confirm").getAttribute("data-id");
+    handler(userId);
   };
 
   /**

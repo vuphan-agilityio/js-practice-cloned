@@ -52,9 +52,9 @@ const renderUserDetails = (data) => {
       <button class="btn__general">General</button>
     </div>
 
-    <div class="panel__confirm">
-      <button class="btn__delete btn__save">Delete</button>
-      <button class="btn__save btn-edit-user" id="save-edit" data-id=${data.id}>Save</button>
+    <div class="panel__confirm" data-id=${data.id}>
+      <button class="btn__delete btn__save" id="delete-user">Delete</button>
+      <button class="btn__save btn-edit-user" id="save-edit">Save</button>
     </div>
 
     <forrm class="panel__edit-profile">
