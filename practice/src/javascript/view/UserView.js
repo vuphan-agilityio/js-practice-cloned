@@ -284,7 +284,7 @@ export default class UserView {
    *
    * @param {object} userDetails - Object containing user details including id, username and email.
    */
-  showUserDetails = ({ id, username, email }) => {
+  showUserDetails = ({ id, username, email}) => {
     this.panelEl.innerHTML = renderUserDetails({
       id,
       username,

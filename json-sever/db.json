@@ -11,38 +11,42 @@
       "email": "user2@example.com",
       "password": "password2",
       "id": "7f20",
-      "username": "user223344a",
-      "role": "readonly"
+      "username": "user223344aaa"
     },
     {
       "id": "ea6f",
       "email": "test@gmail.com",
-      "username": "test@gmail.com",
-      "password": "test@gmail.com"
+      "username": "anaana",
+      "password": "test@gmail.com",
+      "role": "user"
     },
     {
       "id": "80fb",
       "email": "test1@gmail.com",
       "username": "test1@gmail.com123456",
-      "password": "test1@gmail.com"
+      "password": "test1@gmail.com",
+      "role": "user"
     },
     {
       "id": "d6cd",
       "email": "test@gmail.com11",
       "username": "test@gmail.com",
-      "password": "test@gmail.com11"
+      "password": "test@gmail.com11",
+      "role": "user"
     },
     {
       "id": "fd47",
       "email": "nd@gmail.com",
       "username": "DiepPhanDinh",
-      "password": "DiepPhan"
+      "password": "DiepPhan",
+      "role": "user"
     },
     {
       "email": "diep@gmail.com",
       "username": "phandiep",
       "password": "DiepPhan",
-      "id": "71db"
+      "id": "71db",
+      "role": "user"
     }
   ],
   "product": [

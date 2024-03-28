@@ -39,7 +39,7 @@ export default class UserController {
    * @param password {string} - User's password.
    */
   signIn = async (email, password) => {
-    const result = await this.model.signIn(email, password);
+    const result = await UserService.signIn(email, password);
     if (result) {
       this.view.redirectPage("index.html");
     } else {
@@ -140,11 +140,20 @@ export default class UserController {
     }
   };
 
+  handleCheckRole =  async (userId, role) => {
+    // const user = this.model.getUserById(userId);
+    await UserService.checkRole(userId,role);
+    // console.log("check id controller", userId)
+    // console.log("check role controller", role)
+  }
+
   /**
    * The signUp function performs the new user registration process.
    * @param {object} userData - New user information including email, username, password, and passwordConfirm.
    */
   signUp = async ({ email, username, password, passwordConfirm }) => {
+    const role = "user";
+
     if (!inValidEmail(email)) {
       alert("Please enter a valid email address.");
       return;
@@ -165,18 +174,19 @@ export default class UserController {
       return;
     }
 
-    const isExits = await this.model.findUserByEmail(email);
+    const isExits = await UserService.findUserByEmail(email);
 
     if (isExits) {
       alert("Email is already registered.");
       return;
     }
 
-    const response = this.model.createUser({
+    await UserService.createUser({
       email,
       username,
       password,
       passwordConfirm,
+      role,
     });
 
     if (!response.error) {

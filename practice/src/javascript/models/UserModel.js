@@ -13,7 +13,8 @@ export default class UserModel {
     nutrition,
     creator,
     category,
-    id
+    id,
+    role
   ) {
     this.email = email;
     this.password = password;
@@ -31,6 +32,7 @@ export default class UserModel {
     this.creator = creator;
     this.category = category;
     this.id = id;
+    this.role = role;
   }
 
   /**

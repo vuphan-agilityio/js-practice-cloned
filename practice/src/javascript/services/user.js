@@ -12,11 +12,12 @@ export default class UserService {
     username,
     password,
     passwordConfirm,
+    role,
   }) => {
     return await APIHelper.createRequest(
       `${API.BASE_URL}${API.CREATE_USER}`,
       "POST",
-      { email, username, password, passwordConfirm }
+      { email, username, password, passwordConfirm, role }
     );
   };
 
@@ -141,6 +142,13 @@ export default class UserService {
     } catch (err) {
       return this.handleError(err);
     }
+  };
+
+  static checkRole = async (userId, role) => {
+    return await APIHelper.createRequest(
+      `${API.BASE_URL}${API.CREATE_USER}?userId, role=${userId, role}`,
+      "GET"
+    );
   };
 
   /**
