@@ -32,6 +32,11 @@ export default class UserController {
     this.view.bindCallback("backToggle");
   };
 
+  /**
+   * Function to perform signIn during the login process.
+   * @param {string} email - User's email address.
+   * @param password {string} - User's password.
+   */
   signIn = async (email, password) => {
     const result = await this.model.signIn(email, password);
     if (result) {
@@ -41,15 +46,30 @@ export default class UserController {
     }
   };
 
+  /**
+   * The handleEditUser function performs the process of editing user information.
+   * @param {string} userId - ID of the user to edit.
+   * @param {string} newUsername - New username.
+   *
+   */
   handleEditUser = async (userId, newUsername) => {
-    const user = this.model.getUserById(userId);
-    console.log("")
-    await UserService.editUsers(userId, { ...user, username: newUsername });
-    this.handleViewUsers();
+    try {
+      if (!newUsername) {
+        alert("Username cannot be empty!");
+        return;
+      }
+      const user = this.model.getUserById(userId);
+      await UserService.editUsers(userId, { ...user, username: newUsername });
+      alert("Username updated successfully!");
+      this.handleViewUsers();
+    } catch (error) {
+      alert("Failed to update user");
+    }
   };
 
-  // Display a list of users and
-  // Attach listener events for handleShowUserDetails.
+  /**
+   * The handleViewUsers function displaying the list of users.
+   */
   handleViewUsers = async () => {
     const { data } = await this.getUsers();
     this.model.setUsers(data);
@@ -57,30 +77,45 @@ export default class UserController {
     this.view.bindCallback("userRowClick", this.handleShowUserDetails);
   };
 
-  // Displays details of a user
-  // Attach a listener event for saving edit
+  /**
+   * The handleShowUserDetails function displays details of a user.
+   * @param {string} userId - ID of the user to display details.
+   */
   handleShowUserDetails = (userId) => {
     const user = this.model.getUserById(userId);
     this.view.showUserDetails(user);
   };
 
-  // Get data UserService
+  /**
+   * The getUsers function retrieves a list of users from the server through UserService.
+   * @returns {Promise} - A Promise containing user list data from the server.
+   */
   getUsers = async () => {
     return await UserService.fetchUsers();
   };
 
-  // Get data product
+  /**
+   * The handleViewProducts function displays the product list on the interface.
+   */
   handleViewProducts = async () => {
     const { data } = await this.getProducts();
     this.model.setProducts(data);
     this.view.renderTableProducts(data);
   };
 
-  //Get data for produt to the UserService
+  /**
+   * The getProducts function retrieves a list of products from the server through UserService.
+   *
+   * @returns {Promise} - A Promise containing product list data from the server.
+   */
   getProducts = async () => {
     return await UserService.fetchProducts();
   };
 
+  /**
+   * The handlerViewTable function displays the corresponding data table (user or product) on the interface.
+   * @param {string} type - The type of data to display ("users" or "products").
+   */
   handlerViewTable = (type) => {
     switch (type) {
       case "users":
@@ -94,7 +129,10 @@ export default class UserController {
     }
   };
 
-  // Valiation for sign up
+  /**
+   * The signUp function performs the new user registration process.
+   * @param {object} userData - New user information including email, username, password, and passwordConfirm.
+   */
   signUp = async ({ email, username, password, passwordConfirm }) => {
     if (!inValidEmail(email)) {
       alert("Please enter a valid email address.");
@@ -137,24 +175,33 @@ export default class UserController {
     }
   };
 
+  /**
+   * The findUserByEmail function checks whether an email address exists in the system or not.
+   * @param {string} email - Email address to check.
+   * @returns {boolean} - Returns true if the email address already exists in the system, otherwise returns false.
+   */
   findUserByEmail = async (email) => {
     const { result } = await UserService.findUserByEmail(email);
-
     return !!result?.length;
   };
 
+  /**
+   * The signIn function performs user authentication using email address and password.
+   * @param {string} email - User's email address.
+   * @param {string} password - User's password.
+   * @returns {boolean} - Returns true if authentication is successful, false otherwise.
+   */
   signIn = async (email, password) => {
     const { result } = await UserService.signIn(email, password);
-
     return !!result?.length;
   };
 
-  createUser = async ({ email, username, password, passwordConfirm }) => {
-    const response = await UserService.createUser({
-      email,
-      username,
-      password,
-      passwordConfirm,
-    });
-  };
+  // createUser = async ({ email, username, password, passwordConfirm }) => {
+  //   const response = await UserService.createUser({
+  //     email,
+  //     username,
+  //     password,
+  //     passwordConfirm,
+  //   });
+  // };
 }

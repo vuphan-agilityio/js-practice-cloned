@@ -1,3 +1,8 @@
+/**
+ * The userRowTemplate function takes in an array of data containing information about the user and returns an HTML string representing the rows of the users table.
+ * @param {Array} data - Array containing information about the user (including id, username and email).
+ * @returns {string} - HTML string representing rows of the users table.
+ */
 const userRowTemplate = (data) => {
   return data.length ? data.map((item) => {
     return `
@@ -13,6 +18,11 @@ const userRowTemplate = (data) => {
   }).join("") : "";
 };
 
+/**
+ * The renderUserTableTemplate function takes in an array of data containing information about the user and returns an HTML string representing a table of user data.
+ * @param {Array} data - Array containing information about the user (including id, username and email).
+ * @returns {string} - HTML string representing a table of user data.
+ */
 const renderUserTableTemplate = (data) => {
   return `
     <table class="table__wrapper toolbar__title">
@@ -30,6 +40,11 @@ const renderUserTableTemplate = (data) => {
   `
 };
 
+/**
+ * The renderUserDetails function takes an object containing the user's details and returns an HTML string representing that user's details.
+ * @param {object} data - Object containing user details (including id, username and email).
+ * @returns {string} - HTML string representing user details.
+ */
 const renderUserDetails = (data) => {
   return `
     <div class="panel__edit">
@@ -56,6 +71,11 @@ const renderUserDetails = (data) => {
   `
 }
 
+/**
+ * The renderUserEditor function takes an object containing information about the user and returns an HTML string representing the user's information editor.
+ * @param {object} data - Object containing information about the user (including email and username).
+ * @returns {string} - HTML string representing the user's information editor.
+ */
 const renderUserEditor = (data) => {
   return `
   <div class="sidebar__header">

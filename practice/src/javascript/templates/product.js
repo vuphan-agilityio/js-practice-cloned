@@ -1,3 +1,8 @@
+/**
+ * The productRowTemplateProduct function receives an array of data containing product information and returns an HTML string representing the rows of the product table.
+ * @param {Array} data - Array containing product information.
+ * @returns {string} - HTML string representing the rows of the products table.
+ */
 const productRowTemplateProduct = (data) => {
   return data.length ? data.map((item) => {
     return `
@@ -31,6 +36,11 @@ const productRowTemplateProduct = (data) => {
   }).join("") : "";
 };
 
+/**
+ * The renderProductTableTemplate function receives an array of data containing product information and returns an HTML string representing the product data table.
+ * @param {Array} data - Array containing product information.
+ * @returns {string} - HTML string representing the product data table.
+ */
 const renderProductTableTemplate = (data) => {
   return `
     <table class="table__wrapper toolbar__title">

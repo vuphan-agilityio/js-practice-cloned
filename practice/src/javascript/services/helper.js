@@ -1,4 +1,13 @@
 export default class APIHelper {
+  /**
+   * Method for creating and sending a fetch request to a specified URL.
+   *
+   * @param {string} url - URL of the fetch request.
+   * @param {string} method - The method of the fetch request (GET, POST, PUT, DELETE, etc.).
+   * @param {object} data - The data to be sent (if any).
+   * @param {string} contentType - Content type of the fetch request (default is "application/json").
+   * @returns {Promise} - Promise resolved with the result of the fetch request.
+   */
   static createRequest = async (
     url,
     method,
