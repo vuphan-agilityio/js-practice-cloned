@@ -1,16 +1,25 @@
 .panel {
-  display: none;
-  margin: toRem(10);
-  width: 96%;
   border: toRem(1) solid #ccd7e6;
   background-color: #fff;
+  position: absolute;
+  height: 100vh;
+  right: 0;
+  left: 0;
+  top: toRem(47);
+  width: 100%;
+  margin: 0;
+
 
   @include tablet {
-    width: toRem(400);
+    right: auto;
+    left: auto;
   }
 
   @include desktop {
+    margin-left: toRem(10);
+    margin-bottom: toRem(10);
     width: toRem(500);
+    position: static;
   }
 
   &__edit {
@@ -21,6 +30,7 @@
     z-index: 1;
     background-color: #fff;
     border-bottom: toRem(1) solid #ccd7e6;
+    padding: toRem(7);
   }
 
   &__icon-back {
@@ -43,7 +53,7 @@
     flex-direction: column;
     align-items: flex-start;
     overflow: auto;
-    margin: toRem(20) toRem(20) 0 toRem(48);
+    margin: toRem(80) toRem(30) 0 toRem(40);
   }
 
   &__item {
@@ -58,38 +68,9 @@
     justify-items: start;
   }
 
-  &__item-status {
-    @include flex-row;
-    margin-bottom: toRem(24);
-    gap: toRem(70);
-    align-items: center;
-  }
-
   &__label {
     margin-right: toRem(20);
     font-weight: 500;
-  }
-
-  &__upload {
-    display: flex;
-    flex-direction: column;
-    gap: toRem(8);
-  }
-
-  &__upload-wrapper {
-    display: flex;
-    align-items: flex-end;
-    gap: toRem(10);
-    color: #fff;
-    font-size: 90px;
-
-    @include tablet {
-      font-size: 135px;
-    }
-  }
-
-  &__label-status {
-    align-items: end;
   }
 
   &__upload-img {
@@ -97,24 +78,6 @@
     align-items: center;
     width: toRem(109);
     gap: toRem(10);
-  }
-
-  &__upload-btn {
-    gap: toRem(4);
-    align-items: center;
-    font-size: 12px;
-    font-weight: 600;
-    color: #1ca1c1;
-    width: toRem(200);
-    @include cursor;
-
-    @include tablet {
-      font-size: 16px;
-    }
-  }
-
-  &__icon-upload {
-    background-image: url("../assets/images/user/upload-icon.svg");
   }
 
   &__input {
@@ -132,66 +95,12 @@
       border: toRem(1) solid #17839d;
     }
   }
+}
 
-  &__switch {
-    position: relative;
-    display: inline-block;
-    width: toRem(50);
-    height: toRem(24);
-  }
+.show-panel {
+  display: none;
+}
 
-  &__input-toggle {
-    position: absolute;
-    visibility: hidden;
-  }
-
-  &__slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ffdedb;
-    border-radius: toRem(34);
-  }
-
-  &__slider::before {
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-color: white;
-    transition: 0.4s;
-    border: 1px solid #eee;
-    border-radius: 50%;
-    box-shadow: 0 toRem(1) toRem(5) #0000004d;
-    content: "";
-    height: toRem(22);
-    width: toRem(22);
-  }
-
-  &__area {
-    font-size: 12px;
-    width: toRem(250);
-    height: toRem(120);
-    padding: toRem(5) toRem(12);
-    border: toRem(1) solid #ccd7e6;
-    border-radius: toRem(2);
-    outline: none;
-    resize: none;
-    color: #475466;
-    box-sizing: border-box;
-
-    &:hover {
-      border: toRem(1) solid #17839d;
-    }
-
-    @include tablet {
-      width: toRem(216);
-    }
-
-    @include desktop {
-      width: toRem(280);
-    }
-  }
+.hindden-back {
+  display: none;
 }
