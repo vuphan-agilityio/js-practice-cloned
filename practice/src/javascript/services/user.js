@@ -121,6 +121,28 @@ export default class UserService {
     }
   };
 
+ /**
+ * The deleteUser function sends a request to delete a user from the server.
+ * @param {string} userId - The ID of the user to be deleted.
+ * @param {object} payload - The optional payload data to be included in the request body.
+ * @returns {Promise<object>} - A Promise that resolves to an object containing the response data or error information.
+ */
+  static deleteUser = async (userId, payload) => {
+    try {
+      const res = await fetch(`${API.BASE_URL}${API.CREATE_USER}/${userId}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      return this.handleResponse(res);
+    } catch (err) {
+      return this.handleError(err);
+    }
+  };
+
   /**
    * Fetch method to create a new product on the server.
    * @param {object} productInfo - Object containing information about the new product.
