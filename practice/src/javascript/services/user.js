@@ -1,8 +1,6 @@
 import { API } from "../constants/url";
 import APIHelper from "./helper";
 
-const visibleUsers = [];
-
 export default class UserService {
   /**
    * Method to create new users on the server.
@@ -42,32 +40,18 @@ export default class UserService {
    * @returns {Promise} - Promise resolved with the result of the user login request.
    */
   static signIn = async (email, password) => {
-    // return await APIHelper.createRequest(
-    //   `${API.BASE_URL}${API.CREATE_USER}?email=${email}&password=${password}`,
-    //   "GET"
-    // );
-
     const response = await APIHelper.createRequest(
       `${API.BASE_URL}${API.CREATE_USER}?email=${email}&password=${password}`,
       "GET"
     );
 
     const users = response.result;
-
-    users.forEach(user => {
-      if (user.email === email && user.password === password) {
-        console.log("Signed in successful");
-        if (user.role === "user") {
-          visibleUsers.push([user]);
-        } else {
-          visibleUsers.push(users);
-        }
-        return response;
+    for (var i = 0; i < users.length; i++) {
+      if (users[i].email === email && users[i].password === password) {
+        return users[i];
       }
-    });
-
-    console.log("Signed in failed");
-    return null;
+    }
+    return "Signed in failed!";
   };
 
   /**
@@ -103,18 +87,12 @@ export default class UserService {
   };
 
   static fetchUsers = async () => {
-    // const users = [...visibleUsers];
-    // console.log("fetchUsers" + users[0].email);
-    // return {
-    //   users,
-    //   errMsg: null,
-    // };
-    // try {
-    //   const res = await fetch(`${API.BASE_URL}${API.CREATE_USER}`);
-    //   return this.handleResponse(res);
-    // } catch (err) {
-    //   return this.handleError(err);
-    // }
+    try {
+      const res = await fetch(`${API.BASE_URL}${API.CREATE_USER}`);
+      return this.handleResponse(res);
+    } catch (err) {
+      return this.handleError(err);
+    }
   };
 
   /**
@@ -152,12 +130,12 @@ export default class UserService {
     }
   };
 
- /**
- * The deleteUser function sends a request to delete a user from the server.
- * @param {string} userId - The ID of the user to be deleted.
- * @param {object} payload - The optional payload data to be included in the request body.
- * @returns {Promise<object>} - A Promise that resolves to an object containing the response data or error information.
- */
+  /**
+   * The deleteUser function sends a request to delete a user from the server.
+   * @param {string} userId - The ID of the user to be deleted.
+   * @param {object} payload - The optional payload data to be included in the request body.
+   * @returns {Promise<object>} - A Promise that resolves to an object containing the response data or error information.
+   */
   static deleteUser = async (userId, payload) => {
     try {
       const res = await fetch(`${API.BASE_URL}${API.CREATE_USER}/${userId}`, {
@@ -172,13 +150,6 @@ export default class UserService {
     } catch (err) {
       return this.handleError(err);
     }
-  };
-
-  static checkRole = async (userId, role) => {
-    return await APIHelper.createRequest(
-      `${API.BASE_URL}${API.CREATE_USER}?userId, role=${userId, role}`,
-      "GET"
-    );
   };
 
   /**

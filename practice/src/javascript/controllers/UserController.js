@@ -40,9 +40,11 @@ export default class UserController {
    * @param password {string} - User's password.
    */
   handleSignIn = async (email, password) => {
-    const result = await UserService.signIn(email, password);
-    if (result) {
+    const user = await UserService.signIn(email, password);
+    if (user.role === "admin") {
       this.view.redirectPage("user-manager.html");
+    } else if (user.role === "user") {
+      this.view.redirectPage("index.html");
     } else {
       alert("Invalid email or password. Please try again.");
     }
@@ -140,14 +142,7 @@ export default class UserController {
         break;
     }
   };
-
-  handleCheckRole =  async (userId, role) => {
-    // const user = this.model.getUserById(userId);
-    await UserService.checkRole(userId,role);
-    // console.log("check id controller", userId)
-    // console.log("check role controller", role)
-  }
-
+  
   /**
    * The signUp function performs the new user registration process.
    * @param {object} userData - New user information including email, username, password, and passwordConfirm.
