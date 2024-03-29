@@ -1,7 +1,7 @@
 import { API } from "../constants/url";
 import APIHelper from "./helper";
 
-var visibleUsers = [];
+const visibleUsers = [];
 
 export default class UserService {
   /**
@@ -103,7 +103,7 @@ export default class UserService {
   };
 
   static fetchUsers = async () => {
-    // var users = [...visibleUsers];
+    // const users = [...visibleUsers];
     // console.log("fetchUsers" + users[0].email);
     // return {
     //   users,
