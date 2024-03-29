@@ -1,6 +1,8 @@
 import { API } from "../constants/url";
 import APIHelper from "./helper";
 
+var visibleUsers = [];
+
 export default class UserService {
   /**
    * Method to create new users on the server.
@@ -40,10 +42,32 @@ export default class UserService {
    * @returns {Promise} - Promise resolved with the result of the user login request.
    */
   static signIn = async (email, password) => {
-    return await APIHelper.createRequest(
+    // return await APIHelper.createRequest(
+    //   `${API.BASE_URL}${API.CREATE_USER}?email=${email}&password=${password}`,
+    //   "GET"
+    // );
+
+    const response = await APIHelper.createRequest(
       `${API.BASE_URL}${API.CREATE_USER}?email=${email}&password=${password}`,
       "GET"
     );
+
+    const users = response.result;
+
+    users.forEach(user => {
+      if (user.email === email && user.password === password) {
+        console.log("Signed in successful");
+        if (user.role === "user") {
+          visibleUsers.push([user]);
+        } else {
+          visibleUsers.push(users);
+        }
+        return response;
+      }
+    });
+
+    console.log("Signed in failed");
+    return null;
   };
 
   /**
@@ -79,12 +103,18 @@ export default class UserService {
   };
 
   static fetchUsers = async () => {
-    try {
-      const res = await fetch(`${API.BASE_URL}${API.CREATE_USER}`);
-      return this.handleResponse(res);
-    } catch (err) {
-      return this.handleError(err);
-    }
+    // var users = [...visibleUsers];
+    // console.log("fetchUsers" + users[0].email);
+    // return {
+    //   users,
+    //   errMsg: null,
+    // };
+    // try {
+    //   const res = await fetch(`${API.BASE_URL}${API.CREATE_USER}`);
+    //   return this.handleResponse(res);
+    // } catch (err) {
+    //   return this.handleError(err);
+    // }
   };
 
   /**

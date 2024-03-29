@@ -9,7 +9,7 @@ export default class UserController {
   }
 
   init = async () => {
-    this.view.bindCallback("signIn", this.signIn);
+    this.view.bindCallback("signIn", this.handleSignIn);
     this.view.bindCallback("signUp", this.signUp);
     this.view.bindCallback("menuToggle");
     this.view.bindCallback("newToggle");
@@ -23,7 +23,8 @@ export default class UserController {
     if (this.urlParams.get("nav") === "products") {
       this.handleViewProducts();
       this.view.setNavigationActive("products");
-    } else {
+    } else if (this.urlParams.get("nav") === "users") {
+      console.log("handle user");
       await this.handleViewUsers();
       this.view.setNavigationActive("users");
     }
@@ -38,10 +39,10 @@ export default class UserController {
    * @param {string} email - User's email address.
    * @param password {string} - User's password.
    */
-  signIn = async (email, password) => {
+  handleSignIn = async (email, password) => {
     const result = await UserService.signIn(email, password);
     if (result) {
-      this.view.redirectPage("index.html");
+      this.view.redirectPage("user-manager.html");
     } else {
       alert("Invalid email or password. Please try again.");
     }

@@ -6,8 +6,8 @@ export default class UserView {
   constructor() {
     this.signInFormEl = document.getElementById("form-sign-in");
     this.signUpFormEl = document.getElementById("form-sign-up");
-    this.emailEl = document.getElementById("email");
-    this.passwordEl = document.getElementById("password");
+    // this.emailEl = document.getElementById("email");
+    // this.passwordEl = document.getElementById("password");
     this.userNameEl = document.getElementById("username");
     this.passwordConfirmEl = document.getElementById("confirmPassword");
     this.idUserEl = document.getElementById("id-user");
@@ -53,6 +53,7 @@ export default class UserView {
     switch (event) {
       case "signIn":
         bindEvent(this.signInFormEl, "submit", this.signIn(handler));
+        console.log("sigin", this.signInFormEl);
         break;
       case "signUp":
         bindEvent(this.signUpFormEl, "submit", this.signUp(handler));
@@ -251,7 +252,12 @@ export default class UserView {
   signIn = (handler) => {
     return (event) => {
       event.preventDefault();
-      handler(this.emailEl.value, this.passwordEl.value);
+      const emailEl = document.getElementById("email");
+      const passwordEl = document.getElementById("password");
+      console.log("email",emailEl.value);
+      console.log("paasss",passwordEl.value);
+      handler(emailEl.value, passwordEl.value);
+
     };
   };
 
@@ -309,10 +315,12 @@ export default class UserView {
   signUp = (handler) => {
     return (event) => {
       event.preventDefault();
+      const emailEl = document.getElementById("email");
+      const passwordEl = document.getElementById("password");
       handler({
-        email: this.emailEl.value,
+        email: emailEl.value,
         username: this.userNameEl.value,
-        password: this.passwordEl.value,
+        password: passwordEl.value,
         passwordConfirm: this.passwordConfirmEl.value,
       });
     };
