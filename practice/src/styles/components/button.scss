@@ -132,4 +132,22 @@
       @include cursor;
     }
   }
+
+  &__post-commnent {
+    width: toRem(150);
+    height: toRem(38);
+    background-color: #ff642b;
+    border: none;
+    border-radius: toRem(5);
+    color: #fff;
+    font-size: $fs-x-medium;
+    position: absolute;
+    right: toRem(30);
+    bottom: toRem(70);
+
+    @include tablet {
+      width: toRem(208);
+      bottom: toRem(108);
+    }
+  }
 }
