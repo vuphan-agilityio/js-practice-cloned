@@ -6,6 +6,8 @@
   }
   &__item {
     width: toRem(331);
+    @include flex-row;
+    gap: toRem(10);
 
     @include tablet {
       width: toRem(276);
@@ -17,13 +19,27 @@
   }
 
   &__step {
-  font-family: $font-secondary;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.58;
+    font-family: $font-secondary;
+    font-size: $fs-small;
+    font-weight: 400;
+    line-height: 1.58;
+    width: toRem(331);
 
-  @include tablet {
-    font-size: 17px;
+    @include tablet {
+      font-size: 17px;
+      width: toRem(271);
+    }
+
+    @include desktop {
+      width: toRem(460);
+    }
   }
+
+  &__collocate {
+    width: toRem(24);
+    height: toRem(24);
+    background-color: #ff642f;
+    color: #fff;
+    text-align: center;
   }
 }

@@ -13,7 +13,7 @@
     width: toRem(140);
 
     @include tablet {
-      font-size: 14px;
+      font-size: $fs-small;
       width: toRem(250);
     }
 
@@ -62,14 +62,14 @@
     @include flex-column;
     padding-right: toRem(20);
     padding-left: toRem(20);
-    border-right: 1px solid #e8e8e8;
+    border-right: toRem(1) solid #e8e8e8;
 
     &:hover {
       border-right: toRem(1) solid $color-primary;
     }
 
     &:nth-child(1) {
-      padding-left: 0px;
+      padding-left: 0;
     }
   }
 
@@ -89,7 +89,7 @@
     line-height: 1.6;
 
     @include tablet {
-      font-size: 14px;
+      font-size: $fs-small;
     }
   }
 
@@ -110,20 +110,20 @@
   }
 
   &__ingredients {
-    font-size: 20px;
+    font-size: $fs-large;
     line-height: 1.2;
     margin-top: toRem(27);
     font-weight: 500;
 
     @include tablet {
       margin-top: toRem(52);
-      font-size: 30px;
+      font-size: $fs-xxl-large;
     }
   }
 
   &__quantity {
     line-height: 1.58;
-    font-size: 17px;
+    font-size: $fs-medium;
     font-family: $font-secondary;
     font-weight: 500;
   }
@@ -138,7 +138,7 @@
     }
 
     &__title {
-      font-size: 30px;
+      font-size: $fs-xxl-large;
 
       @include tablet {
         font-size: 60px;
@@ -201,18 +201,18 @@
   }
 
   &__write {
-    font-size: 20px;
+    font-size: $fs-large;
 
     @include tablet {
-      font-size: 30px;
+      font-size: $fs-xxl-large;
     }
   }
 
   &__post-comment {
-    font-size: 14px;
+    font-size: $fs-small;
 
     @include tablet {
-      font-size: 16px;
+      font-size: $fs-x-medium;
     }
   }
 
