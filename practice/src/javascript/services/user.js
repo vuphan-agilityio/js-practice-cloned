@@ -12,11 +12,12 @@ export default class UserService {
     username,
     password,
     passwordConfirm,
+    role,
   }) => {
     return await APIHelper.createRequest(
       `${API.BASE_URL}${API.CREATE_USER}`,
       "POST",
-      { email, username, password, passwordConfirm }
+      { email, username, password, passwordConfirm, role }
     );
   };
 
@@ -39,10 +40,18 @@ export default class UserService {
    * @returns {Promise} - Promise resolved with the result of the user login request.
    */
   static signIn = async (email, password) => {
-    return await APIHelper.createRequest(
+    const response = await APIHelper.createRequest(
       `${API.BASE_URL}${API.CREATE_USER}?email=${email}&password=${password}`,
       "GET"
     );
+
+    const users = response.result;
+    for (var i = 0; i < users.length; i++) {
+      if (users[i].email === email && users[i].password === password) {
+        return users[i];
+      }
+    }
+    return "Signed in failed!";
   };
 
   /**
@@ -121,12 +130,12 @@ export default class UserService {
     }
   };
 
- /**
- * The deleteUser function sends a request to delete a user from the server.
- * @param {string} userId - The ID of the user to be deleted.
- * @param {object} payload - The optional payload data to be included in the request body.
- * @returns {Promise<object>} - A Promise that resolves to an object containing the response data or error information.
- */
+  /**
+   * The deleteUser function sends a request to delete a user from the server.
+   * @param {string} userId - The ID of the user to be deleted.
+   * @param {object} payload - The optional payload data to be included in the request body.
+   * @returns {Promise<object>} - A Promise that resolves to an object containing the response data or error information.
+   */
   static deleteUser = async (userId, payload) => {
     try {
       const res = await fetch(`${API.BASE_URL}${API.CREATE_USER}/${userId}`, {
@@ -149,11 +158,42 @@ export default class UserService {
    * @param {string} productInfo.name - Name of the new product.
    * @returns {Promise} - Promise resolved with the result of the fetch request.
    */
-  static createProduct = async ({ name }) => {
+  static createProduct = async ({ name, image }) => {
     return await APIHelper.createRequest(
       `${API.BASE_URL}${API.CREATE_PRODUCT}`,
       "POST",
-      { name }
+      { name, imageUrl: image }
     );
+  };
+
+  static editProduct = async (productId, payload) => {
+    try {
+      const res = await fetch(`${API.BASE_URL}${API.CREATE_PRODUCT}/${productId}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      return this.handleResponse(res);
+    } catch (err) {
+      return this.handleError(err);
+    }
+  };
+
+  static deleteProduct = async (productId) => {
+    try {
+      const res = await fetch(`${API.BASE_URL}${API.CREATE_PRODUCT}/${productId}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      return this.handleResponse(res);
+    } catch (err) {
+      return this.handleError(err);
+    }
   };
 }

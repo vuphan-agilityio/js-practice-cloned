@@ -1,13 +1,13 @@
 import { bindEvent, delegate } from "../helpers";
 import { renderUserTableTemplate, renderUserDetails } from "../templates/user";
-import { renderProductTableTemplate } from "../templates/product";
+import { renderProductTableTemplate, renderProductDetails } from "../templates/product";
 
 export default class UserView {
   constructor() {
     this.signInFormEl = document.getElementById("form-sign-in");
     this.signUpFormEl = document.getElementById("form-sign-up");
-    this.emailEl = document.getElementById("email");
-    this.passwordEl = document.getElementById("password");
+    // this.emailEl = document.getElementById("email");
+    // this.passwordEl = document.getElementById("password");
     this.userNameEl = document.getElementById("username");
     this.passwordConfirmEl = document.getElementById("confirmPassword");
     this.idUserEl = document.getElementById("id-user");
@@ -37,7 +37,8 @@ export default class UserView {
 
     // Add
     this.selectAddEl = document.getElementById("form-add-product");
-    this.nameEl = document.getElementById("name");
+    this.nameEl = document.getElementById("input_name");
+    this.image = document.getElementById("input_image");
 
     // Edit users
     this.rowEl = document.querySelectorAll(".table__row");
@@ -53,6 +54,7 @@ export default class UserView {
     switch (event) {
       case "signIn":
         bindEvent(this.signInFormEl, "submit", this.signIn(handler));
+        console.log("sigin", this.signInFormEl);
         break;
       case "signUp":
         bindEvent(this.signUpFormEl, "submit", this.signUp(handler));
@@ -82,9 +84,9 @@ export default class UserView {
           this.navToggle(handler)
         ); // Toggle icon products
         break;
-      // case "addProduct":
-      //   bindEvent(this.selectAddEl, "submit", this.addProduct(handler)); // Toggle icon products
-      //   break;
+      case "addProduct":
+        bindEvent(this.selectAddEl, "submit", this.addProduct(handler)); // Toggle icon products
+        break;
       case "userRowClick":
         this.tBodyEl = document.querySelector(".table__body");
         delegate(
@@ -112,6 +114,33 @@ export default class UserView {
           this.deleteUser(handler)
           );
           break;
+      case "productRowClick":
+        this.tBodyEl = document.querySelector(".table-body__product");
+        delegate(
+          this.tBodyEl,
+          ".table__row",
+          "click",
+          this.showProductById(handler)
+        );
+      break;
+      case "editProduct":
+        this.sidebarDetailEl = document.getElementById("panel-details");
+        delegate(
+          this.sidebarDetailEl,
+          ".btn-edit-product",
+          "click",
+          this.editProduct(handler)
+        );
+        break;
+      case "deleteProduct":
+        this.sidebarDetailEl = document.getElementById("panel-details");
+        delegate(
+          this.sidebarDetailEl,
+          ".btn-delete-product",
+          "click",
+          this.deleteProduct(handler)
+          );
+          break;
       default:
         break;
     }
@@ -131,6 +160,18 @@ export default class UserView {
   deleteUser = (handler) => (event) => {
     const userId = document.querySelector(".panel__confirm").getAttribute("data-id");
     handler(userId);
+  };
+
+  deleteProduct = (handler) => (event) => {
+    const productId = document.querySelector(".panel__confirm").getAttribute("data-id");
+    handler(productId);
+  };
+
+  editProduct = (handler) => (event) => {
+    const productImage = document.getElementById("image-input").value.trim();
+    const productName = document.getElementById("product-name-input").value.trim();
+    const productId = document.querySelector(".panel__confirm").getAttribute("data-id");
+    handler(productImage, productName, productId);
   };
 
   /**
@@ -251,7 +292,12 @@ export default class UserView {
   signIn = (handler) => {
     return (event) => {
       event.preventDefault();
-      handler(this.emailEl.value, this.passwordEl.value);
+      const emailEl = document.getElementById("email");
+      const passwordEl = document.getElementById("password");
+      console.log("email",emailEl.value);
+      console.log("paasss",passwordEl.value);
+      handler(emailEl.value, passwordEl.value);
+
     };
   };
 
@@ -284,12 +330,22 @@ export default class UserView {
    *
    * @param {object} userDetails - Object containing user details including id, username and email.
    */
-  showUserDetails = ({ id, username, email }) => {
+  showUserDetails = ({ id, username, email}) => {
     this.panelEl.innerHTML = renderUserDetails({
       id,
       username,
       email,
     });
+      this.userDetailsContainerEl.classList.add("show-panel")
+  };
+
+  showProductDetails = ({ id, imageUrl, name}) => {
+    this.panelEl.innerHTML = renderProductDetails({
+      id,
+      imageUrl,
+      name,
+    });
+      this.userDetailsContainerEl.classList.add("show-panel")
   };
 
   /**
@@ -301,6 +357,11 @@ export default class UserView {
     handler(userId);
   };
 
+  showProductById = (handler) => (event) => {
+    const productId = event.target.closest(".table__row").dataset.id;
+    handler(productId);
+  };
+
   /**
    * The signUp function handles the user registration event on the user interface.
    * @param {function} handler - Function to handle when the signUp event is triggered.
@@ -309,21 +370,24 @@ export default class UserView {
   signUp = (handler) => {
     return (event) => {
       event.preventDefault();
+      const emailEl = document.getElementById("email");
+      const passwordEl = document.getElementById("password");
       handler({
-        email: this.emailEl.value,
+        email: emailEl.value,
         username: this.userNameEl.value,
-        password: this.passwordEl.value,
+        password: passwordEl.value,
         passwordConfirm: this.passwordConfirmEl.value,
       });
     };
   };
 
-  // addProduct = (handler) => {
-  //   return (event) => {
-  //     event.preventDefault();
-  //     handler({
-  //       name: this.nameEl.value,
-  //     });
-  //   };
-  // };
+  addProduct = (handler) => {
+    return (event) => {
+      event.preventDefault();
+      handler({
+        name: this.nameEl.value,
+        image: this.image.value
+      });
+    };
+  };
 }

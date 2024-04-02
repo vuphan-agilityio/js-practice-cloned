@@ -9,86 +9,65 @@
     },
     {
       "email": "user2@example.com",
-      "password": "password2",
+      "password": "password1",
       "id": "7f20",
-      "username": "user223344a",
-      "role": "readonly"
+      "username": "user223344aaa",
+      "role": "user"
     },
     {
       "id": "ea6f",
       "email": "test@gmail.com",
-      "username": "test@gmail.com",
-      "password": "test@gmail.com"
+      "username": "anaana",
+      "password": "password1",
+      "role": "user"
     },
     {
       "id": "80fb",
       "email": "test1@gmail.com",
       "username": "test1@gmail.com123456",
-      "password": "test1@gmail.com"
+      "password": "password1",
+      "role": "user"
     },
     {
       "id": "d6cd",
       "email": "test@gmail.com11",
       "username": "test@gmail.com",
-      "password": "test@gmail.com11"
+      "password": "password1",
+      "role": "user"
     },
     {
       "id": "fd47",
       "email": "nd@gmail.com",
       "username": "DiepPhanDinh",
-      "password": "DiepPhan"
+      "password": "password1",
+      "role": "user"
     },
     {
       "email": "diep@gmail.com",
       "username": "phandiep",
-      "password": "DiepPhan",
-      "id": "71db"
+      "password": "password1",
+      "id": "71db",
+      "role": "user"
+    },
+    {
+      "id": "7853"
     }
   ],
   "product": [
     {
-      "name": "Vegan Cauliflower Salad",
-      "creator": "Tricia Albert",
-      "collection": "Cook Like a Chef",
-      "category": "Vegan",
-      "nutrition": "Calories 219.9",
-      "description": "Enjoy my restaurant-inspired recipe!",
-      "ingredients": "150g unsalted butters, melted",
-      "intruction": "Add 1/3 of the mixture to a mixing bowl",
-      "id": "ddf8"
+      "id": "dfsd",
+      "name": "Spinachaaa",
+      "imageUrl": "http://localhost:1234/spinach-and-cheese-pasta.ec522a1c.png"
     },
     {
-      "name": "Birthday Cupcakes",
-      "creator": "Jelanee Uwaezuoke",
-      "collection": "Cook Like a Chef",
-      "category": "Desserts",
-      "nutrition": "Calories 200.2",
-      "description": "Enjoy my restaurant-inspired recipe!",
-      "ingredients": "300g marshmallows",
-      "intruction": " Add melted butter and pulse 3-4 times to coat crumbs with butter.",
-      "id": "238c"
+      "id": "c2a2",
+      "name": "Pizza",
+      "imageUrl": "http://localhost:1234/for-the-love-of-donuts.cf4d0f4b.png"
     },
     {
-      "name": "Mighty Cheesy Breakfast Burger",
-      "creator": "Noell Blue",
-      "collection": "Everything Bagel",
-      "category": "Breakfast",
-      "nutrition": "Calories 119.9",
-      "description": "Enjoy my restaurant-inspired recipe!",
-      "ingredients": "3 tbsp powdered gelatin + 3 tbsp water",
-      "intruction": " Microwave for 30 seconds and mix to combine. Set aside.",
-      "id": "4cb8"
-    },
-    {
-      "name": "Mighty ",
-      "creator": "Noell",
-      "collection": "Bagel",
-      "category": "Breakfast",
-      "nutrition": "Calories 11.9",
-      "description": "",
-      "ingredients": "3 tbsp water",
-      "intruction": "",
-      "id": "28cb"
+      "id": "75ea",
+      "name": "Pizza ymmy",
+      "imageUrl": "http://localhost:1234/for-the-love-of-donuts.cf4d0f4b.png"
     }
   ]
 }

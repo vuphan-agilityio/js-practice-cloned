@@ -13,7 +13,9 @@ export default class UserModel {
     nutrition,
     creator,
     category,
-    id
+    id,
+    role,
+    imageURL
   ) {
     this.email = email;
     this.password = password;
@@ -31,6 +33,8 @@ export default class UserModel {
     this.creator = creator;
     this.category = category;
     this.id = id;
+    this.role = role;
+    this.imageURL = imageURL;
   }
 
   /**
@@ -56,5 +60,9 @@ export default class UserModel {
    */
   setProducts = (data) => {
     this.products = data;
+  };
+
+  getProductById = (id) => {
+    return this.products.find((product) => product.id === id);
   };
 }

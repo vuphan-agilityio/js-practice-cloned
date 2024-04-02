@@ -38,6 +38,7 @@
     gap: toRem(12);
     padding: toRem(20) 0;
     display: flex;
+    flex-direction: column;
   }
 
   &__input {

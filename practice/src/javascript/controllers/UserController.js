@@ -9,7 +9,7 @@ export default class UserController {
   }
 
   init = async () => {
-    this.view.bindCallback("signIn", this.signIn);
+    this.view.bindCallback("signIn", this.handleSignIn);
     this.view.bindCallback("signUp", this.signUp);
     this.view.bindCallback("menuToggle");
     this.view.bindCallback("newToggle");
@@ -17,13 +17,16 @@ export default class UserController {
     this.view.bindCallback("navigationItem", this.handlerViewTable);
     this.view.bindCallback("editUser", this.handleEditUser);
     this.view.bindCallback("deleteUser", this.handleDeleteUser);
+    this.view.bindCallback("editProduct", this.handleEditProduct)
+    this.view.bindCallback("deleteProduct", this.handleDeleteProduct)
 
     this.urlParams = new URLSearchParams(window.location.search);
 
     if (this.urlParams.get("nav") === "products") {
       this.handleViewProducts();
       this.view.setNavigationActive("products");
-    } else {
+    } else if (this.urlParams.get("nav") === "users") {
+      console.log("handle user");
       await this.handleViewUsers();
       this.view.setNavigationActive("users");
     }
@@ -38,9 +41,13 @@ export default class UserController {
    * @param {string} email - User's email address.
    * @param password {string} - User's password.
    */
-  signIn = async (email, password) => {
-    const result = await this.model.signIn(email, password);
-    if (result) {
+  handleSignIn = async (email, password) => {
+    const user = await UserService.signIn(email, password);
+
+    localStorage.setItem("user",user)
+    if (user.role === "admin") {
+      this.view.redirectPage("user-manager.html");
+    } else if (user.role === "user") {
       this.view.redirectPage("index.html");
     } else {
       alert("Invalid email or password. Please try again.");
@@ -67,6 +74,17 @@ export default class UserController {
     }
   };
 
+  handleEditProduct = async (productImage, productName, productId) => {
+    try {
+      const product = this.model.getProductById(productId);
+      await UserService.editProduct(productId, { ...product, name: productName, imageUrl: productImage });
+      alert("Username updated successfully!");
+      this.handleViewProducts();
+    } catch (error) {
+      alert("Failed to update user");
+    }
+  }
+
   /**
    * The handleDeleteUser function initiates the deletion of a user from the server and updates the UI accordingly.
    * @param {string} userId - The ID of the user to be deleted.
@@ -76,6 +94,12 @@ export default class UserController {
     await UserService.deleteUser(userId, { ...user });
     alert("Delete successfully!");
     this.handleViewUsers();
+  };
+
+  handleDeleteProduct = async (productId) => {
+    await UserService.deleteProduct(productId);
+    alert("Delete successfully!");
+    this.handleViewProducts();
   };
 
   /**
@@ -112,6 +136,12 @@ export default class UserController {
     const { data } = await this.getProducts();
     this.model.setProducts(data);
     this.view.renderTableProducts(data);
+    this.view.bindCallback("productRowClick", this.handleShowProductDetails);
+  };
+
+  handleShowProductDetails = (productId) => {
+    const product = this.model.getProductById(productId);
+    this.view.showProductDetails(product);
   };
 
   /**
@@ -145,6 +175,8 @@ export default class UserController {
    * @param {object} userData - New user information including email, username, password, and passwordConfirm.
    */
   signUp = async ({ email, username, password, passwordConfirm }) => {
+    const role = "user";
+
     if (!inValidEmail(email)) {
       alert("Please enter a valid email address.");
       return;
@@ -165,18 +197,19 @@ export default class UserController {
       return;
     }
 
-    const isExits = await this.model.findUserByEmail(email);
+    const isExits = await UserService.findUserByEmail(email);
 
     if (isExits) {
       alert("Email is already registered.");
       return;
     }
 
-    const response = this.model.createUser({
+    await UserService.createUser({
       email,
       username,
       password,
       passwordConfirm,
+      role,
     });
 
     if (!response.error) {
@@ -215,4 +248,10 @@ export default class UserController {
   //     passwordConfirm,
   //   });
   // };
+
+  handleAddProduct = async ({name, image}) => {
+    await UserService.createProduct({name, image})
+    this.handleViewProducts()
+  }
+
 }

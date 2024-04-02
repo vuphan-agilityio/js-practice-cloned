@@ -4,6 +4,7 @@
     line-height: $lh-x-small;
     margin-top: toRem(38);
     margin-bottom: toRem(34);
+    font-family: $font-primary;
 
     @include tablet {
       font-size: $fs-x-huge;

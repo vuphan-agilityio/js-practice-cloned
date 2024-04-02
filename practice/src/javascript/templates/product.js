@@ -6,30 +6,12 @@
 const productRowTemplateProduct = (data) => {
   return data.length ? data.map((item) => {
     return `
-    <tr class="table__row">
+    <tr class="table__row product_item" data-id=${item.id}>
+      <td class="table__row__cell">
+        <img src=${item.imageUrl} width="50px" height="50px"/>
+      </td>
       <td class="table__row__cell">
         <p class="table__title">${item.name}</p>
-      </td>
-      <td class="table__row__cell">
-        <p class="table__title">${item.creator}</p>
-      </td>
-      <td class="table__row__cell">
-        <p class="table__title">${item.collection}</p>
-      </td>
-      <td class="table__row__cell">
-        <p class="table__title">${item.category}</p>
-      </td>
-      <td class="table__row__cell">
-        <p class="table__title">${item.nutrition}</p>
-      </td>
-      <td class="table__row__cell">
-        <p class="table__title">${item.description}</p>
-      </td>
-      <td class="table__row__cell">
-        <p class="table__title">${item.ingredients}</p>
-      </td>
-      <td class="table__row__cell">
-        <p class="table__title">${item.intruction}</p>
       </td>
     </tr>
   `;
@@ -46,14 +28,8 @@ const renderProductTableTemplate = (data) => {
     <table class="table__wrapper toolbar__title">
       <thead class="table__head">
         <tr class="table__header">
+          <th class="table__header__cell">Image</th>
           <th class="table__header__cell table-product__cell">Name</th>
-          <th class="table__header__cell">Creator</th>
-          <th class="table__header__cell">Collection</th>
-          <th class="table__header__cell">Category</th>
-          <th class="table__header__cell">Nutrition</th>
-          <th class="table__header__cell">Description</th>
-          <th class="table__header__cell">Ingredients</th>
-          <th class="table__header__cell">Intruction</th>
         </tr>
       </thead>
 
@@ -64,4 +40,30 @@ const renderProductTableTemplate = (data) => {
   `
 }
 
-export { renderProductTableTemplate };
+const renderProductDetails = (data) => {
+  return `
+    <div class="panel__edit">
+      <span class="panel__icon-back drawer__user-icon" id="icon-back"></span>
+      <button class="btn__general">General</button>
+    </div>
+
+    <div class="panel__confirm" data-id=${data.id}>
+      <button class="btn__delete btn__save btn-delete-product" id="delete-product">Delete</button>
+      <button class="btn__save btn-edit-product" id="save-edit">Save</button>
+    </div>
+
+    <forrm class="panel__edit-profile">
+      <div class="panel__item">
+        <label class="panel__label">Image</label>
+        <input id="image-input" type="text" class="panel__input" value=${data.imageUrl}>
+      </div>
+
+      <div class="panel__item">
+        <label class="panel__label">Name</label>
+        <input id="product-name-input" type="text" class="panel__input" value=${data.name}>
+      </div>
+    </forrm>
+  `
+}
+
+export { renderProductTableTemplate, renderProductDetails };
