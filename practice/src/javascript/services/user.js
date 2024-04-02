@@ -158,11 +158,42 @@ export default class UserService {
    * @param {string} productInfo.name - Name of the new product.
    * @returns {Promise} - Promise resolved with the result of the fetch request.
    */
-  static createProduct = async ({ name }) => {
+  static createProduct = async ({ name, image }) => {
     return await APIHelper.createRequest(
       `${API.BASE_URL}${API.CREATE_PRODUCT}`,
       "POST",
-      { name }
+      { name, imageUrl: image }
     );
+  };
+
+  static editProduct = async (productId, payload) => {
+    try {
+      const res = await fetch(`${API.BASE_URL}${API.CREATE_PRODUCT}/${productId}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      return this.handleResponse(res);
+    } catch (err) {
+      return this.handleError(err);
+    }
+  };
+
+  static deleteProduct = async (productId) => {
+    try {
+      const res = await fetch(`${API.BASE_URL}${API.CREATE_PRODUCT}/${productId}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      return this.handleResponse(res);
+    } catch (err) {
+      return this.handleError(err);
+    }
   };
 }

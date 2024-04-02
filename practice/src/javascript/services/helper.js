@@ -54,3 +54,4 @@ export const usersTableTemplate = (data) => {
   }
   return users;
 };
+

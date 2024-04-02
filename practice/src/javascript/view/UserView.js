@@ -1,6 +1,6 @@
 import { bindEvent, delegate } from "../helpers";
 import { renderUserTableTemplate, renderUserDetails } from "../templates/user";
-import { renderProductTableTemplate } from "../templates/product";
+import { renderProductTableTemplate, renderProductDetails } from "../templates/product";
 
 export default class UserView {
   constructor() {
@@ -37,7 +37,8 @@ export default class UserView {
 
     // Add
     this.selectAddEl = document.getElementById("form-add-product");
-    this.nameEl = document.getElementById("name");
+    this.nameEl = document.getElementById("input_name");
+    this.image = document.getElementById("input_image");
 
     // Edit users
     this.rowEl = document.querySelectorAll(".table__row");
@@ -83,9 +84,9 @@ export default class UserView {
           this.navToggle(handler)
         ); // Toggle icon products
         break;
-      // case "addProduct":
-      //   bindEvent(this.selectAddEl, "submit", this.addProduct(handler)); // Toggle icon products
-      //   break;
+      case "addProduct":
+        bindEvent(this.selectAddEl, "submit", this.addProduct(handler)); // Toggle icon products
+        break;
       case "userRowClick":
         this.tBodyEl = document.querySelector(".table__body");
         delegate(
@@ -113,6 +114,33 @@ export default class UserView {
           this.deleteUser(handler)
           );
           break;
+      case "productRowClick":
+        this.tBodyEl = document.querySelector(".table-body__product");
+        delegate(
+          this.tBodyEl,
+          ".table__row",
+          "click",
+          this.showProductById(handler)
+        );
+      break;
+      case "editProduct":
+        this.sidebarDetailEl = document.getElementById("panel-details");
+        delegate(
+          this.sidebarDetailEl,
+          ".btn-edit-product",
+          "click",
+          this.editProduct(handler)
+        );
+        break;
+      case "deleteProduct":
+        this.sidebarDetailEl = document.getElementById("panel-details");
+        delegate(
+          this.sidebarDetailEl,
+          ".btn-delete-product",
+          "click",
+          this.deleteProduct(handler)
+          );
+          break;
       default:
         break;
     }
@@ -132,6 +160,18 @@ export default class UserView {
   deleteUser = (handler) => (event) => {
     const userId = document.querySelector(".panel__confirm").getAttribute("data-id");
     handler(userId);
+  };
+
+  deleteProduct = (handler) => (event) => {
+    const productId = document.querySelector(".panel__confirm").getAttribute("data-id");
+    handler(productId);
+  };
+
+  editProduct = (handler) => (event) => {
+    const productImage = document.getElementById("image-input").value.trim();
+    const productName = document.getElementById("product-name-input").value.trim();
+    const productId = document.querySelector(".panel__confirm").getAttribute("data-id");
+    handler(productImage, productName, productId);
   };
 
   /**
@@ -296,6 +336,16 @@ export default class UserView {
       username,
       email,
     });
+      this.userDetailsContainerEl.classList.add("show-panel")
+  };
+
+  showProductDetails = ({ id, imageUrl, name}) => {
+    this.panelEl.innerHTML = renderProductDetails({
+      id,
+      imageUrl,
+      name,
+    });
+      this.userDetailsContainerEl.classList.add("show-panel")
   };
 
   /**
@@ -305,6 +355,11 @@ export default class UserView {
   showUserById = (handler) => (event) => {
     const userId = event.target.closest(".table__row").dataset.id;
     handler(userId);
+  };
+
+  showProductById = (handler) => (event) => {
+    const productId = event.target.closest(".table__row").dataset.id;
+    handler(productId);
   };
 
   /**
@@ -326,12 +381,13 @@ export default class UserView {
     };
   };
 
-  // addProduct = (handler) => {
-  //   return (event) => {
-  //     event.preventDefault();
-  //     handler({
-  //       name: this.nameEl.value,
-  //     });
-  //   };
-  // };
+  addProduct = (handler) => {
+    return (event) => {
+      event.preventDefault();
+      handler({
+        name: this.nameEl.value,
+        image: this.image.value
+      });
+    };
+  };
 }

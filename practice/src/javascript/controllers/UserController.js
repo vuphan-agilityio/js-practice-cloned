@@ -17,6 +17,8 @@ export default class UserController {
     this.view.bindCallback("navigationItem", this.handlerViewTable);
     this.view.bindCallback("editUser", this.handleEditUser);
     this.view.bindCallback("deleteUser", this.handleDeleteUser);
+    this.view.bindCallback("editProduct", this.handleEditProduct)
+    this.view.bindCallback("deleteProduct", this.handleDeleteProduct)
 
     this.urlParams = new URLSearchParams(window.location.search);
 
@@ -41,6 +43,8 @@ export default class UserController {
    */
   handleSignIn = async (email, password) => {
     const user = await UserService.signIn(email, password);
+
+    localStorage.setItem("user",user)
     if (user.role === "admin") {
       this.view.redirectPage("user-manager.html");
     } else if (user.role === "user") {
@@ -70,6 +74,17 @@ export default class UserController {
     }
   };
 
+  handleEditProduct = async (productImage, productName, productId) => {
+    try {
+      const product = this.model.getProductById(productId);
+      await UserService.editProduct(productId, { ...product, name: productName, imageUrl: productImage });
+      alert("Username updated successfully!");
+      this.handleViewProducts();
+    } catch (error) {
+      alert("Failed to update user");
+    }
+  }
+
   /**
    * The handleDeleteUser function initiates the deletion of a user from the server and updates the UI accordingly.
    * @param {string} userId - The ID of the user to be deleted.
@@ -79,6 +94,12 @@ export default class UserController {
     await UserService.deleteUser(userId, { ...user });
     alert("Delete successfully!");
     this.handleViewUsers();
+  };
+
+  handleDeleteProduct = async (productId) => {
+    await UserService.deleteProduct(productId);
+    alert("Delete successfully!");
+    this.handleViewProducts();
   };
 
   /**
@@ -115,6 +136,12 @@ export default class UserController {
     const { data } = await this.getProducts();
     this.model.setProducts(data);
     this.view.renderTableProducts(data);
+    this.view.bindCallback("productRowClick", this.handleShowProductDetails);
+  };
+
+  handleShowProductDetails = (productId) => {
+    const product = this.model.getProductById(productId);
+    this.view.showProductDetails(product);
   };
 
   /**
@@ -142,7 +169,7 @@ export default class UserController {
         break;
     }
   };
-  
+
   /**
    * The signUp function performs the new user registration process.
    * @param {object} userData - New user information including email, username, password, and passwordConfirm.
@@ -221,4 +248,10 @@ export default class UserController {
   //     passwordConfirm,
   //   });
   // };
+
+  handleAddProduct = async ({name, image}) => {
+    await UserService.createProduct({name, image})
+    this.handleViewProducts()
+  }
+
 }
