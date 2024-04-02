@@ -78,4 +78,24 @@
       padding-left: toRem(250);
     }
   }
+
+  &__load-comment {
+    font-size: $fs-x-medium;
+    font-family: $font-secondary;
+    width: 100%;
+    height: toRem(34);
+    border: toRem(1) solid #5c5b5b;
+    border-radius: toRem(5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: #f98d5a;
+    }
+
+    @include tablet {
+      height: toRem(58);
+    }
+  }
 }
