@@ -53,6 +53,8 @@
     color: #1ca1c1;
     background-color: #f4f5f9;
     font-weight: 700;
+    width: toRem(100);
+    height: toRem(30);
 
     @include tablet {
       padding: 0 toRem(30);
