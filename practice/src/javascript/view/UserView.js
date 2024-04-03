@@ -1,6 +1,9 @@
 import { bindEvent, delegate } from "../helpers";
 import { renderUserTableTemplate, renderUserDetails } from "../templates/user";
-import { renderProductTableTemplate, renderProductDetails } from "../templates/product";
+import {
+  renderProductTableTemplate,
+  renderProductDetails,
+} from "../templates/product";
 
 export default class UserView {
   constructor() {
@@ -39,6 +42,13 @@ export default class UserView {
     this.selectAddEl = document.getElementById("form-add-product");
     this.nameEl = document.getElementById("input_name");
     this.image = document.getElementById("input_image");
+    this.desEL = document.getElementById("product-description-input");
+    this.categoryEl = document.getElementById("product-category-input");
+    this.creatorEl = document.getElementById("product-creator-input");
+    this.ratingEl = document.getElementById("product-ratings-input");
+    this.instructEL = document.getElementById("product-instruction-input");
+    this.ingredientEL = document.getElementById("product-ingredients-input");
+    this.nutriEL = document.getElementById("product-nutrition-input");
 
     // Edit users
     this.rowEl = document.querySelectorAll(".table__row");
@@ -54,7 +64,6 @@ export default class UserView {
     switch (event) {
       case "signIn":
         bindEvent(this.signInFormEl, "submit", this.signIn(handler));
-        console.log("sigin", this.signInFormEl);
         break;
       case "signUp":
         bindEvent(this.signUpFormEl, "submit", this.signUp(handler));
@@ -112,8 +121,8 @@ export default class UserView {
           ".btn__delete",
           "click",
           this.deleteUser(handler)
-          );
-          break;
+        );
+        break;
       case "productRowClick":
         this.tBodyEl = document.querySelector(".table-body__product");
         delegate(
@@ -122,7 +131,7 @@ export default class UserView {
           "click",
           this.showProductById(handler)
         );
-      break;
+        break;
       case "editProduct":
         this.sidebarDetailEl = document.getElementById("panel-details");
         delegate(
@@ -139,8 +148,8 @@ export default class UserView {
           ".btn-delete-product",
           "click",
           this.deleteProduct(handler)
-          );
-          break;
+        );
+        break;
       default:
         break;
     }
@@ -153,24 +162,34 @@ export default class UserView {
    */
   editUser = (handler) => (event) => {
     const userName = document.getElementById("name-input").value.trim();
-    const userId = document.querySelector(".panel__confirm").getAttribute("data-id");
+    const userId = document
+      .querySelector(".panel__confirm")
+      .getAttribute("data-id");
     handler(userId, userName);
   };
 
   deleteUser = (handler) => (event) => {
-    const userId = document.querySelector(".panel__confirm").getAttribute("data-id");
+    const userId = document
+      .querySelector(".panel__confirm")
+      .getAttribute("data-id");
     handler(userId);
   };
 
   deleteProduct = (handler) => (event) => {
-    const productId = document.querySelector(".panel__confirm").getAttribute("data-id");
+    const productId = document
+      .querySelector(".panel__confirm")
+      .getAttribute("data-id");
     handler(productId);
   };
 
   editProduct = (handler) => (event) => {
     const productImage = document.getElementById("image-input").value.trim();
-    const productName = document.getElementById("product-name-input").value.trim();
-    const productId = document.querySelector(".panel__confirm").getAttribute("data-id");
+    const productName = document
+      .getElementById("product-name-input")
+      .value.trim();
+    const productId = document
+      .querySelector(".panel__confirm")
+      .getAttribute("data-id");
     handler(productImage, productName, productId);
   };
 
@@ -294,10 +313,9 @@ export default class UserView {
       event.preventDefault();
       const emailEl = document.getElementById("email");
       const passwordEl = document.getElementById("password");
-      console.log("email",emailEl.value);
-      console.log("paasss",passwordEl.value);
+      console.log("email", emailEl.value);
+      console.log("paasss", passwordEl.value);
       handler(emailEl.value, passwordEl.value);
-
     };
   };
 
@@ -330,22 +348,40 @@ export default class UserView {
    *
    * @param {object} userDetails - Object containing user details including id, username and email.
    */
-  showUserDetails = ({ id, username, email}) => {
+  showUserDetails = ({ id, username, email }) => {
     this.panelEl.innerHTML = renderUserDetails({
       id,
       username,
       email,
     });
-      this.userDetailsContainerEl.classList.add("show-panel")
+    this.userDetailsContainerEl.classList.add("show-panel");
   };
 
-  showProductDetails = ({ id, imageUrl, name}) => {
+  showProductDetails = ({
+    id,
+    imageUrl,
+    name,
+    category,
+    creator,
+    ratings,
+    description,
+    instruction,
+    ingredients,
+    nutrition,
+  }) => {
     this.panelEl.innerHTML = renderProductDetails({
       id,
       imageUrl,
       name,
+      category,
+      creator,
+      ratings,
+      description,
+      instruction,
+      ingredients,
+      nutrition,
     });
-      this.userDetailsContainerEl.classList.add("show-panel")
+    this.userDetailsContainerEl.classList.add("show-panel");
   };
 
   /**
@@ -386,7 +422,14 @@ export default class UserView {
       event.preventDefault();
       handler({
         name: this.nameEl.value,
-        image: this.image.value
+        image: this.image.value,
+        category: this.categoryEl.value,
+        creator: this.creatorEl.value,
+        ratings: this.ratingEl.value,
+        description: this.desEL.value,
+        instruction: this.instructEL.value,
+        ingredients: this.ingredientEL.value,
+        nutrition: this.nutriEL.value
       });
     };
   };

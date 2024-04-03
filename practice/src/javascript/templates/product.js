@@ -8,10 +8,31 @@ const productRowTemplateProduct = (data) => {
     return `
     <tr class="table__row product_item" data-id=${item.id}>
       <td class="table__row__cell">
-        <img src=${item.imageUrl} width="50px" height="50px"/>
+        <img src=${item.imageUrl} width="100px" height="100px"style="border-radius: 50%;"/>
       </td>
       <td class="table__row__cell">
         <p class="table__title">${item.name}</p>
+      </td>
+      <td class="table__row__cell">
+        <p class="table__title">${item.category}</p>
+      </td>
+      <td class="table__row__cell">
+        <p class="table__title">${item.creator}</p>
+      </td>
+      <td class="table__row__cell">
+        <p class="table__title">${item.ratings}</p>
+      </td>
+      <td class="table__row__cell">
+        <p class="table__title">${item.description}</p>
+      </td>
+      <td class="table__row__cell">
+        <p class="table__title">${item.instructions}</p>
+      </td>
+      <td class="table__row__cell">
+        <p class="table__title">${item.ingredients}</p>
+      </td>
+      <td class="table__row__cell">
+        <p class="table__title">${item.nutrition}</p>
       </td>
     </tr>
   `;
@@ -68,6 +89,55 @@ const renderProductDetails = (data) => {
       <div class="panel__item">
         <label class="panel__label">Name</label>
         <input id="product-name-input" type="text" class="panel__input" value=${data.name}>
+      </div>
+
+      <div class="panel__item">
+        <label class="panel__label" for="product-category-input">Category</label>
+        <select id="product-category-input" class="panel__input" value=${data.category}>
+          <option value="">Please select</option>
+          <option value="Pasta">Pasta</option>
+          <option value="Pizza">Pizza</option>
+          <option value="Vegan">Vegan</option>
+          <option value="Desserts">Desserts</option>
+          <option value="Smoothies">Smoothies</option>
+          <option value="Breakfast">Breakfast</option>
+        </select>
+      </div>
+
+      <div class="panel__item">
+        <label class="panel__label">Creator</label>
+        <input id="product-creator-input" type="text" class="panel__input" value=${data.creator}>
+      </div>
+
+      <div class="panel__item">
+        <label class="panel__label" for="product-ratings-input">Ratings</label>
+        <select id="product-ratings-input" class="panel__input" value=${data.ratings}>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+      <div class="panel__item">
+        <label class="panel__label">Description</label>
+        <input id="product-description-input" type="text" class="panel__input" value=${data.description}>
+      </div>
+
+      <div class="panel__item">
+        <label class="panel__label">Instruction</label>
+        <input id="product-instruction-input" type="text" class="panel__input" value=${data.instruction}>
+      </div>
+
+      <div class="panel__item">
+        <label class="panel__label">Ingredients</label>
+        <input id="product-ingredients-input" type="text" class="panel__input" value=${data.ingredients}>
+      </div>
+
+      <div class="panel__item">
+        <label class="panel__label">Nutrition</label>
+        <input id="product-nutrition-input" type="text" class="panel__input" value=${data.nutrition}>
       </div>
     </forrm>
   `

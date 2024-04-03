@@ -249,8 +249,8 @@ export default class UserController {
   //   });
   // };
 
-  handleAddProduct = async ({name, image}) => {
-    await UserService.createProduct({name, image})
+  handleAddProduct = async ({name, image, category, creator, ratings, description, instruction, ingredients, nutrition}) => {
+    await UserService.createProduct({name, image, category, creator, ratings, description, instruction, ingredients, nutrition})
     this.handleViewProducts()
   }
 
