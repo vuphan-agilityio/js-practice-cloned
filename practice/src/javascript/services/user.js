@@ -158,11 +158,12 @@ export default class UserService {
    * @param {string} productInfo.name - Name of the new product.
    * @returns {Promise} - Promise resolved with the result of the fetch request.
    */
-  static createProduct = async ({ name, image }) => {
+  static createProduct = async ({ name, image, category, creator, ratings, description, instruction, ingredients, nutrition }) => {
     return await APIHelper.createRequest(
       `${API.BASE_URL}${API.CREATE_PRODUCT}`,
       "POST",
-      { name, imageUrl: image }
+      { name, imageUrl: image ,category, creator, ratings, description, instruction, ingredients, nutrition}
+
     );
   };
 

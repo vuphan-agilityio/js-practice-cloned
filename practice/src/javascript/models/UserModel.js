@@ -15,7 +15,8 @@ export default class UserModel {
     category,
     id,
     role,
-    imageURL
+    imageURL,
+    ratings
   ) {
     this.email = email;
     this.password = password;
@@ -35,6 +36,7 @@ export default class UserModel {
     this.id = id;
     this.role = role;
     this.imageURL = imageURL;
+    this.ratings = ratings;
   }
 
   /**

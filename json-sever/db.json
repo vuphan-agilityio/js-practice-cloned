@@ -70,25 +70,44 @@
       "imageUrl": "http://localhost:1234/for-the-love-of-donuts.cf4d0f4b.png"
     },
     {
-      "id": "4ba4",
-      "name": [
-        "400g graham crackers",
-        "150g unsalted butters, melted"
-      ],
-      "imageUrl": "file:///C:/Users/ADMIN/Pictures/p2/archive/Chocolate-Peanut-Butter-Mini-Cupcakes.png"
-    },
-    {
       "name": "Strawberry Cream Cheesecake",
       "ratings": 1,
       "description": "One thing I learned living in the Canarsie section of Brooklyn, NY was how to cook a good Italian meal. Here is a recipe I created after having this dish in a restaurant. Enjoy!",
       "imageUrl": "http://localhost:1234/banner-mb.9b14f6f0.png",
-      "instructions": "",
+      "instructions": [
+        "To prepare crust add graham crackers to a food processor and process until you reach fine crumbs. Add melted butter and pulse 3-4 times to coat crumbs with butter.",
+        "Pour mixture into a 20cm (8”) tart tin. Use the back of a spoon to firmly press the mixture out across the bottom and sides of the tart tin. Chill for 30 min.",
+        "Begin by adding the marshmallows and melted butter into a microwave safe bowl. Microwave for 30 seconds and mix to combine. Set aside.",
+        "Next, add the gelatine and water to a small mixing bowl and mix to combine. Microwave for 30 seconds.",
+        "Add the cream cheese to the marshmallow mixture and use a hand mixer or stand mixer fitted with a paddle attachment to mix until smooth.",
+        "Add the warm cream and melted gelatin mixture and mix until well combined.",
+        "Add 1/3 of the mixture to a mixing bowl, add purple food gel and mix until well combined. Colour 1/3 of the mixture blue. Split the remaining mixture into two mixing bowls, colour one pink and leave the other white.",
+        "Pour half the purple cheesecake mixture into the chill tart crust. Add half the blue and then add the remaining purple and blue in the tart tin. Use a spoon to drizzle some pink cheesecake on top. Use a skewer or the end of a spoon to swirl the pink. Add some small dots of the plain cheesecake mixture to create stars and then sprinkle some more starts on top before chilling for 2 hours.",
+        "To prepare crust add graham crackers to a food processor and process until you reach fine crumbs. Add melted butter and pulse 3-4 times to coat crumbs with butter.",
+        "Slice with a knife to serve."
+      ],
       "ingredients": [
         "400g graham crackers",
         "150g unsalted butters, melted",
-        ""
+        "300g marshmallows",
+        "175g unsalted butter, melted",
+        "500g Philadelphia cream cheese, softened",
+        "250ml thickened/whipping cream, warm",
+        "3 tbsp powdered gelatin + 3 tbsp water",
+        "5 drops purple food gel",
+        "3 drops blue food gel"
       ],
-      "nutrition": "",
+      "nutrition": [
+        "Calories 219.9",
+        "Total Fat 10.7 g",
+        "Saturated Fat 2.2 g",
+        "Cholesterol 37.4 mg",
+        "Sodium 120.3 mg",
+        "Potassium 32.8 mg",
+        "Total Carbohydrate 22.3 g",
+        "Sugars 8.4 g",
+        "Protein 7.9 g"
+      ],
       "creator": "Tricia Albert",
       "category": "Desserts",
       "id": "b8e6"
@@ -137,38 +156,6 @@
       "id": "cd24"
     },
     {
-      "name": "Caramel Strawberry Milkshake",
-      "ratings": 0,
-      "description": "Indulge in the sweet and creamy goodness of this Caramel Strawberry Milkshake. Perfect for a refreshing treat on a warm day or as a delightful dessert.",
-      "imageUrl": "http://example.com/image-url.png",
-      "instructions": [
-        "In a blender, combine 1 cup of fresh strawberries, 2 scoops of vanilla ice cream, 1/4 cup of caramel sauce, and 1/2 cup of milk.",
-        "Blend until smooth and creamy.",
-        "Pour into glasses and drizzle with additional caramel sauce if desired.",
-        "Serve immediately and enjoy!"
-      ],
-      "ingredients": [
-        "1 cup fresh strawberries, hulled and sliced",
-        "2 scoops vanilla ice cream",
-        "1/4 cup caramel sauce, plus extra for drizzling",
-        "1/2 cup milk"
-      ],
-      "nutrition": [
-        "Calories: 320",
-        "Total Fat: 12g",
-        "Saturated Fat: 7g",
-        "Cholesterol: 45mg",
-        "Sodium: 160mg",
-        "Total Carbohydrates: 50g",
-        "Dietary Fiber: 2g",
-        "Sugars: 40g",
-        "Protein: 5g"
-      ],
-      "creator": "Your Name",
-      "category": "Smoothies",
-      "id": "9121"
-    },
-    {
       "name": "Cashew Vegan Rice",
       "ratings": 3,
       "description": "Start your day right with this hearty and nutritious Cashew Vegan Rice breakfast dish. Packed with flavor and plant-based goodness, it's the perfect way to fuel your morning.",
@@ -201,12 +188,12 @@
         "Sugars: 6g",
         "Protein: 6g"
       ],
-      "creator": "Your Name",
+      "creator": "Jelanee Uwaezuoke",
       "category": "Breakfast",
       "id": "474a"
     },
     {
-      "name": "Smoked Salmon Salad Sandwich",
+      "name": "Smoked",
       "ratings": 0,
       "description": "Elevate your breakfast with this delicious Smoked Salmon Salad Sandwich. Packed with flavors and nutrients, it's a perfect start to your day.",
       "imageUrl": "http://localhost:1234/smoked-salmon-salad-sandwich.63ea2613.png",
@@ -877,28 +864,6 @@
     },
     {
       "name": "Crispy Orange Chips",
-      "ratings": 0,
-      "description": "Savor the tangy and refreshing taste of oranges in a crispy chip form with these Crispy Orange Chips. A delightful snack that's both healthy and flavorful, perfect for satisfying your cravings.",
-      "imageUrl": "https://example.com/image-url.png",
-      "instructions": [
-        "Preheat your oven to 200°F (95°C).",
-        "Thinly slice 2-3 large oranges into rounds, about 1/8 inch thick.",
-        "Place the orange slices on a baking sheet lined with parchment paper, making sure they are in a single layer and not touching each other.",
-        "Bake in the preheated oven for 2-3 hours, or until the orange slices are dried and crispy. You may need to flip them halfway through the baking time to ensure even crispiness.",
-        "Once the orange slices are crispy, remove them from the oven and let them cool completely.",
-        "Store the Crispy Orange Chips in an airtight container at room temperature for up to 1 week.",
-        "Enjoy the tangy and crunchy goodness of these Crispy Orange Chips as a snack or as a topping for salads and desserts!"
-      ],
-      "ingredients": [
-        "2-3 large oranges"
-      ],
-      "nutrition": [],
-      "creator": "Your Name",
-      "category": "Snacks",
-      "id": "4367"
-    },
-    {
-      "name": "Crispy Orange Chips",
       "ratings": 2,
       "description": "Savor the tangy and refreshing taste of oranges in a crispy chip form with these Crispy Orange Chips. A delightful snack that's both healthy and flavorful, perfect for satisfying your cravings.",
       "imageUrl": "http://localhost:1234/crispy-orange-chips.b68941c3.png",
@@ -911,9 +876,7 @@
         "Store the Crispy Orange Chips in an airtight container at room temperature for up to 1 week.",
         "Enjoy the tangy and crunchy goodness of these Crispy Orange Chips as a snack or as a topping for salads and desserts!"
       ],
-      "ingredients": [
-        "2-3 large oranges"
-      ],
+      "ingredients": "2-3 large oranges",
       "nutrition": [
         "Calories: 60",
         "Total Fat: 0g",
@@ -1134,11 +1097,6 @@
       "creator": "Your Name",
       "category": "Desserts",
       "id": "ff18"
-    },
-    {
-      "id": "ef62",
-      "name": "a",
-      "imageUrl": "https://www.google.com/imgres?q=cake&imgurl=https%3A%2F%2Fassets.tmecosys.com%2Fimage%2Fupload%2Ft_web767x639%2Fimg%2Frecipe%2Fras%2FAssets%2F0A475B34-4E78-40D8-9F30-46223B7D77E7%2FDerivates%2FE55C7EA4-0E60-403F-B5DC-75EA358197BD.jpg&imgrefurl=https%3A%2F%2Fcookidoo.international%2Frecipes%2Frecipe%2Fvi%2Fr144267&docid=KLhHY_yN-8tpnM&tbnid=zh-QWptBEkXWQM&vet=12ahUKEwj3-omf7aOFAxUmrlYBHQ3-DKoQM3oECGMQAA..i&w=767&h=639&hcb=2&ved=2ahUKEwj3-omf7aOFAxUmrlYBHQ3-DKoQM3oECGMQAA"
     },
     {
       "id": "b679",
