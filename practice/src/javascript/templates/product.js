@@ -30,6 +30,13 @@ const renderProductTableTemplate = (data) => {
         <tr class="table__header">
           <th class="table__header__cell">Image</th>
           <th class="table__header__cell table-product__cell">Name</th>
+          <th class="table__header__cell">Category</th>
+          <th class="table__header__cell">Creator</th>
+          <th class="table__header__cell">Ratings</th>
+          <th class="table__header__cell">Description</th>
+          <th class="table__header__cell">Instruction</th>
+          <th class="table__header__cell">Ingredients</th>
+          <th class="table__header__cell">Nutrition</th>
         </tr>
       </thead>
 

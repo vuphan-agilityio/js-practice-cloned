@@ -4,7 +4,7 @@
   font-family: $font-secondary;
   font-size: $fs-small;
   width: toRem(300);
-  height: toRem(300);
+  height: toRem(774);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -13,8 +13,8 @@
   display: block;
 
   @include tablet {
-    width: toRem(351);
-    height: toRem(300);
+    width: toRem(450);
+    height: toRem(774);
   }
 
   &__header {
@@ -75,6 +75,7 @@
   &__label {
     font-weight: 500;
     font-size: $fs-small;
+    width: toRem(80);
   }
 }
 
