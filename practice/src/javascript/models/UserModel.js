@@ -7,16 +7,17 @@ export default class UserModel {
     passwordRegister,
     confirmPassword,
     name,
-    description,
-    ingredients,
-    intruction,
-    nutrition,
-    creator,
-    category,
-    id,
-    role,
-    imageURL,
-    ratings
+    
+    // description,
+    // ingredients,
+    // intruction,
+    // nutrition,
+    // creator,
+    // category,
+    // id,
+    // role,
+    // imageURL,
+    // ratings
   ) {
     this.email = email;
     this.password = password;
@@ -27,16 +28,16 @@ export default class UserModel {
     this.users = [];
     this.products = [];
     this.name = name;
-    this.description = description;
-    this.ingredients = ingredients;
-    this.intruction = intruction;
-    this.nutrition = nutrition;
-    this.creator = creator;
-    this.category = category;
-    this.id = id;
-    this.role = role;
-    this.imageURL = imageURL;
-    this.ratings = ratings;
+    // this.description = description;
+    // this.ingredients = ingredients;
+    // this.intruction = intruction;
+    // this.nutrition = nutrition;
+    // this.creator = creator;
+    // this.category = category;
+    // this.id = id;
+    // this.role = role;
+    // this.imageURL = imageURL;
+    // this.ratings = ratings;
   }
 
   /**
@@ -56,15 +57,15 @@ export default class UserModel {
     return this.users.find((user) => user.id === id);
   };
 
-  /**
-   * The setProducts function updates product data in the application model.
-   * @param {array} data - An array containing new product data
-   */
-  setProducts = (data) => {
-    this.products = data;
-  };
+  // /**
+  //  * The setProducts function updates product data in the application model.
+  //  * @param {array} data - An array containing new product data
+  //  */
+  // setProducts = (data) => {
+  //   this.products = data;
+  // };
 
-  getProductById = (id) => {
-    return this.products.find((product) => product.id === id);
-  };
+  // getProductById = (id) => {
+  //   return this.products.find((product) => product.id === id);
+  // };
 }

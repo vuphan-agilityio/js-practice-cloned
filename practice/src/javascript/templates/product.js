@@ -20,6 +20,9 @@ const productRowTemplateProduct = (data) => {
         <p class="table__title">${item.creator}</p>
       </td>
       <td class="table__row__cell">
+        <p class="table__title">${item.createdAt}</p>
+      </td>
+      <td class="table__row__cell">
         <p class="table__title">${item.ratings}</p>
       </td>
       <td class="table__row__cell">
@@ -53,6 +56,7 @@ const renderProductTableTemplate = (data) => {
           <th class="table__header__cell table-product__cell">Name</th>
           <th class="table__header__cell">Category</th>
           <th class="table__header__cell">Creator</th>
+          <th class="table__header__cell">createdAt</th>
           <th class="table__header__cell">Ratings</th>
           <th class="table__header__cell">Description</th>
           <th class="table__header__cell">Instruction</th>
@@ -143,4 +147,19 @@ const renderProductDetails = (data) => {
   `
 }
 
-export { renderProductTableTemplate, renderProductDetails };
+const renderProductHomeTemplate = (data) => {
+  return data.length ? data.map((item) => {
+  return `
+  <li class="recipes__food" data-id=${item.id}>
+    <article class="card">
+      <img class="card__image" src="${item.imageUrl}"
+        alt="Pictire cashew-vegan-rice" />
+      <p class="card__name recipes__name">${item.name}</p>
+    </article>
+  </li>
+  `;
+}).join("") : "";
+}
+
+
+export { renderProductTableTemplate, renderProductDetails, renderProductHomeTemplate };

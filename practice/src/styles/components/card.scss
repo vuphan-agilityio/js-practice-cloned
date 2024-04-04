@@ -3,6 +3,8 @@
   gap: toRem(16);
 	@include cursor;
   border: none;
+  text-decoration: none;
+  color: $color-primary;
 
 	&__image {
 		width: 100%;
