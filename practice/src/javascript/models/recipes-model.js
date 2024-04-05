@@ -2,8 +2,8 @@ export default class RecipeModel {
   constructor(
     name,
     description,
-    ingredients,
-    intruction,
+    ingredient,
+    instruction,
     nutrition,
     creator,
     category,
@@ -16,8 +16,8 @@ export default class RecipeModel {
     this.recipes = [];
     this.name = name;
     this.description = description;
-    this.ingredients = ingredients;
-    this.intruction = intruction;
+    this.ingredient = ingredient;
+    this.instruction = instruction;
     this.nutrition = nutrition;
     this.creator = creator;
     this.category = category;

@@ -17,17 +17,15 @@ export default class RecipeController {
    */
   handleViewRecipes = async () => {
     const { data } = await this.getRecipes();
-    console.log("data", data);
     this.model.setRecipes(data);
     this.view.renderTableRecipes(data);
     this.view.bindCallback("recipeRowClick", this.handleShowRecipeDetails);
-    console.log("data", data);
   };
 
   handleViewRecipeHome = async () => {
     const { data } = await this.getRecipes();
     this.model.setRecipes(data);
-    this.view.renderRecipeHomeTemplate(data);
+    this.view.renderListRecipesTemplate(data);
     console.log("data-controller", data);
   };
 
@@ -58,7 +56,7 @@ export default class RecipeController {
       await RecipeService.editRecipe(recipeId, {
         ...recipe,
         name: recipeName,
-        imageUrl: recipeImage,
+        imageURL: recipeImage,
       });
       alert("Username updated successfully!");
       this.handleViewRecipes();
@@ -75,7 +73,7 @@ export default class RecipeController {
     ratings,
     description,
     instruction,
-    ingredients,
+    ingredient,
     nutrition,
     createdAt,
   }) => {
@@ -87,7 +85,7 @@ export default class RecipeController {
       ratings,
       description,
       instruction,
-      ingredients,
+      ingredient,
       nutrition,
       createdAt,
     });

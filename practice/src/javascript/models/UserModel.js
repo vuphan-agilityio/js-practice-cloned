@@ -26,7 +26,7 @@ export default class UserModel {
     this.passwordRegister = passwordRegister;
     this.confirmPassword = confirmPassword;
     this.users = [];
-    this.recipes = [];
+    this.products = [];
     this.name = name;
     // this.description = description;
     // this.ingredient = ingredient;
@@ -58,14 +58,14 @@ export default class UserModel {
   };
 
   // /**
-  //  * The setRecipes function updates recipe data in the application model.
-  //  * @param {array} data - An array containing new recipe data
+  //  * The setProducts function updates product data in the application model.
+  //  * @param {array} data - An array containing new product data
   //  */
-  // setRecipes = (data) => {
-  //   this.recipes = data;
+  // setProducts = (data) => {
+  //   this.products = data;
   // };
 
-  // getRecipeById = (id) => {
-  //   return this.recipes.find((recipe) => recipe.id === id);
+  // getProductById = (id) => {
+  //   return this.products.find((product) => product.id === id);
   // };
 }

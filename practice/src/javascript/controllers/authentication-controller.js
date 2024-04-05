@@ -28,7 +28,6 @@ export default class AuthenticationController {
       this.view.redirectPage("dashboard.html");
     } else if (user.role === "user") {
       this.view.redirectPage("index.html");
-      this.view.renderRecipeHomeTemplate;
 
     } else {
       alert("Invalid email or password. Please try again.");

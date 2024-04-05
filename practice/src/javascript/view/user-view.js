@@ -26,7 +26,7 @@ export default class UserView {
     // this.creatorEl = document.getElementById("recipe-creator-input");
     // this.ratingEl = document.getElementById("recipe-ratings-input");
     // this.instructEL = document.getElementById("recipe-instruction-input");
-    // this.ingredientEL = document.getElementById("recipe-ingredients-input");
+    // this.ingredientEL = document.getElementById("recipe-ingredient-input");
     // this.nutriEL = document.getElementById("recipe-nutrition-input");
 
     // Edit users
@@ -288,7 +288,7 @@ export default class UserView {
 
   // renderRecipe = (data) => {
   //   // this.recipePageEl.innerHTML = renderRecipeHomeTemplet(data);
-  //   this.recipesListEl.innerHTML = renderRecipeHomeTemplate(data);
+  //   this.recipesListEl.innerHTML = renderListRecipesTemplate(data);
   //   console.log("data",data)
   // };
 
@@ -309,26 +309,26 @@ export default class UserView {
 
   // showRecipeDetails = ({
   //   id,
-  //   imageUrl,
+  //   imageURL,
   //   name,
   //   category,
   //   creator,
   //   ratings,
   //   description,
   //   instruction,
-  //   ingredients,
+  //   ingredient,
   //   nutrition,
   // }) => {
   //   this.panelEl.innerHTML = renderRecipeDetails({
   //     id,
-  //     imageUrl,
+  //     imageURL,
   //     name,
   //     category,
   //     creator,
   //     ratings,
   //     description,
   //     instruction,
-  //     ingredients,
+  //     ingredient,
   //     nutrition,
   //   });
   //   this.userDetailsContainerEl.classList.add("show-panel");
@@ -378,7 +378,7 @@ export default class UserView {
   //       ratings: this.ratingEl.value,
   //       description: this.desEL.value,
   //       instruction: this.instructEL.value,
-  //       ingredients: this.ingredientEL.value,
+  //       ingredient: this.ingredientEL.value,
   //       nutrition: this.nutriEL.value
   //     });
   //   };

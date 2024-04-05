@@ -1,25 +1,36 @@
-import RecipeService from "../../services/recipe-service";
+import RecipeService from "../../services/reicpes-service.js";
 
-export default class RecipesAppController {
+export default class RecipeController {
   constructor(model, view) {
     this.model = model;
     this.view = view;
   }
 
   init = async () => {
-
-    this.view.bindCallback("displayPanel");
-    // this.view.bindCallback("addRecipe", this.handleAddRecipe);
-    this.view.bindCallback("backToggle");
+    this.handleViewRecipeHome();
   };
-
 
   handleViewRecipeHome = async () => {
-    const { data } = await this.getRecipes();
+    const {data} = await this.getRecipes();
     this.model.setRecipes(data);
-    this.view.renderRecipeHomeTemplate(data);
+    this.view.renderRecipe(data);
     console.log("data-controller", data);
   };
+
+  // handleRecipePageDetail = async () => {
+  //   const  {data} = await this.getRecipes();
+  //   this.model.setRecipes(data);
+  //   this.view.renderRecipePageDetail(data);
+  //   console.log("data-controller", data);
+  // };
+
+  // handleShowPageRecipeDetails = (recipeId) => {
+  //   console.log("recipeId", recipeId);
+  //   const recipe = this.model.getRecipeById(recipeId);
+  //   this.view.showPageRecipeDetails(recipe);
+  // };
+
+  // showPageRecipeDetails
 
    /**
    * The getRecipes function retrieves a list of recipes from the server through UserService.

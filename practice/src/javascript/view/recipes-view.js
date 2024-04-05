@@ -2,7 +2,7 @@ import { bindEvent, delegate } from "../helpers";
 import {
   renderRecipeTableTemplate,
   renderRecipeDetails,
-  renderRecipeHomeTemplate,
+  renderListRecipesTemplate,
 } from "../templates/recipes";
 
 export default class RecipeView {
@@ -16,7 +16,7 @@ export default class RecipeView {
     this.creatorEl = document.getElementById("recipe-creator-input");
     this.ratingEl = document.getElementById("recipe-ratings-input");
     this.instructEL = document.getElementById("recipe-instruction-input");
-    this.ingredientEL = document.getElementById("recipe-ingredients-input");
+    this.ingredientEL = document.getElementById("recipe-ingredient-input");
     this.nutriEL = document.getElementById("recipe-nutrition-input");
 
     this.tableWrapperEl = document.getElementById("table-wrapper");
@@ -83,34 +83,34 @@ export default class RecipeView {
     handler(recipesId);
   };
 
-  showRecipeById = (handler) => (event) => {
-    const precipesId = event.target.closest(".table__row").dataset.id;
-    handler(recipesId);
-  };
+  // showRecipeById = (handler) => (event) => {
+  //   const recipesId = event.target.closest(".table__row").dataset.id;
+  //   handler(recipesId);
+  // };
 
   showRecipeDetails = ({
     id,
-    imageUrl,
+    imageURL,
     name,
     category,
     creator,
     ratings,
     description,
     instruction,
-    ingredients,
+    ingredient,
     nutrition,
     createdAt
   }) => {
     this.panelEl.innerHTML = renderRecipeDetails({
       id,
-      imageUrl,
+      imageURL,
       name,
       category,
       creator,
       ratings,
       description,
       instruction,
-      ingredients,
+      ingredient,
       nutrition,
       createdAt
     });
@@ -125,11 +125,11 @@ export default class RecipeView {
     this.tableWrapperEl.innerHTML = renderRecipeTableTemplate(data);
   };
 
-  renderRecipe = (data) => {
-    // this.recipePageEl.innerHTML = renderRecipeHomeTemplet(data);
-    this.recipesListEl.innerHTML = renderRecipeHomeTemplate(data);
-    console.log("data", data);
-  };
+  // renderRecipe = (data) => {
+  //   // this.recipePageEl.innerHTML = renderRecipeHomeTemplet(data);
+  //   this.recipesListEl.innerHTML = renderListRecipesTemplate(data);
+  //   console.log("data", data);
+  // };
 
   deleteRecipe = (handler) => (event) => {
     const recipesId = document
@@ -160,7 +160,7 @@ export default class RecipeView {
         ratings: this.ratingEl.value,
         description: this.desEL.value,
         instruction: this.instructEL.value,
-        ingredients: this.ingredientEL.value,
+        ingredient: this.ingredientEL.value,
         nutrition: this.nutriEL.value,
         createdAt: this.createdAt.value
       });

@@ -1,6 +1,6 @@
 import UserService from "../services/user.js";
 
-import { inValidEmail, inValidUsername, inValidPassword } from "../helpers/index.js";
+import { inValidEmail, inValidUsername, inValidPassword } from "../helpers";
 
 export default class UserController {
   constructor(model, view) {
@@ -16,16 +16,15 @@ export default class UserController {
     this.view.bindCallback("closeToggle");
     this.view.bindCallback("editUser", this.handleEditUser);
     this.view.bindCallback("deleteUser", this.handleDeleteUser);
-    // this.view.bindCallback("editRecipe", this.handleEditRecipe);
-    // this.view.bindCallback("deleteRecipe", this.handleDeleteRecipe);
+    // this.view.bindCallback("editProduct", this.handleEditProduct);
+    // this.view.bindCallback("deleteProduct", this.handleDeleteProduct);
 
 
     this.urlParams = new URLSearchParams(window.location.search);
 
-
-    if (this.urlParams.get("nav") === "recipes") {
-      this.handleViewRecipes();
-      this.view.setNavigationActive("recipes");
+    if (this.urlParams.get("nav") === "products") {
+      this.handleViewProducts();
+      this.view.setNavigationActive("products");
     } else if (this.urlParams.get("nav") === "users") {
       console.log("handle user");
       await this.handleViewUsers();
@@ -33,7 +32,7 @@ export default class UserController {
     }
 
     this.view.bindCallback("displayPanel");
-    // this.view.bindCallback("addRecipe", this.handleAddRecipe);
+    // this.view.bindCallback("addProduct", this.handleAddProduct);
     this.view.bindCallback("backToggle");
   };
 
@@ -47,10 +46,10 @@ export default class UserController {
 
   //   localStorage.setItem("user",user)
   //   if (user.role === "admin") {
-  //     this.view.redirectPage("dashboard.html");
+  //     this.view.redirectPage("user-manager.html");
   //   } else if (user.role === "user") {
   //     this.view.redirectPage("index.html");
-  //     this.view.renderListRecipesTemplate;
+  //     this.view.renderProductHomeTemplate;
 
   //   } else {
   //     alert("Invalid email or password. Please try again.");
@@ -77,12 +76,12 @@ export default class UserController {
     }
   };
 
-  // handleEditRecipe = async (recipeImage, recipeName, recipeId) => {
+  // handleEditProduct = async (productImage, productName, productId) => {
   //   try {
-  //     const recipe = this.model.getRecipeById(recipeId);
-  //     await UserService.editRecipe(recipeId, { ...recipe, name: recipeName, imageURL: recipeImage });
+  //     const product = this.model.getProductById(productId);
+  //     await UserService.editProduct(productId, { ...product, name: productName, imageURL: productImage });
   //     alert("Username updated successfully!");
-  //     this.handleViewRecipes();
+  //     this.handleViewProducts();
   //   } catch (error) {
   //     alert("Failed to update user");
   //   }
@@ -99,10 +98,10 @@ export default class UserController {
     this.handleViewUsers();
   };
 
-  // handleDeleteRecipe = async (recipesId) => {
-  //   await UserService.deleteRecipe(recipeId);
+  // handleDeleteProduct = async (productId) => {
+  //   await UserService.deleteProduct(productId);
   //   alert("Delete successfully!");
-  //   this.handleViewRecipes();
+  //   this.handleViewProducts();
   // };
 
   /**
@@ -133,34 +132,34 @@ export default class UserController {
   };
 
   // /**
-  //  * The handleViewRecipes function displays the recipes list on the interface.
+  //  * The handleViewProducts function displays the product list on the interface.
   //  */
-  handleViewRecipes = async () => {
-    // const { data } = await this.getRecipes();
-    // this.model.setRecipes(data);
-    // this.view.renderTableRecipes(data);
-    // this.view.bindCallback("recipeRowClick", this.handleShowRecipeDetails);
+  handleViewProducts = async () => {
+    // const { data } = await this.getProducts();
+    // this.model.setProducts(data);
+    // this.view.renderTableProducts(data);
+    // this.view.bindCallback("productRowClick", this.handleShowProductDetails);
   };
 
-  // handleShowRecipeDetails = (recipesId) => {
-  //   const recipes = this.model.getRecipeById(recipesId);
-  //   this.view.showRecipeDetails(recipes);
+  // handleShowProductDetails = (productId) => {
+  //   const product = this.model.getProductById(productId);
+  //   this.view.showProductDetails(product);
   // };
 
-  // handleViewRecipeHome = async () => {
-  //   const { data } = await this.getRecipes();
-  //   this.model.setRecipes(data);
-  //   this.view.renderListRecipesTemplate(data);
+  // handleViewProductHome = async () => {
+  //   const { data } = await this.getProducts();
+  //   this.model.setProducts(data);
+  //   this.view.renderProductHomeTemplate(data);
   //   console.log("data-controller", data)
   // }
 
   // /**
-  //  * The getRecipes function retrieves a list of recipes from the server through UserService.
+  //  * The getProducts function retrieves a list of products from the server through UserService.
   //  *
-  //  * @returns {Promise} - A Promise containing recipe list data from the server.
+  //  * @returns {Promise} - A Promise containing product list data from the server.
   //  */
-  // getRecipes = async () => {
-  //   return await UserService.fetchRecipes();
+  // getProducts = async () => {
+  //   return await UserService.fetchProducts();
   // };
 
   // /**
@@ -242,9 +241,9 @@ export default class UserController {
   //   });
   // };
 
-  // handleAddRecipe = async ({name, image, category, creator, ratings, description, instruction, ingredient, nutrition}) => {
-  //   await UserService.createRecipe({name, image, category, creator, ratings, description, instruction, ingredient, nutrition})
-  //   this.handleViewRecipes()
+  // handleAddProduct = async ({name, image, category, creator, ratings, description, instruction, ingredient, nutrition}) => {
+  //   await UserService.createProduct({name, image, category, creator, ratings, description, instruction, ingredient, nutrition})
+  //   this.handleViewProducts()
   // }
 
 }
