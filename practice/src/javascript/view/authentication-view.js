@@ -52,9 +52,9 @@ export default class AuthenticationView {
   redirectPage = (page) => {
     window.location.replace(page);
   };
-  // showProductById = (handler) => (event) => {
-  //   const productId = event.target.closest(".table__row").dataset.id;
-  //   handler(productId);
+  // showRecipeById = (handler) => (event) => {
+  //   const recipeId = event.target.closest(".table__row").dataset.id;
+  //   handler(recipeId);
   // };
 
   /**

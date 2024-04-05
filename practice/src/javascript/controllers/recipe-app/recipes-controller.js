@@ -1,4 +1,4 @@
-import ProductService from "../../services/ProductService.js";
+import RecipeService from "../../services/recipe-service";
 
 export default class RecipesAppController {
   constructor(model, view) {
@@ -9,24 +9,24 @@ export default class RecipesAppController {
   init = async () => {
 
     this.view.bindCallback("displayPanel");
-    // this.view.bindCallback("addProduct", this.handleAddProduct);
+    // this.view.bindCallback("addRecipe", this.handleAddRecipe);
     this.view.bindCallback("backToggle");
   };
 
 
-  handleViewProductHome = async () => {
-    const { data } = await this.getProducts();
-    this.model.setProducts(data);
-    this.view.renderProductHomeTemplate(data);
+  handleViewRecipeHome = async () => {
+    const { data } = await this.getRecipes();
+    this.model.setRecipes(data);
+    this.view.renderRecipeHomeTemplate(data);
     console.log("data-controller", data);
   };
 
    /**
-   * The getProducts function retrieves a list of products from the server through UserService.
+   * The getRecipes function retrieves a list of recipes from the server through UserService.
    *
-   * @returns {Promise} - A Promise containing product list data from the server.
+   * @returns {Promise} - A Promise containing recipe list data from the server.
    */
-   getProducts = async () => {
-    return await ProductService.fetchProducts();
+   getRecipes = async () => {
+    return await RecipeService.fetchRecipes();
   };
 }

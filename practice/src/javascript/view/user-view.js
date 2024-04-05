@@ -17,17 +17,17 @@ export default class UserView {
     // Table
     this.tableWrapperEl = document.getElementById("table-wrapper");
 
-    // // Add product
-    // this.selectAddEl = document.getElementById("form-add-product");
+    // // Add recipe
+    // this.selectAddEl = document.getElementById("form-add-recipe");
     // this.nameEl = document.getElementById("input_name");
     // this.image = document.getElementById("input_image");
-    // this.desEL = document.getElementById("product-description-input");
-    // this.categoryEl = document.getElementById("product-category-input");
-    // this.creatorEl = document.getElementById("product-creator-input");
-    // this.ratingEl = document.getElementById("product-ratings-input");
-    // this.instructEL = document.getElementById("product-instruction-input");
-    // this.ingredientEL = document.getElementById("product-ingredients-input");
-    // this.nutriEL = document.getElementById("product-nutrition-input");
+    // this.desEL = document.getElementById("recipe-description-input");
+    // this.categoryEl = document.getElementById("recipe-category-input");
+    // this.creatorEl = document.getElementById("recipe-creator-input");
+    // this.ratingEl = document.getElementById("recipe-ratings-input");
+    // this.instructEL = document.getElementById("recipe-instruction-input");
+    // this.ingredientEL = document.getElementById("recipe-ingredients-input");
+    // this.nutriEL = document.getElementById("recipe-nutrition-input");
 
     // Edit users
     this.rowEl = document.querySelectorAll(".table__row");
@@ -35,7 +35,7 @@ export default class UserView {
 
     // Render recipes
     // this.recipePageEl = document.querySelector(".recipe-page");
-    // this.recipesListEl = document.querySelector(".recipes__list[data-id='product']");
+    // this.recipesListEl = document.querySelector(".recipes__list[data-id='recipe']");
     this.recipesListEl = document.querySelector(".recipes__list");
   }
 
@@ -56,17 +56,17 @@ export default class UserView {
       // case "closeToggle":
       //   bindEvent(this.selectCloseEl, "click", this.closeToggle); // Toggle icon close
       //   break;
-      // case "displayPanel":
-      //   const selectPanelEl = document.getElementById("user-body");
-      //   bindEvent(selectPanelEl, "click", this.displayPanel); // DisplayPanel
-      //   break;
+      case "displayPanel":
+        const selectPanelEl = document.getElementById("user-body");
+        bindEvent(selectPanelEl, "click", this.displayPanel); // DisplayPanel
+        break;
       // case "backToggle":
       //   const selectBackEl = document.getElementById("icon-back");
       //   bindEvent(selectBackEl, "click", this.backToggle);
       //   break;
 
-      // case "addProduct":
-      //   bindEvent(this.selectAddEl, "submit", this.addProduct(handler)); // Toggle icon products
+      // case "addRecipe":
+      //   bindEvent(this.selectAddEl, "submit", this.addRecipe(handler)); // Toggle icon recipes
       //   break;
       case "userRowClick":
         this.tBodyEl = document.querySelector(".table__body");
@@ -95,36 +95,46 @@ export default class UserView {
           this.deleteUser(handler)
         );
         break;
-      // case "productRowClick":
-      //   this.tBodyEl = document.querySelector(".table-body__product");
+      // case "recipeRowClick":
+      //   this.tBodyEl = document.querySelector(".table-body__recipe");
       //   delegate(
       //     this.tBodyEl,
       //     ".table__row",
       //     "click",
-      //     this.showProductById(handler)
+      //     this.showRecipeById(handler)
       //   );
       //   break;
-      // case "editProduct":
+      // case "editRecipe":
       //   this.sidebarDetailEl = document.getElementById("panel-details");
       //   delegate(
       //     this.sidebarDetailEl,
-      //     ".btn-edit-product",
+      //     ".btn-edit-recipe",
       //     "click",
-      //     this.editProduct(handler)
+      //     this.editRecipe(handler)
       //   );
       //   break;
-      // case "deleteProduct":
+      // case "deleteRecipe":
       //   this.sidebarDetailEl = document.getElementById("panel-details");
       //   delegate(
       //     this.sidebarDetailEl,
-      //     ".btn-delete-product",
+      //     ".btn-delete-recipe",
       //     "click",
-      //     this.deleteProduct(handler)
+      //     this.deleteRecipe(handler)
       //   );
       //   break;
       default:
         break;
     }
+  };
+  /**
+   * The displayPanel function displays or hides a panel on the user interface when a click event occurs.
+   * @param {object} event - Click event object.
+   */
+  displayPanel = (event) => {
+    event.preventDefault();
+    const detailPanel = document.getElementById("panel-details");
+    detailPanel.classList.toggle("show-panel");
+    this.bindCallback("saveUsers");
   };
 
   /**
@@ -147,22 +157,22 @@ export default class UserView {
     handler(userId);
   };
 
-  // deleteProduct = (handler) => (event) => {
-  //   const productId = document
+  // deleteRecipe = (handler) => (event) => {
+  //   const recipeId = document
   //     .querySelector(".panel__confirm")
   //     .getAttribute("data-id");
-  //   handler(productId);
+  //   handler(recipeId);
   // };
 
-  // editProduct = (handler) => (event) => {
-  //   const productImage = document.getElementById("image-input").value.trim();
-  //   const productName = document
-  //     .getElementById("product-name-input")
+  // editRecipe = (handler) => (event) => {
+  //   const recipeImage = document.getElementById("image-input").value.trim();
+  //   const recipeName = document
+  //     .getElementById("recipe-name-input")
   //     .value.trim();
-  //   const productId = document
+  //   const recipeId = document
   //     .querySelector(".panel__confirm")
   //     .getAttribute("data-id");
-  //   handler(productImage, productName, productId);
+  //   handler(recipeImage, recipeName, recipeId);
   // };
 
   // /**
@@ -268,17 +278,17 @@ export default class UserView {
   };
 
   /**
-   * The renderTableProducts function renders the product data table to the user interface.
-   * @param {Array} data - Array containing product information.
+   * The renderTableRecipes function renders the recipe data table to the user interface.
+   * @param {Array} data - Array containing recipe information.
    */
-  // renderTableProducts = (data) => {
-  //   this.tableWrapperEl.innerHTML = renderProductTableTemplate(data);
+  // renderTableRecipes = (data) => {
+  //   this.tableWrapperEl.innerHTML = renderRecipeTableTemplate(data);
   // };
 
 
-  // renderProduct = (data) => {
-  //   // this.recipePageEl.innerHTML = renderProductHomeTemplet(data);
-  //   this.recipesListEl.innerHTML = renderProductHomeTemplate(data);
+  // renderRecipe = (data) => {
+  //   // this.recipePageEl.innerHTML = renderRecipeHomeTemplet(data);
+  //   this.recipesListEl.innerHTML = renderRecipeHomeTemplate(data);
   //   console.log("data",data)
   // };
 
@@ -297,7 +307,7 @@ export default class UserView {
     this.userDetailsContainerEl.classList.add("show-panel");
   };
 
-  // showProductDetails = ({
+  // showRecipeDetails = ({
   //   id,
   //   imageUrl,
   //   name,
@@ -309,7 +319,7 @@ export default class UserView {
   //   ingredients,
   //   nutrition,
   // }) => {
-  //   this.panelEl.innerHTML = renderProductDetails({
+  //   this.panelEl.innerHTML = renderRecipeDetails({
   //     id,
   //     imageUrl,
   //     name,
@@ -333,9 +343,9 @@ export default class UserView {
     handler(userId);
   };
 
-  // showProductById = (handler) => (event) => {
-  //   const productId = event.target.closest(".table__row").dataset.id;
-  //   handler(productId);
+  // showRecipeById = (handler) => (event) => {
+  //   const recipeId = event.target.closest(".table__row").dataset.id;
+  //   handler(recipeId);
   // };
 
   /**
@@ -357,7 +367,7 @@ export default class UserView {
     };
   };
 
-  // addProduct = (handler) => {
+  // addRecipe = (handler) => {
   //   return (event) => {
   //     event.preventDefault();
   //     handler({

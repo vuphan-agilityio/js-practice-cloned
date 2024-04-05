@@ -1,6 +1,6 @@
-import AuthenticationServise from "../services/AuthenticationServise.js";
+import AuthenticationServise from "../services/authentication-servise.js";
 
-import { inValidEmail, inValidUsername, inValidPassword } from "../helpers";
+import { inValidEmail, inValidUsername, inValidPassword } from "../helpers/index.js";
 
 export default class AuthenticationController {
   constructor(model, view) {
@@ -25,10 +25,10 @@ export default class AuthenticationController {
     localStorage.setItem("user",user)
     if (user.role === "admin") {
       console.log("passss",user)
-      this.view.redirectPage("user-manager.html");
+      this.view.redirectPage("dashboard.html");
     } else if (user.role === "user") {
       this.view.redirectPage("index.html");
-      this.view.renderProductHomeTemplate;
+      this.view.renderRecipeHomeTemplate;
 
     } else {
       alert("Invalid email or password. Please try again.");

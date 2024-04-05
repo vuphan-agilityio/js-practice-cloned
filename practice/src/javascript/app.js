@@ -1,12 +1,12 @@
-import UserModel from "./models/UserModel.js";
-import UserView from "./view/UserView.js";
-import UserController from "./controllers/UserController.js";
-import ProductView from "./view/ProductView.js";
-import ProductController from "./controllers/productController.js";
-import ProductModel from "./models/ProductModel.js";
+import UserModel from "./models/user-model.js";
+import UserView from "./view/user-view.js";
+import UserController from "./controllers/user-controller.js";
+import RecipeView from "./view/recipes-view.js";
+import RecipeController from "./controllers/recipes-controller.js";
+import RecipeModel from "./models/recipes-model.js";
 import { delegate } from "./helpers/index.js";
-import AuthenticationController from "./controllers/AuthenticationController.js";
-import AuthenticationView from "./view/AuthenticationView.js";
+import AuthenticationController from "./controllers/authentication-controller.js";
+import AuthenticationView from "./view/authentication-view.js";
 import DashBoardController from "./controllers/dashbord-controller.js";
 import DashBoardView from "./view/dashboard-view.js";
 import ToggleController from "./controllers/toggle-controller.js";
@@ -24,11 +24,11 @@ window.addEventListener("load", () => {
     window.location.replace("login");
   }
   console.log("path", pathname);
-  if (pathname == "/user-manager.html") {
+  if (pathname == "/dashboard.html") {
     const userController = new UserController(new UserModel(), new UserView());
-    const recipesController = new ProductController(
-      new ProductModel(),
-      new ProductView(),
+    const recipesController = new RecipeController(
+      new RecipeModel(),
+      new RecipeView(),
       userController
     );
     const dashboardController = new DashBoardController(new DashBoardView());
@@ -51,10 +51,10 @@ window.addEventListener("load", () => {
           urlParams = new URLSearchParams(window.location.search);
           urlParams.set("nav", "users");
           break;
-        case "products":
-          document.querySelector(".navigation__item[data-id='products']").classList.add("active");
+        case "recipes":
+          document.querySelector(".navigation__item[data-id='recipes']").classList.add("active");
           urlParams = new URLSearchParams(window.location.search);
-          urlParams.set("nav", "product");
+          urlParams.set("nav", "recipe");
           break;
         default:
           break;
@@ -77,7 +77,7 @@ window.addEventListener("load", () => {
           toolEl.textContent = "User";
         } else {
           toolEl = document.querySelector(".toolbar__title");
-          toolEl.textContent = "Products";
+          toolEl.textContent = "Recipes";
         }
         console.log("userController", userController);
         switch (type) {
@@ -85,8 +85,8 @@ window.addEventListener("load", () => {
             userController.handleViewUsers();
 
             break;
-          case "products":
-            recipesController.handleViewProducts();
+          case "recipes":
+            recipesController.handleViewRecipes();
             // TODO: update button add new to enable
             break;
           default:

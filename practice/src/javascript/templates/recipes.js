@@ -148,6 +148,7 @@ const renderRecipeDetails = (data) => {
 }
 
 const renderRecipeHomeTemplate = (data) => {
+  console.log("${item.imageUrl}",data)
   return data.length ? data.map((item) => {
   return `
   <li class="recipes__food" data-id=${item.id}>

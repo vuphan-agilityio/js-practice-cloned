@@ -12,7 +12,7 @@ export default class DashBoardView {
     this.formEl = document.querySelector(".modal");
     this.isShowForm = false;
 
-    // Toggle item product
+    // Toggle item recipe
     this.navigationEl = document.querySelector(".navigation");
     // this.toolEl = document.querySelector(".toolbar__title");
     this.panelEl = document.querySelector(".panel");
@@ -37,8 +37,8 @@ export default class DashBoardView {
       //   bindEvent(selectBackEl, "click", this.backToggle);
       //   break;
 
-      // case "addProduct":
-      //   bindEvent(this.selectAddEl, "submit", this.addProduct(handler)); // Toggle icon products
+      // case "addRecipe":
+      //   bindEvent(this.selectAddEl, "submit", this.addRecipe(handler)); // Toggle icon recipes
       //   break;
 
       default:

@@ -96,10 +96,10 @@ export default class UserService {
   };
 
   // /**
-  //  * Fetch method to get product list from the server.
+  //  * Fetch method to get recipe list from the server.
   //  * @returns {Promise} - Promise resolved with the result of the fetch request.
   //  */
-  // static fetchProducts = async () => {
+  // static fetchRecipes = async () => {
   //   try {
   //     const res = await fetch(`${API.BASE_URL}${API.CREATE_PRODUCT}`);
   //     return this.handleResponse(res);
@@ -153,12 +153,12 @@ export default class UserService {
   };
 
   // /**
-  //  * Fetch method to create a new product on the server.
-  //  * @param {object} productInfo - Object containing information about the new product.
-  //  * @param {string} productInfo.name - Name of the new product.
+  //  * Fetch method to create a new recipe on the server.
+  //  * @param {object} recipeInfo - Object containing information about the new recipe.
+  //  * @param {string} recipeInfo.name - Name of the new recipe.
   //  * @returns {Promise} - Promise resolved with the result of the fetch request.
   //  */
-  // static createProduct = async ({ name, image, category, creator, ratings, description, instruction, ingredients, nutrition, createdAt}) => {
+  // static createRecipe = async ({ name, image, category, creator, ratings, description, instruction, ingredients, nutrition, createdAt}) => {
   //   return await APIHelper.createRequest(
   //     `${API.BASE_URL}${API.CREATE_PRODUCT}`,
   //     "POST",
@@ -167,9 +167,9 @@ export default class UserService {
   //   );
   // };
 
-  // static editProduct = async (productId, payload) => {
+  // static editRecipe = async (recipeId, payload) => {
   //   try {
-  //     const res = await fetch(`${API.BASE_URL}${API.CREATE_PRODUCT}/${productId}`, {
+  //     const res = await fetch(`${API.BASE_URL}${API.CREATE_PRODUCT}/${recipeId}`, {
   //       method: "PUT",
   //       headers: {
   //         "Content-Type": "application/json",
@@ -183,9 +183,9 @@ export default class UserService {
   //   }
   // };
 
-  // static deleteProduct = async (productId) => {
+  // static deleteRecipe = async (recipeId) => {
   //   try {
-  //     const res = await fetch(`${API.BASE_URL}${API.CREATE_PRODUCT}/${productId}`, {
+  //     const res = await fetch(`${API.BASE_URL}${API.CREATE_PRODUCT}/${recipeId}`, {
   //       method: "DELETE",
   //       headers: {
   //         "Content-Type": "application/json",

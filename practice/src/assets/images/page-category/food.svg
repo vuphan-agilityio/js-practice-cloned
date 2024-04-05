@@ -47,7 +47,7 @@ false,"overflowSubmenu":false,"tabsOnSpecials":true,"personalMenu":false,"mainMe
 <body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-6 ns-subject mw-editable page-File_Pictograms-nps-food_service_svg rootpage-File_Pictograms-nps-food_service_svg stable skin-minerva action-view skin--responsive mw-mf-amc-disabled mw-mf"><div id="mw-mf-viewport">
 	<div id="mw-mf-page-center">
 		<a class="mw-mf-page-center__mask" href="#"></a>
-		
+
 		<header class="header-container header-chrome">
 			<div class="minerva-header">
 				<nav class="navigation-drawer toggle-list view-border-box">
@@ -56,7 +56,7 @@ false,"overflowSubmenu":false,"tabsOnSpecials":true,"personalMenu":false,"mainMe
 	role="button"
     for="main-menu-input"id="mw-mf-main-menu-button"aria-hidden="true"data-event-name="ui.mainmenu"
     class="cdx-button cdx-button--size-large cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--icon-only cdx-button--weight-quiet toggle-list__toggle">
-    <span 
+    <span
     class="minerva-icon  minerva-icon--menu-base20"></span>
 <span></span>
 </label>
@@ -65,7 +65,7 @@ false,"overflowSubmenu":false,"tabsOnSpecials":true,"personalMenu":false,"mainMe
 	<ul id="p-navigation" class="toggle-list__list">
 			<li class="toggle-list-item ">
 				<a class="toggle-list-item__anchor " href="/wiki/Bogga_Hore"data-mw="interface">
-					<span 
+					<span
     class="minerva-icon  minerva-icon--home"></span>
 
 					<span class="toggle-list-item__label">Bogga Hore</span>
@@ -73,7 +73,7 @@ false,"overflowSubmenu":false,"tabsOnSpecials":true,"personalMenu":false,"mainMe
 			</li>
 			<li class="toggle-list-item ">
 				<a class="toggle-list-item__anchor " href="/wiki/Special:Random"data-mw="interface">
-					<span 
+					<span
     class="minerva-icon  minerva-icon--die"></span>
 
 					<span class="toggle-list-item__label">Samayn, dhacdo ama doorasho aan laga fiirsan</span>
@@ -81,7 +81,7 @@ false,"overflowSubmenu":false,"tabsOnSpecials":true,"personalMenu":false,"mainMe
 			</li>
 			<li class="toggle-list-item skin-minerva-list-item-jsonly">
 				<a class="toggle-list-item__anchor skin-minerva-list-item-jsonly" href="/wiki/Special:Nearby"data-event-name="menu.nearby"data-mw="interface">
-					<span 
+					<span
     class="minerva-icon  minerva-icon--mapPin"></span>
 
 					<span class="toggle-list-item__label">Ugu dhow</span>
@@ -91,7 +91,7 @@ false,"overflowSubmenu":false,"tabsOnSpecials":true,"personalMenu":false,"mainMe
 	<ul id="p-personal" class="toggle-list__list">
 			<li class="toggle-list-item ">
 				<a class="toggle-list-item__anchor " href="/w/index.php?title=Special:UserLogin&amp;returnto=File%3APictograms-nps-food+service.svg"data-event-name="menu.login"data-mw="interface">
-					<span 
+					<span
     class="minerva-icon  minerva-icon--logIn"></span>
 
 					<span class="toggle-list-item__label">Soo gal</span>
@@ -101,7 +101,7 @@ false,"overflowSubmenu":false,"tabsOnSpecials":true,"personalMenu":false,"mainMe
 	<ul id="pt-preferences" class="toggle-list__list">
 			<li class="toggle-list-item skin-minerva-list-item-jsonly">
 				<a class="toggle-list-item__anchor skin-minerva-list-item-jsonly" href="/w/index.php?title=Special:MobileOptions&amp;returnto=File%3APictograms-nps-food+service.svg"data-event-name="menu.settings"data-mw="interface">
-					<span 
+					<span
     class="minerva-icon  minerva-icon--settings"></span>
 
 					<span class="toggle-list-item__label">Dookhyada</span>
@@ -111,7 +111,7 @@ false,"overflowSubmenu":false,"tabsOnSpecials":true,"personalMenu":false,"mainMe
 	<ul id="p-donation" class="toggle-list__list">
 			<li class="toggle-list-item ">
 				<a class="toggle-list-item__anchor " href="//donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_so.wikipedia.org&amp;uselang=so&amp;utm_key=minerva"data-event-name="menu.donate"data-mw="interface">
-					<span 
+					<span
     class="minerva-icon  minerva-icon--heart"></span>
 
 					<span class="toggle-list-item__label">Tabarucid</span>
@@ -121,13 +121,13 @@ false,"overflowSubmenu":false,"tabsOnSpecials":true,"personalMenu":false,"mainMe
 	<ul class="hlist">
 			<li class="toggle-list-item ">
 				<a class="toggle-list-item__anchor " href="/wiki/Wikipedia:Ku_saabsan"data-mw="interface">
-					
+
 					<span class="toggle-list-item__label">Ku saabsan Wikipedia</span>
 				</a>
 			</li>
 			<li class="toggle-list-item ">
 				<a class="toggle-list-item__anchor " href="/wiki/Wikipedia:Masuul_la%27aan_guud"data-mw="interface">
-					
+
 					<span class="toggle-list-item__label">Masuul la&#039;aan</span>
 				</a>
 			</li>
@@ -142,7 +142,7 @@ false,"overflowSubmenu":false,"tabsOnSpecials":true,"personalMenu":false,"mainMe
 	style="width: 7.5em; height: 1.125em;"/>
 
 </span>
-						
+
 					</a>
 				</div>
 					<form action="/w/index.php" method="get" class="minerva-search-form">
@@ -152,16 +152,16 @@ false,"overflowSubmenu":false,"tabsOnSpecials":true,"personalMenu":false,"mainMe
 						 type="search" name="search" placeholder="Raadi" aria-label="Raadi" autocapitalize="sentences" title="Ka raadi Wikipedia [f]" accesskey="f"">
 				</div>
 				<button
-		
+
 	    id="searchIcon"
 	    class="cdx-button cdx-button--size-large cdx-button--icon-only cdx-button--weight-quiet skin-minerva-search-trigger">
-	    <span 
+	    <span
     class="minerva-icon  minerva-icon--search-base20"></span>
 <span>Raadi</span>
 	</button>
 </form>
 		<nav class="minerva-user-navigation" aria-label="User navigation">
-					
+
 				</nav>
 			</div>
 		</header>
@@ -169,7 +169,7 @@ false,"overflowSubmenu":false,"tabsOnSpecials":true,"personalMenu":false,"mainMe
 			<div class="banner-container">
 			<div id="siteNotice"></div>
 			</div>
-			
+
 			<div class="pre-content heading-holder">
 				<div class="page-heading">
 					<h1 id="firstHeading" class="firstHeading mw-first-heading">File:Pictograms-nps-food service.svg</h1>
@@ -182,7 +182,7 @@ false,"overflowSubmenu":false,"tabsOnSpecials":true,"personalMenu":false,"mainMe
 					role="button"
 				    href=""data-mw="interface"data-event-name="menu.languages"role="button"title="Luuqadda"
 				    class="cdx-button cdx-button--size-large cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--icon-only cdx-button--weight-quiet   language-selector disabled">
-				    <span 
+				    <span
     class="minerva-icon  minerva-icon--language-base20"></span>
 <span>Luuqadda</span>
 				</a>
@@ -192,7 +192,7 @@ false,"overflowSubmenu":false,"tabsOnSpecials":true,"personalMenu":false,"mainMe
 					role="button"
 				    id="ca-watch"href="/w/index.php?title=Special:UserLogin&amp;returnto=File%3APictograms-nps-food+service.svg"data-event-name="menu.watch"
 				    class="cdx-button cdx-button--size-large cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--icon-only cdx-button--weight-quiet menu__item--page-actions-watch">
-				    <span 
+				    <span
     class="minerva-icon  minerva-icon--star-base20"></span>
 <span>Waardiyey</span>
 				</a>
@@ -202,7 +202,7 @@ false,"overflowSubmenu":false,"tabsOnSpecials":true,"personalMenu":false,"mainMe
 					role="button"
 				    id="ca-create-local"href="/w/index.php?title=File:Pictograms-nps-food_service.svg&amp;action=edit"data-event-name="menu.edit"data-mw="interface"
 				    class="cdx-button cdx-button--size-large cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--icon-only cdx-button--weight-quiet edit-page menu__item--page-actions-edit">
-				    <span 
+				    <span
     class="minerva-icon  minerva-icon--edit-base20"></span>
 <span>Kudar faahfaahinta deegaanka</span>
 				</a>
@@ -224,7 +224,7 @@ Sharaxaadda ku taal boggeeda faylka ee <a class="external text" href="https://co
 </p>
 </div>
 <div id="shared-image-desc"><div class="mw-content-ltr mw-parser-output" lang="en" dir="ltr"><h2><span class="mw-headline" id="Qoraal_kooban">Qoraal kooban</span></h2>
-<div class="hproduct commons-file-information-table">
+<div class="hrecipe commons-file-information-table">
 <table class="fileinfotpl-type-information vevent mw-content-ltr" style="direction: ltr;">
 
 <tbody><tr>
@@ -276,7 +276,7 @@ Inverted and non-inverted pictograms available, see <a href="//commons.wikimedia
 
 
 </tbody></table>
-</div> 
+</div>
 <h2><span class="mw-headline" id="Laysinka">Laysinka</span></h2>
 <table class="licensetpl" style="display:none">
 <tbody><tr>
@@ -290,7 +290,7 @@ Inverted and non-inverted pictograms available, see <a href="//commons.wikimedia
 </td>
 <td><figure class="mw-halign-right" typeof="mw:File"><span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Logo_of_the_United_States_National_Park_Service.svg/52px-Logo_of_the_United_States_National_Park_Service.svg.png" decoding="async" width="52" height="68" class="mw-file-element" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Logo_of_the_United_States_National_Park_Service.svg/78px-Logo_of_the_United_States_National_Park_Service.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Logo_of_the_United_States_National_Park_Service.svg/104px-Logo_of_the_United_States_National_Park_Service.svg.png 2x" data-file-width="553" data-file-height="720"></span><figcaption></figcaption></figure>
 </td></tr></tbody></table>
-<!-- 
+<!--
 NewPP limit report
 Parsed by mw2360
 Cached time: 20240224193238
@@ -443,14 +443,14 @@ Transclusion expansion time report (%,ms,calls,template)
 </ul>
 </div><!--esi <esi:include src="/esitest-fa8a495983347898/content" /> --><noscript><img src="https://login.m.wikimedia.org/wiki/Special:CentralAutoLogin/start?type=1x1&amp;mobile=1" alt="" width="1" height="1" style="border: none; position: absolute;"></noscript>
 <div class="printfooter" data-nosnippet="">Waxaa laga keenay "<a dir="ltr" href="https://so.wikipedia.org/wiki/File:Pictograms-nps-food_service.svg">https://so.wikipedia.org/wiki/File:Pictograms-nps-food_service.svg</a>"</div></div>
-				
+
 			</div>
 			<div class="post-content" id="page-secondary-actions">
 			</div>
 		</main>
 		<footer class="mw-footer minerva-footer" role="contentinfo">
 			<div class="post-content footer-content">
-			
+
 			<div id="p-lang">
 	    <h4>Languages</h4>
 	    <section>
