@@ -33,26 +33,26 @@ export default class UserService {
     );
   };
 
-  /**
-   * User login method using email address and password on the server.
-   * @param {string} email - User's email address.
-   * @param {string} password - User's password.
-   * @returns {Promise} - Promise resolved with the result of the user login request.
-   */
-  static signIn = async (email, password) => {
-    const response = await APIHelper.createRequest(
-      `${API.BASE_URL}${API.CREATE_USER}?email=${email}&password=${password}`,
-      "GET"
-    );
+  // /**
+  //  * User login method using email address and password on the server.
+  //  * @param {string} email - User's email address.
+  //  * @param {string} password - User's password.
+  //  * @returns {Promise} - Promise resolved with the result of the user login request.
+  //  */
+  // static signIn = async (email, password) => {
+  //   const response = await APIHelper.createRequest(
+  //     `${API.BASE_URL}${API.CREATE_USER}?email=${email}&password=${password}`,
+  //     "GET"
+  //   );
 
-    const users = response.result;
-    for (var i = 0; i < users.length; i++) {
-      if (users[i].email === email && users[i].password === password) {
-        return users[i];
-      }
-    }
-    return "Signed in failed!";
-  };
+  //   const users = response.result;
+  //   for (var i = 0; i < users.length; i++) {
+  //     if (users[i].email === email && users[i].password === password) {
+  //       return users[i];
+  //     }
+  //   }
+  //   return "Signed in failed!";
+  // };
 
   /**
    * Handle API response
@@ -95,18 +95,18 @@ export default class UserService {
     }
   };
 
-  /**
-   * Fetch method to get product list from the server.
-   * @returns {Promise} - Promise resolved with the result of the fetch request.
-   */
-  static fetchProducts = async () => {
-    try {
-      const res = await fetch(`${API.BASE_URL}${API.CREATE_PRODUCT}`);
-      return this.handleResponse(res);
-    } catch (err) {
-      return this.handleError(err);
-    }
-  };
+  // /**
+  //  * Fetch method to get recipe list from the server.
+  //  * @returns {Promise} - Promise resolved with the result of the fetch request.
+  //  */
+  // static fetchRecipes = async () => {
+  //   try {
+  //     const res = await fetch(`${API.BASE_URL}${API.CREATE_PRODUCT}`);
+  //     return this.handleResponse(res);
+  //   } catch (err) {
+  //     return this.handleError(err);
+  //   }
+  // };
 
   /**
    * Fetch method to edit user information on the server.
@@ -152,49 +152,49 @@ export default class UserService {
     }
   };
 
-  /**
-   * Fetch method to create a new product on the server.
-   * @param {object} productInfo - Object containing information about the new product.
-   * @param {string} productInfo.name - Name of the new product.
-   * @returns {Promise} - Promise resolved with the result of the fetch request.
-   */
-  static createProduct = async ({ name, image, category, creator, ratings, description, instruction, ingredients, nutrition }) => {
-    return await APIHelper.createRequest(
-      `${API.BASE_URL}${API.CREATE_PRODUCT}`,
-      "POST",
-      { name, imageUrl: image ,category, creator, ratings, description, instruction, ingredients, nutrition}
+  // /**
+  //  * Fetch method to create a new recipe on the server.
+  //  * @param {object} recipeInfo - Object containing information about the new recipe.
+  //  * @param {string} recipeInfo.name - Name of the new recipe.
+  //  * @returns {Promise} - Promise resolved with the result of the fetch request.
+  //  */
+  // static createRecipe = async ({ name, image, category, creator, ratings, description, instruction, ingredients, nutrition, createdAt}) => {
+  //   return await APIHelper.createRequest(
+  //     `${API.BASE_URL}${API.CREATE_PRODUCT}`,
+  //     "POST",
+  //     { name, imageUrl: image ,category, creator, ratings, description, instruction, ingredients, nutrition, createdAt}
 
-    );
-  };
+  //   );
+  // };
 
-  static editProduct = async (productId, payload) => {
-    try {
-      const res = await fetch(`${API.BASE_URL}${API.CREATE_PRODUCT}/${productId}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
+  // static editRecipe = async (recipeId, payload) => {
+  //   try {
+  //     const res = await fetch(`${API.BASE_URL}${API.CREATE_PRODUCT}/${recipeId}`, {
+  //       method: "PUT",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(payload),
+  //     });
 
-      return this.handleResponse(res);
-    } catch (err) {
-      return this.handleError(err);
-    }
-  };
+  //     return this.handleResponse(res);
+  //   } catch (err) {
+  //     return this.handleError(err);
+  //   }
+  // };
 
-  static deleteProduct = async (productId) => {
-    try {
-      const res = await fetch(`${API.BASE_URL}${API.CREATE_PRODUCT}/${productId}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+  // static deleteRecipe = async (recipeId) => {
+  //   try {
+  //     const res = await fetch(`${API.BASE_URL}${API.CREATE_PRODUCT}/${recipeId}`, {
+  //       method: "DELETE",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     });
 
-      return this.handleResponse(res);
-    } catch (err) {
-      return this.handleError(err);
-    }
-  };
+  //     return this.handleResponse(res);
+  //   } catch (err) {
+  //     return this.handleError(err);
+  //   }
+  // };
 }

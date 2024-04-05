@@ -13,12 +13,10 @@
 
   @include tablet {
     right: auto;
-    left: auto;
   }
 
   @include desktop {
     margin-left: toRem(10);
-    margin-bottom: toRem(10);
     width: toRem(500);
     position: static;
   }
