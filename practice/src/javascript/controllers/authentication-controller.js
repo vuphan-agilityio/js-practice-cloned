@@ -33,6 +33,7 @@ export default class AuthenticationController {
       alert("Invalid email or password. Please try again.");
     }
   };
+  
   /**
    * The signUp function performs the new user registration process.
    * @param {object} userData - New user information including email, username, password, and passwordConfirm.

@@ -2,7 +2,6 @@ import { API } from "../constants/url";
 import APIHelper from "./helper";
 
 export default class AuthenticationServise {
-
   /**
    * Handle API response
    * @param {Response} res The response object from the API
@@ -23,6 +22,13 @@ export default class AuthenticationServise {
     }
   };
 
+  /**
+   * The handleError static method handles errors by returning an object with error details.
+   * @param {Error} err - The error object.
+   * @returns {object} - An object containing error details.
+   * @property {any} data - Data associated with the error (null in this case).
+   * @property {string} errMsg - Error message from the error object.
+   */
   static handleError = (err) => {
     return {
       data: null,
@@ -50,5 +56,4 @@ export default class AuthenticationServise {
     }
     return "Signed in failed!";
   };
-
 }

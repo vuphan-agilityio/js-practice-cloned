@@ -10,11 +10,9 @@ export default class ToggleView {
 
   bindCallback = (event, handler) => {
     switch (event) {
-
       case "menuToggle":
         bindEvent(this.selectEl, "click", this.menuToggle); // Toggle menu
         break;
-
       default:
         break;
     }

@@ -17,8 +17,6 @@ export default class DashBoardView {
 
   bindCallback = (event, handler) => {
     switch (event) {
-
-
       case "newToggle":
         bindEvent(this.selectNewEl, "click", this.newToggle); // Toggle button new
         break;
@@ -33,11 +31,6 @@ export default class DashBoardView {
       //   const selectBackEl = document.getElementById("icon-back");
       //   bindEvent(selectBackEl, "click", this.backToggle);
       //   break;
-
-      // case "addRecipe":
-      //   bindEvent(this.selectAddEl, "submit", this.addRecipe(handler)); // Toggle icon recipes
-      //   break;
-
       default:
         break;
     }
@@ -62,7 +55,7 @@ export default class DashBoardView {
   closeToggle = (event) => {
     event.preventDefault();
     if (this.formEl.classList.contains("show-form")) {
-    this.isShowForm = false;
+      this.isShowForm = false;
       this.formEl.classList.remove("show-form");
     } else {
       this.formEl.classList.add("show-form");
@@ -81,6 +74,7 @@ export default class DashBoardView {
       this.detailPanel.classList.add("hindder-panel");
     }
   };
+
   /**
    * The displayPanel function displays or hides a panel on the user interface when a click event occurs.
    * @param {object} event - Click event object.
