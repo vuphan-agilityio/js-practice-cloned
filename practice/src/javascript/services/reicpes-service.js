@@ -15,6 +15,13 @@ export default class RecipeService {
     }
   };
 
+  static fetchRecipeDetail = async (id) => {
+    return await APIHelper.createRequest(
+      `${API.BASE_URL}${API.CREATE_PRODUCT}?id=${id}`,
+      "GET"
+    );
+  }
+
    /**
    * Handle API response
    * @param {Response} res The response object from the API
@@ -56,7 +63,7 @@ export default class RecipeService {
     ratings,
     description,
     instruction,
-    ingredients,
+    ingredient,
     nutrition,
     createdAt,
   }) => {
@@ -65,13 +72,13 @@ export default class RecipeService {
       "POST",
       {
         name,
-        imageUrl: image,
+        imageURL: image,
         category,
         creator,
         ratings,
         description,
         instruction,
-        ingredients,
+        ingredient,
         nutrition,
         createdAt,
       }

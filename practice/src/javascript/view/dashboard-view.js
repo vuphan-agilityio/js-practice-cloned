@@ -5,12 +5,9 @@ export default class DashBoardView {
     // Toggle button new
     this.selectNewEl = document.querySelector(".btn__drawer");
     this.formEl = document.querySelector(".modal");
-    this.isShowForm = false;
 
     // Toggle icon close
     this.selectCloseEl = document.querySelector(".modal__icon");
-    this.formEl = document.querySelector(".modal");
-    this.isShowForm = false;
 
     // Toggle item recipe
     this.navigationEl = document.querySelector(".navigation");
@@ -51,7 +48,6 @@ export default class DashBoardView {
    */
   newToggle = (event) => {
     event.preventDefault();
-    console.log("show form", this.formEl);
     if (this.formEl.classList.contains("show-form")) {
       this.formEl.classList.remove("show-form");
     } else {

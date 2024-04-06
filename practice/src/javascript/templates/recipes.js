@@ -8,7 +8,7 @@ const recipeRowTemplateRecipe = (data) => {
     return `
     <tr class="table__row recipe_item" data-id=${item.id}>
       <td class="table__row__cell">
-        <img src=${item.imageUrl} width="100px" height="100px"style="border-radius: 50%;"/>
+        <img src=${item.imageURL} width="100px" height="100px"style="border-radius: 50%;"/>
       </td>
       <td class="table__row__cell">
         <p class="table__title">${item.name}</p>
@@ -29,17 +29,16 @@ const recipeRowTemplateRecipe = (data) => {
         <p class="table__title">${item.description}</p>
       </td>
       <td class="table__row__cell">
-        <p class="table__title">${item.instructions}</p>
+        <p class="table__title">${item.instruction}</p>
       </td>
       <td class="table__row__cell">
-        <p class="table__title">${item.ingredients}</p>
+        <p class="table__title">${item.ingredient}</p>
       </td>
       <td class="table__row__cell">
         <p class="table__title">${item.nutrition}</p>
       </td>
     </tr>
-  `;
-  }).join("") : "";
+  `;}).join("") : "";
 };
 
 /**
@@ -69,8 +68,8 @@ const renderRecipeTableTemplate = (data) => {
         ${recipeRowTemplateRecipe(data)}
       </tbody>
     </table>
-  `
-}
+  `;
+};
 
 const renderRecipeDetails = (data) => {
   return `
@@ -87,7 +86,7 @@ const renderRecipeDetails = (data) => {
     <forrm class="panel__edit-profile">
       <div class="panel__item">
         <label class="panel__label">Image</label>
-        <input id="image-input" type="text" class="panel__input" value=${data.imageUrl}>
+        <input id="image-input" type="text" class="panel__input" value=${data.imageURL}>
       </div>
 
       <div class="panel__item">
@@ -136,7 +135,7 @@ const renderRecipeDetails = (data) => {
 
       <div class="panel__item">
         <label class="panel__label">Ingredients</label>
-        <input id="recipe-ingredients-input" type="text" class="panel__input" value=${data.ingredients}>
+        <input id="recipe-ingredient-input" type="text" class="panel__input" value=${data.ingredient}>
       </div>
 
       <div class="panel__item">
@@ -144,23 +143,139 @@ const renderRecipeDetails = (data) => {
         <input id="recipe-nutrition-input" type="text" class="panel__input" value=${data.nutrition}>
       </div>
     </forrm>
-  `
-}
-
-const renderRecipeHomeTemplate = (data) => {
-  console.log("${item.imageUrl}",data)
-  return data.length ? data.map((item) => {
-  return `
-  <li class="recipes__food" data-id=${item.id}>
-    <article class="card">
-      <img class="card__image" src="${item.imageUrl}"
-        alt="Pictire cashew-vegan-rice" />
-      <p class="card__name recipes__name">${item.name}</p>
-    </article>
-  </li>
   `;
-}).join("") : "";
-}
+};
 
+const renderListRecipesTemplate = (data) => {
+  return data.length ? data.map((item) => {
+     return `
+      <a href="recipe.html?id=${item.id}">
+        <li class="recipes__food" data-id=${item.id}>
+          <article class="card">
+            <img class="card__image" src="${item.imageURL}"
+              alt="Pictire cashew-vegan-rice" />
+            <p class="card__name recipes__name">${item.name}</p>
+          </article>
+        </li>
+       </a>
+    `;}).join("") : "";
+};
 
-export { renderRecipeTableTemplate, renderRecipeDetails, renderRecipeHomeTemplate };
+const renderRecipeDetailTemplate = (recipeItem) => {
+  return `
+  <div class="banner__introduce recipe-pages__introduce">
+          <div class="recipe-pages__introduce-wrapper">
+            <img src="./assets/images/banner/arrows-up.svg" alt="Arrow up" />
+            <p class="recipe-pages__estimate">85% would make this again</p>
+          </div>
+          <div class="recipe-pages__introduce-wrapper">
+            <span class="recipe-pages__icon-upload recipe-pages__icon"></span>
+            <span class="recipe-pages__icon-save recipe-pages__icon"></span>
+          </div>
+        </div>
+
+        <article class="recipes-detail">
+          <h4 class="recipes-detail__title">${recipeItem.name}</h4>
+          <div class="recipes-detail__info">
+            <ul class="recipes-detail__item-info">
+              <li class="recipes-detail__user">
+                <span class="recipes-detail__icon-avata recipes-detail__icon"></span>
+                <p class="recipes-detail__name">${recipeItem.creator_id}</p>
+              </li>
+              <li class="recipes-detail__user">
+                <span class="recipes-detail__icon-date recipes-detail__icon"></span>
+                <p class="recipes-detail__name">${recipeItem.createdAt}</p>
+              </li>
+              <li class="recipes-detail__user">
+                <span class="recipes-detail__icon-comment  recipes-detail__icon"></span>
+                <p class="recipes-detail__name">25</p>
+              </li>
+            </ul>
+            <div class="card__rating">${renderRating(recipeItem.ratings)}
+            </div>
+          </div>
+          <p class="recipes-detail__desc">${recipeItem.description}</p>
+          <img class="recipes-detail__img-banner" src=${recipeItem.imageURL}
+            alt="Picture banner recipe pages" />
+        </article>
+
+        <ul class="recipe-pages__custom">
+          <li class="recipe-pages__prep-time">
+            <p class="recipe-pages__label">PREP TIME</p>
+            <P class="recipe-pages__value">15 MIN</P>
+          </li>
+          <li class="recipe-pages__prep-time">
+            <p class="recipe-pages__label">PREP TIME</p>
+            <P class="recipe-pages__value">15 MIN</P>
+            <span class="icon-edit"></span>
+          </li>
+          <li class="recipe-pages__prep-time">
+            <p class="recipe-pages__label">SERVINGS</p>
+            <P class="recipe-pages__value">4 PEOPLE
+              <span class="recipe-pages__icon-edit recipe-pages__icon"></span>
+            </P>
+          </li>
+          <li class="recipe-pages__prep-time">
+            <span class="recipe-pages__icon-print recipe-pages__icon"></span>
+          </li>
+        </ul>
+        <div class="recipe-pages__content">
+          <div class="recipe-pages__wapper">
+              ${recipeItem.ingredient}
+              ${recipeItem.nutrition}
+          </div>
+          ${recipeItem.instruction}
+        </div>
+   `;
+};
+
+const renderRating = (ratings) => {
+  let rating = "";
+  for (let i = 0; i < ratings; i++) {
+    rating += '<span class="card__rating-star"></span>';
+  }
+  return rating;
+};
+
+const renderListRecipesByCollectionTemplate = (data) => {
+  return data.length ? data.map((item) => {
+    return `
+    <a href="recipe.html?id=${item.id}">
+      <li class="delicious__item">
+        <article class="card">
+          <img class="card__image delicious__image"
+            src="${item.imageURL}"
+              alt="Picture spinach-and-cheese-pasta" />
+          <div class="card__rating">${renderRating(item.ratings)}</div>
+          <p class="card__name delicious__name-food">${item.name}</p>
+        </article>
+      </li>
+    </a>
+    `;
+    }).join("") : "";
+};
+
+const renderListRecipesBySweetTemplate = (data) => {
+  return data.length ? data.map((item) => {
+    return `
+    <a href="recipe.html?id=${item.id}">
+      <li class="delicious__item">
+        <article class="card">
+          <img class="card__image delicious__image" src="${item.imageURL}"
+           alt="Picture spinach-and-cheese-pasta" />
+          <div class="card__rating">${renderRating(item.ratings)}</div>
+          <p class="card__name delicious__name-food">${item.name}</p>
+        </article>
+      </li>
+    </a>
+    `;}).join(""): "";
+}; 
+
+export {
+  renderRecipeTableTemplate,
+  renderRecipeDetails,
+  renderListRecipesTemplate,
+  renderRecipeDetailTemplate,
+  renderListRecipesByCollectionTemplate,
+  renderListRecipesBySweetTemplate,
+};

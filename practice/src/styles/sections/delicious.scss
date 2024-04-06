@@ -15,6 +15,10 @@
   &__list {
     @include tablet {
       @include flex-row;
+      display: grid;
+      gap: toRem(20);
+      grid-template-columns: repeat(3, 1fr);
+
     }
   }
 

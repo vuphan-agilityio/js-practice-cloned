@@ -29,7 +29,6 @@ window.addEventListener("load", () => {
     const recipesController = new RecipeController(
       new RecipeModel(),
       new RecipeView(),
-      userController
     );
     const dashboardController = new DashBoardController(new DashBoardView());
     const toggleController = new ToggleController(new ToggleView());
@@ -42,7 +41,7 @@ window.addEventListener("load", () => {
       document
         .querySelector(".navigation__item.active")
         ?.classList.remove("active");
-
+      const newRecipesBtn = document.getElementById("new-recipes")
       switch (type) {
         case "users":
           document
@@ -50,11 +49,13 @@ window.addEventListener("load", () => {
             .classList.add("active");
           urlParams = new URLSearchParams(window.location.search);
           urlParams.set("nav", "users");
+          newRecipesBtn.classList.add("hide")
           break;
         case "recipes":
           document.querySelector(".navigation__item[data-id='recipes']").classList.add("active");
           urlParams = new URLSearchParams(window.location.search);
           urlParams.set("nav", "recipe");
+          newRecipesBtn.classList.remove("hide")
           break;
         default:
           break;

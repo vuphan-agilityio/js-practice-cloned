@@ -2,24 +2,26 @@ import { bindEvent, delegate } from "../helpers";
 import {
   renderRecipeTableTemplate,
   renderRecipeDetails,
-  renderRecipeHomeTemplate,
+  renderListRecipesTemplate,
 } from "../templates/recipes";
 
 export default class RecipeView {
   constructor() {
     // Add recipe
-    this.selectAddEl = document.getElementById("form-add-recipe");
+    this.selectAddEl = document.getElementById("form-add-recipes");
     this.nameEl = document.getElementById("input_name");
     this.image = document.getElementById("input_image");
-    this.desEL = document.getElementById("recipe-description-input");
-    this.categoryEl = document.getElementById("recipe-category-input");
-    this.creatorEl = document.getElementById("recipe-creator-input");
-    this.ratingEl = document.getElementById("recipe-ratings-input");
-    this.instructEL = document.getElementById("recipe-instruction-input");
-    this.ingredientEL = document.getElementById("recipe-ingredients-input");
-    this.nutriEL = document.getElementById("recipe-nutrition-input");
+    this.desEL = document.getElementById("input_description");
+    this.categoryEl = document.getElementById("input_category");
+    this.creatorEl = document.getElementById("input_creator");
+    this.ratingEl = document.getElementById("input_ratings");
+    this.instructEL = document.getElementById("input_instruction");
+    this.ingredientEL = document.getElementById("input_ingredients");
+    this.nutriEL = document.getElementById("input_nutrition");
 
     this.tableWrapperEl = document.getElementById("table-wrapper");
+    this.panelEl = document.querySelector(".panel");
+    this.userDetailsContainerEl = document.querySelector(".panel");
 
     // Render recipes
     // this.recipePageEl = document.querySelector(".recipe-page");
@@ -44,10 +46,13 @@ export default class RecipeView {
         ); // Toggle icon recipess
         break;
       case "addRecipe":
-        bindEvent(this.selectAddEl, "submit", this.addRecipe(handler)); // Toggle icon recipes
+        bindEvent(this.selectAddEl, "submit", (event) => {
+          event.preventDefault();
+          this.addRecipe(handler)
+        }); // Toggle icon recipes
         break;
-      case "recipesRowClick":
-        this.tBodyEl = document.querySelector(".table-body__recipes");
+      case "recipeRowClick":
+        this.tBodyEl = document.querySelector(".table-body__recipe");
         delegate(
           this.tBodyEl,
           ".table__row",
@@ -83,34 +88,29 @@ export default class RecipeView {
     handler(recipesId);
   };
 
-  showRecipeById = (handler) => (event) => {
-    const precipesId = event.target.closest(".table__row").dataset.id;
-    handler(recipesId);
-  };
-
   showRecipeDetails = ({
     id,
-    imageUrl,
+    imageURL,
     name,
     category,
     creator,
     ratings,
     description,
     instruction,
-    ingredients,
+    ingredient,
     nutrition,
     createdAt
   }) => {
     this.panelEl.innerHTML = renderRecipeDetails({
       id,
-      imageUrl,
+      imageURL,
       name,
       category,
       creator,
       ratings,
       description,
       instruction,
-      ingredients,
+      ingredient,
       nutrition,
       createdAt
     });
@@ -125,11 +125,11 @@ export default class RecipeView {
     this.tableWrapperEl.innerHTML = renderRecipeTableTemplate(data);
   };
 
-  renderRecipe = (data) => {
-    // this.recipePageEl.innerHTML = renderRecipeHomeTemplet(data);
-    this.recipesListEl.innerHTML = renderRecipeHomeTemplate(data);
-    console.log("data", data);
-  };
+  // renderRecipe = (data) => {
+  //   // this.recipePageEl.innerHTML = renderRecipeHomeTemplet(data);
+  //   this.recipesListEl.innerHTML = renderListRecipesTemplate(data);
+  //   console.log("data", data);
+  // };
 
   deleteRecipe = (handler) => (event) => {
     const recipesId = document
@@ -150,8 +150,6 @@ export default class RecipeView {
   };
 
   addRecipe = (handler) => {
-    return (event) => {
-      event.preventDefault();
       handler({
         name: this.nameEl.value,
         image: this.image.value,
@@ -160,10 +158,13 @@ export default class RecipeView {
         ratings: this.ratingEl.value,
         description: this.desEL.value,
         instruction: this.instructEL.value,
-        ingredients: this.ingredientEL.value,
+        ingredient: this.ingredientEL.value,
         nutrition: this.nutriEL.value,
-        createdAt: this.createdAt.value
       });
-    };
+  };
+
+  showRecipeById = (handler) => (event) => {
+    const recipeId = event.target.closest(".table__row").dataset.id;
+    handler(recipeId);
   };
 }

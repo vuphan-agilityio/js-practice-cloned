@@ -4,8 +4,10 @@
  * @returns {string} - HTML string representing rows of the users table.
  */
 const userRowTemplate = (data) => {
-  return data.length ? data.map((item) => {
-    return `
+  return data.length
+    ? data
+        .map((item) => {
+          return `
     <tr class="table__row user-row" data-id=${item.id}>
       <td class="table__row__cell">
         <p class="table__title user-name">${item.username}</p>
@@ -15,7 +17,9 @@ const userRowTemplate = (data) => {
       </td>
     </tr>
   `;
-  }).join("") : "";
+        })
+        .join("")
+    : "";
 };
 
 /**
@@ -37,7 +41,7 @@ const renderUserTableTemplate = (data) => {
         ${userRowTemplate(data)}
       </tbody>
     </table>
-  `
+  `;
 };
 
 /**
@@ -68,8 +72,8 @@ const renderUserDetails = (data) => {
         <input id="mail-input" type="text" class="panel__input" value=${data.email}>
       </div>
     </forrm>
-  `
-}
+  `;
+};
 
 /**
  * The renderUserEditor function takes an object containing information about the user and returns an HTML string representing the user's information editor.
@@ -104,8 +108,7 @@ const renderUserEditor = (data) => {
       </li>
     </ul>
   </div>
-  `
-}
+  `;
+};
 
 export { renderUserTableTemplate, renderUserDetails, renderUserEditor };
-

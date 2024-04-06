@@ -12,6 +12,10 @@ body {
 	word-wrap: break-word;
 }
 
+a {
+  text-decoration: none;
+}
+
 html {
   font-size: calc(var(--default-font-size) * 1px);
 }

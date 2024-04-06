@@ -39,8 +39,6 @@ export default class AuthenticationView {
       event.preventDefault();
       const emailEl = document.getElementById("email");
       const passwordEl = document.getElementById("password");
-      console.log("email", emailEl.value);
-      console.log("paasss", passwordEl.value);
       handler(emailEl.value, passwordEl.value);
     };
   };
@@ -52,9 +50,9 @@ export default class AuthenticationView {
   redirectPage = (page) => {
     window.location.replace(page);
   };
-  // showRecipeById = (handler) => (event) => {
-  //   const recipeId = event.target.closest(".table__row").dataset.id;
-  //   handler(recipeId);
+  // showProductById = (handler) => (event) => {
+  //   const productId = event.target.closest(".table__row").dataset.id;
+  //   handler(productId);
   // };
 
   /**
