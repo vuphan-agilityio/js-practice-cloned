@@ -50,11 +50,7 @@ export default class AuthenticationView {
   redirectPage = (page) => {
     window.location.replace(page);
   };
-  // showProductById = (handler) => (event) => {
-  //   const productId = event.target.closest(".table__row").dataset.id;
-  //   handler(productId);
-  // };
-
+ 
   /**
    * The signUp function handles the user registration event on the user interface.
    * @param {function} handler - Function to handle when the signUp event is triggered.

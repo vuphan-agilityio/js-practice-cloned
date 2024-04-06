@@ -7,13 +7,16 @@ export default class RecipeDetailController {
   }
   init = async () => {
     this.urlParams = new URLSearchParams(window.location.search);
-    console.log("urlParams", this.urlParams.get("id"));
     const { result } = await this.getRecipeDetail(this.urlParams.get("id"));
-    console.log("result: ", result[0]);
     this.view.renderRecipePageDetail(result[0]);
   };
 
+  /**
+   * The getRecipeDetail function fetches detailed information about a recipe based on its ID.
+   * @param {string} id - The ID of the recipe to fetch details for.
+   * @returns {Promise<object>} - A Promise that resolves to the detailed information of the recipe.
+   */
   getRecipeDetail = async (id) => {
     return await RecipeService.fetchRecipeDetail(id);
-  }
+  };
 }

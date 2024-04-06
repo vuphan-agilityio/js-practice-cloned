@@ -20,14 +20,14 @@ export default class RecipeService {
       `${API.BASE_URL}${API.CREATE_PRODUCT}?id=${id}`,
       "GET"
     );
-  }
+  };
 
-   /**
+  /**
    * Handle API response
    * @param {Response} res The response object from the API
    * @returns {object} An object containing the response users or error message
    */
-   static handleResponse = async (res) => {
+  static handleResponse = async (res) => {
     if (res.ok) {
       const data = await res.json();
       return {
@@ -85,6 +85,12 @@ export default class RecipeService {
     );
   };
 
+  /**
+   * The editRecipe static method updates an existing recipe with the provided payload.
+   * @param {string} recipeId - The ID of the recipe to be updated.
+   * @param {object} payload - The payload containing updated recipe details.
+   * @returns {Promise<object>} - A Promise resolving to the response object.
+   */
   static editRecipe = async (recipeId, payload) => {
     try {
       const res = await fetch(
@@ -104,6 +110,11 @@ export default class RecipeService {
     }
   };
 
+  /**
+   * The deleteRecipe static method deletes a recipe with the specified recipeId.
+   * @param {string} recipeId - The ID of the recipe to be deleted.
+   * @returns {Promise<object>} - A Promise resolving to the response object.
+   */
   static deleteRecipe = async (recipeId) => {
     try {
       const res = await fetch(

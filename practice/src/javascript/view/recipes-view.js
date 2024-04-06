@@ -22,12 +22,9 @@ export default class RecipeView {
     this.tableWrapperEl = document.getElementById("table-wrapper");
     this.panelEl = document.querySelector(".panel");
     this.userDetailsContainerEl = document.querySelector(".panel");
-
-    // Render recipes
-    // this.recipePageEl = document.querySelector(".recipe-page");
-    // this.recipesListEl = document.querySelector(".recipes__list[data-id='recipes']");
     this.recipesListEl = document.querySelector(".recipes__list");
   }
+
   bindCallback = (event, handler) => {
     switch (event) {
       case "signIn":
@@ -36,20 +33,19 @@ export default class RecipeView {
       case "signUp":
         bindEvent(this.signUpFormEl, "submit", this.signUp(handler));
         break;
-
       case "navigationItem":
         delegate(
           this.navigationEl,
           ".navigation__item",
           "click",
           this.navToggle(handler)
-        ); // Toggle icon recipess
+        );
         break;
       case "addRecipe":
         bindEvent(this.selectAddEl, "submit", (event) => {
           event.preventDefault();
-          this.addRecipe(handler)
-        }); // Toggle icon recipes
+          this.addRecipe(handler);
+        });
         break;
       case "recipeRowClick":
         this.tBodyEl = document.querySelector(".table-body__recipe");
@@ -83,6 +79,11 @@ export default class RecipeView {
     }
   };
 
+  /**
+   * The showRecipeById function extracts the ID of a recipe from a DOM element and invokes a handler function.
+   * @param {function} handler - The handler function to be invoked with the recipe ID.
+   * @param {Event} event - The event triggered by interacting with a DOM element.
+   */
   showRecipeById = (handler) => (event) => {
     const recipesId = event.target.closest(".table__row").dataset.id;
     handler(recipesId);
@@ -99,7 +100,7 @@ export default class RecipeView {
     instruction,
     ingredient,
     nutrition,
-    createdAt
+    createdAt,
   }) => {
     this.panelEl.innerHTML = renderRecipeDetails({
       id,
@@ -112,7 +113,7 @@ export default class RecipeView {
       instruction,
       ingredient,
       nutrition,
-      createdAt
+      createdAt,
     });
     this.userDetailsContainerEl.classList.add("show-panel");
   };
@@ -125,12 +126,11 @@ export default class RecipeView {
     this.tableWrapperEl.innerHTML = renderRecipeTableTemplate(data);
   };
 
-  // renderRecipe = (data) => {
-  //   // this.recipePageEl.innerHTML = renderRecipeHomeTemplet(data);
-  //   this.recipesListEl.innerHTML = renderListRecipesTemplate(data);
-  //   console.log("data", data);
-  // };
-
+  /**
+   * The deleteRecipe function extracts the ID of a recipe from a DOM element and invokes a handler function to delete the recipe.
+   * @param {function} handler - The handler function to be invoked with the recipe ID for deletion.
+   * @param {Event} event - The event triggered by interacting with a DOM element.
+   */
   deleteRecipe = (handler) => (event) => {
     const recipesId = document
       .querySelector(".panel__confirm")
@@ -138,6 +138,11 @@ export default class RecipeView {
     handler(recipesId);
   };
 
+  /**
+   * The editRecipe function extracts information from input fields and invokes a handler function to edit a recipe.
+   * @param {function} handler - The handler function to be invoked with the updated recipe information.
+   * @param {Event} event - The event triggered by interacting with a DOM element.
+   */
   editRecipe = (handler) => (event) => {
     const recipesImage = document.getElementById("image-input").value.trim();
     const recipesName = document
@@ -146,25 +151,24 @@ export default class RecipeView {
     const recipesId = document
       .querySelector(".panel__confirm")
       .getAttribute("data-id");
-    handler(recipesImage, recipesName,recipesId);
+    handler(recipesImage, recipesName, recipesId);
   };
 
+  /**
+   * The addRecipe function extracts information from input fields and invokes a handler function to add a new recipe.
+   * @param {function} handler - The handler function to be invoked with the new recipe information.
+   */
   addRecipe = (handler) => {
-      handler({
-        name: this.nameEl.value,
-        image: this.image.value,
-        category: this.categoryEl.value,
-        creator: this.creatorEl.value,
-        ratings: this.ratingEl.value,
-        description: this.desEL.value,
-        instruction: this.instructEL.value,
-        ingredient: this.ingredientEL.value,
-        nutrition: this.nutriEL.value,
-      });
-  };
-
-  showRecipeById = (handler) => (event) => {
-    const recipeId = event.target.closest(".table__row").dataset.id;
-    handler(recipeId);
+    handler({
+      name: this.nameEl.value,
+      image: this.image.value,
+      category: this.categoryEl.value,
+      creator: this.creatorEl.value,
+      ratings: this.ratingEl.value,
+      description: this.desEL.value,
+      instruction: this.instructEL.value,
+      ingredient: this.ingredientEL.value,
+      nutrition: this.nutriEL.value,
+    });
   };
 }

@@ -22,12 +22,12 @@ export default class RecipeController {
     this.view.bindCallback("recipeRowClick", this.handleShowRecipeDetails);
   };
 
-  handleViewRecipeHome = async () => {
-    const { data } = await this.getRecipes();
-    this.model.setRecipes(data);
-    this.view.renderListRecipesTemplate(data);
-    console.log("data-controller", data);
-  };
+  // handleViewRecipeHome = async () => {
+  //   const { data } = await this.getRecipes();
+  //   this.model.setRecipes(data);
+  //   this.view.renderListRecipesTemplate(data);
+  //   console.log("data-controller", data);
+  // };
 
   /**
    * The getRecipes function retrieves a list of recipes from the server through UserService.
@@ -38,18 +38,31 @@ export default class RecipeController {
     return await RecipeService.fetchRecipes();
   };
 
+  /**
+   * The handleShowRecipeDetails function displays details of a recipe.
+   * @param {string} recipeId - The ID of the recipe to display details.
+   */
   handleShowRecipeDetails = (recipeId) => {
-    console.log("recipeId", recipeId);
     const recipe = this.model.getRecipeById(recipeId);
     this.view.showRecipeDetails(recipe);
   };
 
+  /**
+   * The handleDeleteRecipe function deletes a recipe.
+   * @param {string} recipeId - The ID of the recipe to delete.
+   */
   handleDeleteRecipe = async (recipeId) => {
     await RecipeService.deleteRecipe(recipeId);
     alert("Delete successfully!");
     this.handleViewRecipes();
   };
 
+  /**
+   * The handleEditRecipe function edits a recipe.
+   * @param {string} recipeImage - The image URL of the recipe.
+   * @param {string} recipeName - The name of the recipe.
+   * @param {string} recipeId - The ID of the recipe to edit.
+   */
   handleEditRecipe = async (recipeImage, recipeName, recipeId) => {
     try {
       const recipe = this.model.getRecipeById(recipeId);
@@ -65,6 +78,20 @@ export default class RecipeController {
     }
   };
 
+  /**
+   * The handleAddRecipe function adds a new recipe.
+   * @param {object} recipeData - An object containing recipe details.
+   * @param {string} recipeData.name - The name of the recipe.
+   * @param {string} recipeData.image - The image URL of the recipe.
+   * @param {string} recipeData.category - The category of the recipe.
+   * @param {string} recipeData.creator - The creator of the recipe.
+   * @param {number} recipeData.ratings - The ratings of the recipe.
+   * @param {string} recipeData.description - The description of the recipe.
+   * @param {string} recipeData.instruction - The instruction of the recipe.
+   * @param {string} recipeData.ingredient - The ingredients of the recipe.
+   * @param {string} recipeData.nutrition - The nutrition facts of the recipe.
+   * @param {string} recipeData.createdAt - The creation date of the recipe.
+   */
   handleAddRecipe = async ({
     name,
     image,
