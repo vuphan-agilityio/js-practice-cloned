@@ -87,7 +87,6 @@ export default class RecipeController {
       instruction,
       ingredient,
       nutrition,
-      createdAt,
     });
     this.handleViewRecipes();
   };

@@ -4,39 +4,16 @@ import { renderUserTableTemplate, renderUserDetails } from "../templates/user";
 
 export default class UserView {
   constructor() {
-    // this.signInFormEl = document.getElementById("form-sign-in");
-    // this.signUpFormEl = document.getElementById("form-sign-up");
-    // this.emailEl = document.getElementById("email");
-    // // this.passwordEl = document.getElementById("password");
-    // this.userNameEl = document.getElementById("username");
-    // this.passwordConfirmEl = document.getElementById("confirmPassword");
-    // this.idUserEl = document.getElementById("id-user");
-
-
-
     // Table
     this.tableWrapperEl = document.getElementById("table-wrapper");
-
-    // // Add recipe
-    // this.selectAddEl = document.getElementById("form-add-recipe");
-    // this.nameEl = document.getElementById("input_name");
-    // this.image = document.getElementById("input_image");
-    // this.desEL = document.getElementById("recipe-description-input");
-    // this.categoryEl = document.getElementById("recipe-category-input");
-    // this.creatorEl = document.getElementById("recipe-creator-input");
-    // this.ratingEl = document.getElementById("recipe-ratings-input");
-    // this.instructEL = document.getElementById("recipe-instruction-input");
-    // this.ingredientEL = document.getElementById("recipe-ingredient-input");
-    // this.nutriEL = document.getElementById("recipe-nutrition-input");
 
     // Edit users
     this.rowEl = document.querySelectorAll(".table__row");
     this.userDetailsContainerEl = document.querySelector(".panel");
 
     // Render recipes
-    // this.recipePageEl = document.querySelector(".recipe-page");
-    // this.recipesListEl = document.querySelector(".recipes__list[data-id='recipe']");
     this.recipesListEl = document.querySelector(".recipes__list");
+    this.panelEl = document.querySelector(".panel");
   }
 
   /**

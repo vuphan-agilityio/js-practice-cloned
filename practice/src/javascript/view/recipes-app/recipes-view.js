@@ -1,27 +1,13 @@
-import { renderListRecipesTemplate } from "../../templates/recipes.js";
+import { renderListRecipesTemplate, renderListRecipesByCollectionTemplate, renderListRecipesBySweetTemplate } from "../../templates/recipes.js";
 import { bindEvent, delegate } from "../../helpers";
 
 export default class RecipesAppView {
   constructor() {
     // Render recipes
     this.recipesListEl = document.getElementById("latest-recipes");
+    this.deliciousEl = document.getElementById("delicious-recipes");
+    this.sweetEl = document.getElementById("sweet-recipes");
   }
-
-  bindCallback = (event, handler) => {
-    switch (event) {
-      case "recipeClick":
-        console.log("entered bind call back event before delegating");
-        delegate(
-          this.recipesListEl,
-          ".recipes__food",
-          "click",
-          handler
-        );
-        break;
-      default:
-        break;
-    }
-  };
 
   redirectPage = (page) => {
     window.location.replace(page);
@@ -37,7 +23,13 @@ export default class RecipesAppView {
     this.recipesListEl.innerHTML = renderListRecipesTemplate(data);
   };
 
+  renderDeliciousRecipe = (data) => {
+    this.deliciousEl.innerHTML = renderListRecipesByCollectionTemplate(data);
+  }
 
+  renderSweetRecipe = (data) => {
+    this.sweetEl.innerHTML = renderListRecipesBySweetTemplate(data)
+  }
 
   showRecipeById = (handler) => (event) => {
     const recipesId = event.target.closest(".latest-recipes").dataset.id;

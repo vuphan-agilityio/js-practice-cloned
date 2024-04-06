@@ -38,8 +38,7 @@ const recipeRowTemplateRecipe = (data) => {
         <p class="table__title">${item.nutrition}</p>
       </td>
     </tr>
-  `;
-  }).join("") : "";
+  `;}).join("") : "";
 };
 
 /**
@@ -69,8 +68,8 @@ const renderRecipeTableTemplate = (data) => {
         ${recipeRowTemplateRecipe(data)}
       </tbody>
     </table>
-  `
-}
+  `;
+};
 
 const renderRecipeDetails = (data) => {
   return `
@@ -144,25 +143,25 @@ const renderRecipeDetails = (data) => {
         <input id="recipe-nutrition-input" type="text" class="panel__input" value=${data.nutrition}>
       </div>
     </forrm>
-  `
-}
+  `;
+};
 
 const renderListRecipesTemplate = (data) => {
   return data.length ? data.map((item) => {
-  return `
-  <li class="recipes__food" data-id=${item.id}>
-    <article class="card">
-      <img class="card__image" src="${item.imageURL}"
-        alt="Pictire cashew-vegan-rice" />
-      <p class="card__name recipes__name">${item.name}</p>
-    </article>
-  </li>
-  `;
-}).join("") : "";
-}
+     return `
+      <a href="recipe.html?id=${item.id}">
+        <li class="recipes__food" data-id=${item.id}>
+          <article class="card">
+            <img class="card__image" src="${item.imageURL}"
+              alt="Pictire cashew-vegan-rice" />
+            <p class="card__name recipes__name">${item.name}</p>
+          </article>
+        </li>
+       </a>
+    `;}).join("") : "";
+};
 
 const renderRecipeDetailTemplate = (recipeItem) => {
-
   return `
   <div class="banner__introduce recipe-pages__introduce">
           <div class="recipe-pages__introduce-wrapper">
@@ -177,12 +176,11 @@ const renderRecipeDetailTemplate = (recipeItem) => {
 
         <article class="recipes-detail">
           <h4 class="recipes-detail__title">${recipeItem.name}</h4>
-
           <div class="recipes-detail__info">
             <ul class="recipes-detail__item-info">
               <li class="recipes-detail__user">
                 <span class="recipes-detail__icon-avata recipes-detail__icon"></span>
-                <p class="recipes-detail__name">${recipeItem.creator}</p>
+                <p class="recipes-detail__name">${recipeItem.creator_id}</p>
               </li>
               <li class="recipes-detail__user">
                 <span class="recipes-detail__icon-date recipes-detail__icon"></span>
@@ -193,16 +191,9 @@ const renderRecipeDetailTemplate = (recipeItem) => {
                 <p class="recipes-detail__name">25</p>
               </li>
             </ul>
-
-            <div class="card__rating">${recipeItem.ratings}
-              <span class="card__rating-star"></span>
-              <span class="card__rating-star"></span>
-              <span class="card__rating-star"></span>
-              <span class="card__rating-star"></span>
-              <span class="card__rating-star"></span>
+            <div class="card__rating">${renderRating(recipeItem.ratings)}
             </div>
           </div>
-
           <p class="recipes-detail__desc">${recipeItem.description}</p>
           <img class="recipes-detail__img-banner" src=${recipeItem.imageURL}
             alt="Picture banner recipe pages" />
@@ -228,20 +219,63 @@ const renderRecipeDetailTemplate = (recipeItem) => {
             <span class="recipe-pages__icon-print recipe-pages__icon"></span>
           </li>
         </ul>
-
         <div class="recipe-pages__content">
           <div class="recipe-pages__wapper">
-
               ${recipeItem.ingredient}
-
               ${recipeItem.nutrition}
-
-            ${recipeItem.instruction}
-
+          </div>
+          ${recipeItem.instruction}
         </div>
-  `
+   `;
+};
 
-}
+const renderRating = (ratings) => {
+  let rating = "";
+  for (let i = 0; i < ratings; i++) {
+    rating += '<span class="card__rating-star"></span>';
+  }
+  return rating;
+};
 
+const renderListRecipesByCollectionTemplate = (data) => {
+  return data.length ? data.map((item) => {
+    return `
+    <a href="recipe.html?id=${item.id}">
+      <li class="delicious__item">
+        <article class="card">
+          <img class="card__image delicious__image"
+            src="${item.imageURL}"
+              alt="Picture spinach-and-cheese-pasta" />
+          <div class="card__rating">${renderRating(item.ratings)}</div>
+          <p class="card__name delicious__name-food">${item.name}</p>
+        </article>
+      </li>
+    </a>
+    `;
+    }).join("") : "";
+};
 
-export { renderRecipeTableTemplate, renderRecipeDetails, renderListRecipesTemplate, renderRecipeDetailTemplate };
+const renderListRecipesBySweetTemplate = (data) => {
+  return data.length ? data.map((item) => {
+    return `
+    <a href="recipe.html?id=${item.id}">
+      <li class="delicious__item">
+        <article class="card">
+          <img class="card__image delicious__image" src="${item.imageURL}"
+           alt="Picture spinach-and-cheese-pasta" />
+          <div class="card__rating">${renderRating(item.ratings)}</div>
+          <p class="card__name delicious__name-food">${item.name}</p>
+        </article>
+      </li>
+    </a>
+    `;}).join(""): "";
+}; 
+
+export {
+  renderRecipeTableTemplate,
+  renderRecipeDetails,
+  renderListRecipesTemplate,
+  renderRecipeDetailTemplate,
+  renderListRecipesByCollectionTemplate,
+  renderListRecipesBySweetTemplate,
+};

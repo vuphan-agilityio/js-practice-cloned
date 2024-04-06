@@ -1,3 +1,5 @@
+import { bindEvent } from "../helpers";
+
 export default class ToggleView {
   constructor() {
     // Toggle menu
@@ -17,7 +19,6 @@ export default class ToggleView {
         break;
     }
   };
-
 
     /**
    * The menuToggle function changes the display state of the menu on the user interface when a click event occurs.

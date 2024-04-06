@@ -6,18 +6,7 @@ export default class UserModel {
     username,
     passwordRegister,
     confirmPassword,
-    name,
-
-    // description,
-    // ingredient,
-    // instruction,
-    // nutrition,
-    // creator,
-    // category,
-    // id,
-    // role,
-    // imageURL,
-    // ratings
+    name
   ) {
     this.email = email;
     this.password = password;
@@ -28,16 +17,6 @@ export default class UserModel {
     this.users = [];
     this.recipes = [];
     this.name = name;
-    // this.description = description;
-    // this.ingredient = ingredient;
-    // this.instruction = instruction;
-    // this.nutrition = nutrition;
-    // this.creator = creator;
-    // this.category = category;
-    // this.id = id;
-    // this.role = role;
-    // this.imageURL = imageURL;
-    // this.ratings = ratings;
   }
 
   /**
@@ -56,16 +35,4 @@ export default class UserModel {
   getUserById = (id) => {
     return this.users.find((user) => user.id === id);
   };
-
-  // /**
-  //  * The setRecipes function updates recipe data in the application model.
-  //  * @param {array} data - An array containing new recipe data
-  //  */
-  // setRecipes = (data) => {
-  //   this.recipes = data;
-  // };
-
-  // getRecipeById = (id) => {
-  //   return this.recipes.find((recipe) => recipe.id === id);
-  // };
 }

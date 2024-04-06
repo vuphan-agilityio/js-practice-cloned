@@ -14,6 +14,8 @@ export default class RecipeController {
     const {data} = await this.getRecipes();
     this.model.setRecipes(data);
     this.view.renderRecipe(data);
+    this.view.renderDeliciousRecipe(data.filter(item => item.collection_id === 1).slice(0,3));
+    this.view.renderSweetRecipe(data.filter(item => item.collection_id === 2).slice(0,3));
     console.log("data-controller", data);
   };
 
