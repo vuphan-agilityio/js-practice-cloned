@@ -4,7 +4,7 @@
       "email": "user1@example.com",
       "password": "password1",
       "id": "ea50",
-      "username": "user111",
+      "username": "user111222",
       "role": "admin"
     },
     {
@@ -12,13 +12,6 @@
       "password": "password1",
       "id": "7f20",
       "username": "user223344aaa",
-      "role": "user"
-    },
-    {
-      "id": "ea6f",
-      "email": "test@gmail.com",
-      "username": "anaana",
-      "password": "password1",
       "role": "user"
     },
     {
@@ -63,7 +56,7 @@
       "nutrition": "<article class=\"nutrition\"><h5 class=\"recipe-pages__ingredients\">Nutrition Facts</h5><ul><li class=\"nutrition__crust nutrition__item\"><p>Calories</p><p>350</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Fat</p><p>20g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Saturated Fat</p><p>5g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Cholesterol</p><p>80mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Sodium</p><p>800mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Carbohydrate</p><p>15g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Dietary Fiber</p><p>5g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Sugars</p><p>3g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Protein</p><p>30g</p></li></ul></article>",
       "creator_id": "Tricia Albert",
       "collection_id": 2,
-      "category_id": "Smoothies",
+      "category": "Smoothies",
       "ratings": 5,
       "createdAt": "04 April",
       "imageURL": "http://localhost:1234/caramel-strawberry-milkshake.48e6cb47.png"
@@ -77,7 +70,7 @@
       "nutrition": "<article class=\"nutrition\"><h5 class=\"recipe-pages__ingredients\">Nutrition Facts</h5><ul><li class=\"nutrition__crust nutrition__item\"><p>Calories</p><p>300</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Fat</p><p>12g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Saturated Fat</p><p>3g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Cholesterol</p><p>0mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Sodium</p><p>700mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Carbohydrate</p><p>25g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Dietary Fiber</p><p>6g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Sugars</p><p>7g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Protein</p><p>15g</p></li></ul></article>",
       "creator_id": "Jelanee Uwaezuoke",
       "collection_id": 2,
-      "category_id": "Breakfast",
+      "category": "Breakfast",
       "ratings": 4,
       "createdAt": "04 May",
       "imageURL": "http://localhost:1234/cashew-vegan-rice.24fc4212.png"
@@ -91,7 +84,7 @@
       "nutrition": "<article class=\"nutrition\"><h5 class=\"recipe-pages__ingredients\">Nutrition Facts</h5><ul><li class=\"nutrition__crust nutrition__item\"><p>Calories</p><p>280</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Fat</p><p>12g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Saturated Fat</p><p>6g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Cholesterol</p><p>25mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Sodium</p><p>500mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Carbohydrate</p><p>30g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Dietary Fiber</p><p>2g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Sugars</p><p>5g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Protein</p><p>15g</p></li></ul></article>",
       "creator_id": "Tricia Albert",
       "collection_id": 4,
-      "category_id": "Breakfast",
+      "category": "Breakfast",
       "ratings": 3,
       "createdAt": "14 May",
       "imageURL": "http://localhost:1234/smoked-salmon-salad-sandwich.63ea2613.png"
@@ -105,7 +98,7 @@
       "nutrition": "<article class=\"nutrition\"><h5 class=\"recipe-pages__ingredients\">Nutrition Facts</h5><ul><li class=\"nutrition__crust nutrition__item\"><p>Calories</p><p>320</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Fat</p><p>14g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Saturated Fat</p><p>2g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Cholesterol</p><p>0mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Sodium</p><p>420mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Carbohydrate</p><p>38g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Dietary Fiber</p><p>10g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Sugars</p><p>3g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Protein</p><p>10g</p></li></ul></article>",
       "creator_id": "MaiLin Quist",
       "collection_id": 3,
-      "category_id": "Breakfast",
+      "category": "Breakfast",
       "ratings": 4,
       "createdAt": "24 Jun",
       "imageURL": "http://localhost:1234/salmon-in-sreamy-sun-dried-tomato-sauce.166eb915.png"
@@ -119,7 +112,7 @@
       "nutrition": "<article class=\"nutrition\"><h5 class=\"recipe-pages__ingredients\">Nutrition Facts</h5><ul><li class=\"nutrition__crust nutrition__item\"><p>Calories</p><p>280</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Fat</p><p>14g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Saturated Fat</p><p>3g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Cholesterol</p><p>25mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Sodium</p><p>500mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Carbohydrate</p><p>30g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Dietary Fiber</p><p>6g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Sugars</p><p>3g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Protein</p><p>15g</p></li></ul></article>",
       "creator_id": "Henk Fortuin",
       "collection_id": 2,
-      "category_id": "Breakfast",
+      "category": "Breakfast",
       "ratings": 3,
       "createdAt": "20 Dem",
       "imageURL": "http://localhost:1234/cashew-vegan-rice.24fc4212.png"
@@ -133,7 +126,7 @@
       "nutrition": "<article class=\"nutrition\"><h5 class=\"recipe-pages__ingredients\">Nutrition Facts</h5><ul><li class=\"nutrition__crust nutrition__item\"><p>Calories</p><p>240</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Fat</p><p>10g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Saturated Fat</p><p>2g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Cholesterol</p><p>5mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Sodium</p><p>400mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Carbohydrate</p><p>30g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Dietary Fiber</p><p>8g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Sugars</p><p>5g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Protein</p><p>10g</p></li></ul></article>",
       "creator_id": "Diane Lane Lansdowne",
       "collection_id": 2,
-      "category_id": "Desserts",
+      "category": "Desserts",
       "ratings": 5,
       "createdAt": "30 May",
       "imageURL": "http://localhost:1234/chocolate-and-jar-care.33e4ef01.png"
@@ -147,7 +140,7 @@
       "nutrition": "<article class=\"nutrition\"><h5 class=\"recipe-pages__ingredients\">Nutrition Facts</h5><ul><li class=\"nutrition__crust nutrition__item\"><p>Calories</p><p>380</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Fat</p><p>20g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Saturated Fat</p><p>4g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Cholesterol</p><p>5mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Sodium</p><p>300mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Carbohydrate</p><p>40g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Dietary Fiber</p><p>5g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Sugars</p><p>3g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Protein</p><p>10g</p></li></ul></article>",
       "creator_id": "Natalya",
       "collection_id": 5,
-      "category_id": "Desserts",
+      "category": "Desserts",
       "ratings": 3,
       "createdAt": "29 Bar",
       "imageURL": "http://localhost:1234/caramel-blueberry-scones.dcbb5518.png"
@@ -161,7 +154,7 @@
       "nutrition": "<article class=\"nutrition\"><h5 class=\"recipe-pages__ingredients\">Nutrition Facts</h5><ul><li class=\"nutrition__crust nutrition__item\"><p>Calories</p><p>350</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Fat</p><p>15g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Saturated Fat</p><p>6g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Cholesterol</p><p>20mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Sodium</p><p>500mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Carbohydrate</p><p>40g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Dietary Fiber</p><p>5g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Sugars</p><p>3g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Protein</p><p>15g</p></li></ul></article>",
       "creator_id": "Jenni",
       "collection_id": 4,
-      "category_id": "Desserts",
+      "category": "Desserts",
       "ratings": 1,
       "createdAt": "26 Sep",
       "imageURL": "http://localhost:1234/blueberry-carrot-cake.8e510fff.png"
@@ -175,7 +168,7 @@
       "nutrition": "<article class=\"nutrition\"><h5 class=\"recipe-pages__ingredients\">Nutrition Facts</h5><ul><li class=\"nutrition__crust nutrition__item\"><p>Calories</p><p>420</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Fat</p><p>22g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Saturated Fat</p><p>4g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Cholesterol</p><p>0mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Sodium</p><p>500mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Carbohydrate</p><p>45g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Dietary Fiber</p><p>6g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Sugars</p><p>8g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Protein</p><p>20g</p></li></ul></article>",
       "creator_id": "MaiLin Quist",
       "collection_id": 4,
-      "category_id": "Vegan",
+      "category": "Vegan",
       "ratings": 3,
       "createdAt": "22 Oct",
       "imageURL": "http://localhost:1234/vegan-cauliflower-salad.ef5b206e.png"
@@ -189,7 +182,7 @@
       "nutrition": "<article class=\"nutrition\"><h5 class=\"recipe-pages__ingredients\">Nutrition Facts</h5><ul><li class=\"nutrition__crust nutrition__item\"><p>Calories</p><p>420</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Fat</p><p>15g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Saturated Fat</p><p>2g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Cholesterol</p><p>30mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Sodium</p><p>350mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Carbohydrate</p><p>50g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Dietary Fiber</p><p>12g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Sugars</p><p>3g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Protein</p><p>25g</p></li></ul></article>",
       "creator_id": "Tricia Albert",
       "collection_id": 3,
-      "category_id":  "Breakfast",
+      "category": "Breakfast",
       "ratings": 4,
       "createdAt": "28 May",
       "imageURL": "http://localhost:1234/roasted-red-pepper-soup.66430eda.png"
@@ -203,7 +196,7 @@
       "nutrition": "<article class=\"nutrition\"><h5 class=\"recipe-pages__ingredients\">Nutrition Facts</h5><ul><li class=\"nutrition__crust nutrition__item\"><p>Calories</p><p>180</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Fat</p><p>15g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Saturated Fat</p><p>3g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Cholesterol</p><p>10mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Sodium</p><p>250mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Carbohydrate</p><p>10g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Dietary Fiber</p><p>4g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Sugars</p><p>4g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Protein</p><p>5g</p></li></ul></article>",
       "creator_id": "MaiLin Quist",
       "collection_id": 3,
-      "category_id": "Breakfast",
+      "category": "Breakfast",
       "ratings": 3,
       "createdAt": "07 July",
       "imageURL": "http://localhost:1234/eggs-and-avocado-toast.6ea15491.png"
@@ -217,7 +210,7 @@
       "nutrition": "<article class=\"nutrition\"><h5 class=\"recipe-pages__ingredients\">Nutrition Facts</h5><ul><li class=\"nutrition__crust nutrition__item\"><p>Calories</p><p>280</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Fat</p><p>10g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Saturated Fat</p><p>2g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Cholesterol</p><p>180mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Sodium</p><p>400mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Carbohydrate</p><p>20g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Dietary Fiber</p><p>4g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Sugars</p><p>5g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Protein</p><p>25g</p></li></ul></article>",
       "creator_id": "Natalya",
       "collection_id": 4,
-      "category_id": "Pasta",
+      "category": "Pasta",
       "ratings": 2,
       "createdAt": "30 April",
       "imageURL": "http://localhost:1234/pork-shoulder-cashew-noodles.38ff0de2.png"
@@ -231,7 +224,7 @@
       "nutrition": "<article class=\"nutrition\"><h5 class=\"recipe-pages__ingredients\">Nutrition Facts</h5><ul><li class=\"nutrition__crust nutrition__item\"><p>Calories</p><p>280</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Fat</p><p>12g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Saturated Fat</p><p>5g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Cholesterol</p><p>130mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Sodium</p><p>400mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Carbohydrate</p><p>2g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Dietary Fiber</p><p>1g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Sugars</p><p>1g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Protein</p><p>40g</p></li></ul></article>",
       "creator_id": "Jenni",
       "collection_id": 3,
-      "category_id": "Pasta",
+      "category": "Pasta",
       "ratings": 4,
       "createdAt": "28 May",
       "imageURL": "http://localhost:1234/toasted-farfalle-in-pesto-sauce.9ec2b210.png"
@@ -245,7 +238,7 @@
       "nutrition": "<article class=\"nutrition\"><h5 class=\"recipe-pages__ingredients\">Nutrition Facts</h5><ul><li class=\"nutrition__crust nutrition__item\"><p>Calories</p><p>200</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Fat</p><p>1g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Saturated Fat</p><p>0g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Cholesterol</p><p>0mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Sodium</p><p>700mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Carbohydrate</p><p>35g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Dietary Fiber</p><p>15g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Sugars</p><p>7g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Protein</p><p>12g</p></li></ul></article>",
       "creator_id": "Henk Fortuin",
       "collection_id": 3,
-      "category_id": "Breakfast",
+      "category": "Breakfast",
       "ratings": 3,
       "createdAt": "11 Sep",
       "imageURL": "http://localhost:1234/cheesy-bacon-burger-sdliders.feedd8fa.png"
@@ -259,7 +252,7 @@
       "nutrition": "<article class=\"nutrition\"><h5 class=\"recipe-pages__ingredients\">Nutrition Facts</h5><ul><li class=\"nutrition__crust nutrition__item\"><p>Calories</p><p>350</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Fat</p><p>12g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Saturated Fat</p><p>2g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Cholesterol</p><p>80mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Sodium</p><p>800mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Carbohydrate</p><p>30g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Dietary Fiber</p><p>5g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Sugars</p><p>8g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Protein</p><p>30g</p></li></ul></article>",
       "creator_id": "Tricia Albert",
       "collection_id": 3,
-      "category_id": "Breakfast",
+      "category": "Breakfast",
       "ratings": 4,
       "createdAt": "04 Jun",
       "imageURL": "http://localhost:1234/Ffig-and-raisins-oatmeal.d665c3ad.png"
@@ -273,7 +266,7 @@
       "nutrition": "<article class=\"nutrition\"><h5 class=\"recipe-pages__ingredients\">Nutrition Facts</h5><ul><li class=\"nutrition__crust nutrition__item\"><p>Calories</p><p>320</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Fat</p><p>18g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Saturated Fat</p><p>7g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Cholesterol</p><p>30mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Sodium</p><p>450mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Carbohydrate</p><p>30g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Dietary Fiber</p><p>8g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Sugars</p><p>2g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Protein</p><p>15g</p></li></ul></article>",
       "creator_id": "Natalya",
       "collection_id": 4,
-      "category_id": "Desserts",
+      "category": "Desserts",
       "ratings": 2,
       "createdAt": "11 May",
       "imageURL": "http://localhost:1234/silky-smooth-panacotta.df31fe18.png"
@@ -287,7 +280,7 @@
       "nutrition": "<article class=\"nutrition\"><h5 class=\"recipe-pages__ingredients\">Nutrition Facts</h5><ul><li class=\"nutrition__crust nutrition__item\"><p>Calories</p><p>320</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Fat</p><p>15g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Saturated Fat</p><p>3g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Cholesterol</p><p>280mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Sodium</p><p>500mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Carbohydrate</p><p>30g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Dietary Fiber</p><p>6g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Sugars</p><p>4g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Protein</p><p>20g</p></li></ul></article>",
       "creator_id": "Jelanee Uwaezuoke",
       "collection_id": 3,
-      "category_id": "Desserts",
+      "category": "Desserts",
       "ratings": 3,
       "createdAt": "22 July",
       "imageURL": "http://localhost:1234/triple-decker-cranberry-cake.2c3b909f.png"
@@ -301,7 +294,7 @@
       "nutrition": "<article class=\"nutrition\"><h5 class=\"recipe-pages__ingredients\">Nutrition Facts</h5><ul><li class=\"nutrition__crust nutrition__item\"><p>Calories</p><p>280</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Fat</p><p>5g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Saturated Fat</p><p>1g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Cholesterol</p><p>0mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Sodium</p><p>600mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Carbohydrate</p><p>50g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Dietary Fiber</p><p>10g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Sugars</p><p>5g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Protein</p><p>10g</p></li></ul></article>",
       "creator_id": "Jenni",
       "collection_id": 3,
-      "category_id": "Smoothies",
+      "category": "Smoothies",
       "ratings": 2,
       "createdAt": "26 May",
       "imageURL": "http://localhost:1234/very-berry-healthy-summer-smoothie.3bf9d105.png"
@@ -315,7 +308,7 @@
       "nutrition": "<article class=\"nutrition\"><h5 class=\"recipe-pages__ingredients\">Nutrition Facts</h5><ul><li class=\"nutrition__crust nutrition__item\"><p>Calories</p><p>150</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Fat</p><p>8g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Saturated Fat</p><p>1g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Cholesterol</p><p>25mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Sodium</p><p>450mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Carbohydrate</p><p>3g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Dietary Fiber</p><p>1g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Sugars</p><p>1g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Protein</p><p>16g</p></li></ul></article>",
       "creator_id": "Henk Fortuin",
       "collection_id": 3,
-      "category_id": "Desserts",
+      "category": "Desserts",
       "ratings": 4,
       "createdAt": "22 Sep",
       "imageURL": "http://localhost:1234/crispy-orange-chips.b68941c3.png"
@@ -329,7 +322,7 @@
       "nutrition": "<article class=\"nutrition\"><h5 class=\"recipe-pages__ingredients\">Nutrition Facts</h5><ul><li class=\"nutrition__crust nutrition__item\"><p>Calories</p><p>280</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Fat</p><p>10g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Saturated Fat</p><p>1.5g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Cholesterol</p><p>0mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Sodium</p><p>300mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Carbohydrate</p><p>40g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Dietary Fiber</p><p>10g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Sugars</p><p>3g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Protein</p><p>8g</p></li></ul></article>",
       "creator_id": "Diane Lane Lansdowne",
       "collection_id": 3,
-      "category_id": "Desserts",
+      "category": "Desserts",
       "ratings": 3,
       "createdAt": "22 Oct",
       "imageURL": "http://localhost:1234/tumeric-lavendar-tea.d2fbaec9.png"
@@ -343,7 +336,7 @@
       "nutrition": "<article class=\"nutrition\"><h5 class=\"recipe-pages__ingredients\">Nutrition Facts</h5><ul><li class=\"nutrition__crust nutrition__item\"><p>Calories</p><p>280</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Fat</p><p>5g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Saturated Fat</p><p>1g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Cholesterol</p><p>0mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Sodium</p><p>600mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Carbohydrate</p><p>50g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Dietary Fiber</p><p>10g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Sugars</p><p>5g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Protein</p><p>10g</p></li></ul></article>",
       "creator_id": "Tricia Albert",
       "collection_id": 4,
-      "category_id": "Desserts",
+      "category": "Desserts",
       "ratings": 2,
       "createdAt": "10 Oct",
       "imageURL": "http://localhost:1234/blue-velvet-brownies.0eb258e7.png"
@@ -357,7 +350,7 @@
       "nutrition": "<article class=\"nutrition\"><h5 class=\"recipe-pages__ingredients\">Nutrition Facts</h5><ul><li class=\"nutrition__crust nutrition__item\"><p>Calories</p><p>150</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Fat</p><p>8g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Saturated Fat</p><p>1g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Cholesterol</p><p>25mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Sodium</p><p>450mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Carbohydrate</p><p>3g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Dietary Fiber</p><p>1g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Sugars</p><p>1g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Protein</p><p>16g</p></li></ul></article>",
       "creator_id": "Henk Fortuin",
       "collection_id": 4,
-      "category_id": "Desserts",
+      "category": "Desserts",
       "ratings": 4,
       "createdAt": "10 Sep",
       "imageURL": "http://localhost:1234/birthday-cupcakes.34bdd0b2.png"
@@ -371,7 +364,7 @@
       "nutrition": "<article class=\"nutrition\"><h5 class=\"recipe-pages__ingredients\">Nutrition Facts</h5><ul><li class=\"nutrition__crust nutrition__item\"><p>Calories</p><p>280</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Fat</p><p>10g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Saturated Fat</p><p>1.5g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Cholesterol</p><p>0mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Sodium</p><p>300mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Carbohydrate</p><p>40g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Dietary Fiber</p><p>10g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Sugars</p><p>3g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Protein</p><p>8g</p></li></ul></article>",
       "creator_id": "Jelanee Uwaezuoke",
       "collection_id": 3,
-      "category_id": "Breakfast",
+      "category": "Breakfast",
       "ratings": 4,
       "createdAt": "13 Nov",
       "imageURL": "http://localhost:1234/gourmet-fillet-in-roasted-almond-sauce.a5f070e7.png"
@@ -385,7 +378,7 @@
       "nutrition": "<article class=\"nutrition\"><h5 class=\"recipe-pages__ingredients\">Nutrition Facts</h5><ul><li class=\"nutrition__crust nutrition__item\"><p>Calories</p><p>280</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Fat</p><p>5g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Saturated Fat</p><p>1g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Cholesterol</p><p>0mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Sodium</p><p>600mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Carbohydrate</p><p>50g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Dietary Fiber</p><p>10g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Sugars</p><p>5g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Protein</p><p>10g</p></li></ul></article>",
       "creator_id": "MaiLin Quist",
       "collection_id": 3,
-      "category_id": "Desserts",
+      "category": "Desserts",
       "ratings": 2,
       "createdAt": "22 Nov",
       "imageURL": "http://localhost:1234/four-ingredient-oatmeal-pancakes.794cbf46.png"
@@ -399,7 +392,7 @@
       "nutrition": "<article class=\"nutrition\"><h5 class=\"recipe-pages__ingredients\">Nutrition Facts</h5><ul><li class=\"nutrition__crust nutrition__item\"><p>Calories</p><p>150</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Fat</p><p>8g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Saturated Fat</p><p>1g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Cholesterol</p><p>25mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Sodium</p><p>450mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Carbohydrate</p><p>3g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Dietary Fiber</p><p>1g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Sugars</p><p>1g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Protein</p><p>16g</p></li></ul></article>",
       "creator_id": "MaiLin Quist",
       "collection_id": 1,
-      "category_id": "Pasta",
+      "category": "Pasta",
       "ratings": 5,
       "createdAt": "18 Oct",
       "imageURL": "http://localhost:1234/spinach-and-cheese-pasta.ec522a1c.png"
@@ -413,7 +406,7 @@
       "nutrition": "<article class=\"nutrition\"><h5 class=\"recipe-pages__ingredients\">Nutrition Facts</h5><ul><li class=\"nutrition__crust nutrition__item\"><p>Calories</p><p>280</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Fat</p><p>10g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Saturated Fat</p><p>1.5g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Cholesterol</p><p>0mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Sodium</p><p>300mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Carbohydrate</p><p>40g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Dietary Fiber</p><p>10g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Sugars</p><p>3g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Protein</p><p>8g</p></li></ul></article>",
       "creator_id": "Tricia Albert",
       "collection_id": 1,
-      "category_id": "Desserts",
+      "category": "Desserts",
       "ratings": 5,
       "createdAt": "09 Nov",
       "imageURL": "http://localhost:1234/fancty-glazed-dounts.0bfa4c3f.png"
@@ -427,7 +420,7 @@
       "nutrition": "<article class=\"nutrition\"><h5 class=\"recipe-pages__ingredients\">Nutrition Facts</h5><ul><li class=\"nutrition__crust nutrition__item\"><p>Calories</p><p>280</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Fat</p><p>5g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Saturated Fat</p><p>1g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Cholesterol</p><p>0mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Sodium</p><p>600mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Carbohydrate</p><p>50g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Dietary Fiber</p><p>10g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Sugars</p><p>5g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Protein</p><p>10g</p></li></ul></article>",
       "creator_id": "Jelanee Uwaezuoke",
       "collection_id": 1,
-      "category_id": "Breakfast",
+      "category": "Breakfast",
       "ratings": 5,
       "createdAt": "12 Oct",
       "imageURL": "http://localhost:1234/mighty-cheesy-breakfast-burger.83f6d7f2.png"
@@ -441,7 +434,7 @@
       "nutrition": "<article class=\"nutrition\"><h5 class=\"recipe-pages__ingredients\">Nutrition Facts</h5><ul><li class=\"nutrition__crust nutrition__item\"><p>Calories</p><p>150</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Fat</p><p>8g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Saturated Fat</p><p>1g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Cholesterol</p><p>25mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Sodium</p><p>450mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Carbohydrate</p><p>3g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Dietary Fiber</p><p>1g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Sugars</p><p>1g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Protein</p><p>16g</p></li></ul></article>",
       "creator_id": "Jenni",
       "collection_id": 2,
-      "category_id": "Desserts",
+      "category": "Desserts",
       "ratings": 5,
       "createdAt": "21 Sep",
       "imageURL": "http://localhost:1234/berry-maddness-biscuts.6ccee5c3.png"
@@ -455,7 +448,7 @@
       "nutrition": "<article class=\"nutrition\"><h5 class=\"recipe-pages__ingredients\">Nutrition Facts</h5><ul><li class=\"nutrition__crust nutrition__item\"><p>Calories</p><p>280</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Fat</p><p>10g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Saturated Fat</p><p>1.5g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Cholesterol</p><p>0mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Sodium</p><p>300mg</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Carbohydrate</p><p>40g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Dietary Fiber</p><p>10g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Total Sugars</p><p>3g</p></li><li class=\"nutrition__crust nutrition__item\"><p>Protein</p><p>8g</p></li></ul></article>",
       "creator_id": "Henk Fortuin",
       "collection_id": 1,
-      "category_id": 1,
+      "category": 1,
       "ratings": 5,
       "createdAt": "27 Bar",
       "imageURL": "http://localhost:1234/gourmet-fillet-in-roasted-almond-sauce.a5f070e7.png"
@@ -465,12 +458,54 @@
       "name": "a",
       "imageURL": "http://localhost:1234/gourmet-fillet-in-roasted-almond-sauce.a5f070e7.png",
       "category": "Pasta",
-      "creator": "a",
+      "creator_id": "Henk Fortuin",
       "ratings": "1",
       "description": "a",
       "instruction": "a",
       "ingredient": "a",
       "nutrition": "a"
+    },
+    {
+      "id": "ab8c",
+      "name": "aa",
+      "imageURL": "",
+      "category": "Pizza",
+      "creator_id": "jenni",
+      "ratings": "3",
+      "description": "Yummuy",
+      "instruction": "abc",
+      "ingredient": "aa",
+      "nutrition": "bbb"
+    },
+    {
+      "id": "e0d0",
+      "name": "aa",
+      "imageURL": "",
+      "category": "Pizza",
+      "creator_id": "jenni",
+      "ratings": "3",
+      "description": "Yummuy",
+      "instruction": "abc",
+      "ingredient": "aa",
+      "nutrition": "bbb"
+    },
+    {
+      "id": "fc5d",
+      "name": "Pizza",
+      "imageURL": "http://localhost:1234/fancty-glazed-dounts.0bfa4c3f.png",
+      "category": "Vegan",
+      "creator_id": "Jennine",
+      "ratings": "4",
+      "description": "It very good"
+    },
+    {
+      "id": "31c8",
+      "name": "Fig and Raisins Oatmeal",
+      "imageURL": "http://localhost:1234/Ffig-and-raisins-oatmeal.d665c3ad.png",
+      "category": "Smoothies",
+      "creator_id": "Henk Fortuin",
+      "ratings": "4",
+      "description": "Panna Cotta. This classic Italian dessert is rich, creamy, and velvety smooth, making it a perfect ending to any meal or a delightful treat on its own."
     }
   ]
 }

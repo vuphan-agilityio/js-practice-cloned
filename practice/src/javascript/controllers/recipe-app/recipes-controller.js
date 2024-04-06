@@ -24,7 +24,6 @@ export default class RecipeController {
     this.view.renderSweetRecipe(
       data.filter((item) => item.collection_id === 2).slice(0, 3)
     );
-    console.log("data-controller", data);
   };
 
   /**

@@ -17,7 +17,7 @@ const recipeRowTemplateRecipe = (data) => {
         <p class="table__title">${item.category}</p>
       </td>
       <td class="table__row__cell">
-        <p class="table__title">${item.creator}</p>
+        <p class="table__title">${item.creator_id}</p>
       </td>
       <td class="table__row__cell">
         <p class="table__title">${item.createdAt}</p>
@@ -27,15 +27,6 @@ const recipeRowTemplateRecipe = (data) => {
       </td>
       <td class="table__row__cell">
         <p class="table__title">${item.description}</p>
-      </td>
-      <td class="table__row__cell">
-        <p class="table__title">${item.instruction}</p>
-      </td>
-      <td class="table__row__cell">
-        <p class="table__title">${item.ingredient}</p>
-      </td>
-      <td class="table__row__cell">
-        <p class="table__title">${item.nutrition}</p>
       </td>
     </tr>
   `;}).join("") : "";
@@ -58,9 +49,6 @@ const renderRecipeTableTemplate = (data) => {
           <th class="table__header__cell">createdAt</th>
           <th class="table__header__cell">Ratings</th>
           <th class="table__header__cell">Description</th>
-          <th class="table__header__cell">Instruction</th>
-          <th class="table__header__cell">Ingredients</th>
-          <th class="table__header__cell">Nutrition</th>
         </tr>
       </thead>
 
@@ -109,7 +97,7 @@ const renderRecipeDetails = (data) => {
 
       <div class="panel__item">
         <label class="panel__label">Creator</label>
-        <input id="recipe-creator-input" type="text" class="panel__input" value=${data.creator}>
+        <input id="recipe-creator_id-input" type="text" class="panel__input" value=${data.creator_id}>
       </div>
 
       <div class="panel__item">
@@ -126,21 +114,6 @@ const renderRecipeDetails = (data) => {
       <div class="panel__item">
         <label class="panel__label">Description</label>
         <input id="recipe-description-input" type="text" class="panel__input" value=${data.description}>
-      </div>
-
-      <div class="panel__item">
-        <label class="panel__label">Instruction</label>
-        <input id="recipe-instruction-input" type="text" class="panel__input" value=${data.instruction}>
-      </div>
-
-      <div class="panel__item">
-        <label class="panel__label">Ingredients</label>
-        <input id="recipe-ingredient-input" type="text" class="panel__input" value=${data.ingredient}>
-      </div>
-
-      <div class="panel__item">
-        <label class="panel__label">Nutrition</label>
-        <input id="recipe-nutrition-input" type="text" class="panel__input" value=${data.nutrition}>
       </div>
     </forrm>
   `;
@@ -269,7 +242,7 @@ const renderListRecipesBySweetTemplate = (data) => {
       </li>
     </a>
     `;}).join(""): "";
-}; 
+};
 
 export {
   renderRecipeTableTemplate,

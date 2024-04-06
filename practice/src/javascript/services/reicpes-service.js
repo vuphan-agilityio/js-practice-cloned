@@ -59,12 +59,9 @@ export default class RecipeService {
     name,
     image,
     category,
-    creator,
+    creator_id,
     ratings,
     description,
-    instruction,
-    ingredient,
-    nutrition,
     createdAt,
   }) => {
     return await APIHelper.createRequest(
@@ -74,12 +71,9 @@ export default class RecipeService {
         name,
         imageURL: image,
         category,
-        creator,
+        creator_id,
         ratings,
         description,
-        instruction,
-        ingredient,
-        nutrition,
         createdAt,
       }
     );

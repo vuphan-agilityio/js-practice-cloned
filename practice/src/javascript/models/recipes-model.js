@@ -5,7 +5,7 @@ export default class RecipeModel {
     ingredient,
     instruction,
     nutrition,
-    creator,
+    creator_id,
     category,
     id,
     role,
@@ -19,7 +19,7 @@ export default class RecipeModel {
     this.ingredient = ingredient;
     this.instruction = instruction;
     this.nutrition = nutrition;
-    this.creator = creator;
+    this.creator_id = creator_id;
     this.category = category;
     this.id = id;
     this.role = role;

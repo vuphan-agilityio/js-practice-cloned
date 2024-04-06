@@ -27,7 +27,6 @@ export default class UserController {
       this.handleViewRecipes();
       this.view.setNavigationActive("recipes");
     } else if (this.urlParams.get("nav") === "users") {
-      console.log("handle user");
       await this.handleViewUsers();
       this.view.setNavigationActive("users");
     }
@@ -173,8 +172,8 @@ export default class UserController {
   //   });
   // };
 
-  // handleAddRecipe = async ({name, image, category, creator, ratings, description, instruction, ingredient, nutrition}) => {
-  //   await UserService.createRecipe({name, image, category, creator, ratings, description, instruction, ingredient, nutrition})
+  // handleAddRecipe = async ({name, image, category, creator_id, ratings, description, instruction, ingredient, nutrition}) => {
+  //   await UserService.createRecipe({name, image, category, creator_id, ratings, description, instruction, ingredient, nutrition})
   //   this.handleViewRecipes()
   // }
 

@@ -31,7 +31,7 @@ window.addEventListener("load", () => {
       new RecipeModel(),
       new RecipeView()
     );
-    
+
     const dashboardController = new DashBoardController(new DashBoardView());
     const toggleController = new ToggleController(new ToggleView());
     userController.init();
@@ -77,7 +77,6 @@ window.addEventListener("load", () => {
           toolEl.textContent = "Recipes";
         }
 
-        console.log("userController", userController);
         switch (type) {
           case "users":
             userController.handleViewUsers();

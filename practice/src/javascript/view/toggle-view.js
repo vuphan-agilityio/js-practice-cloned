@@ -25,7 +25,6 @@ export default class ToggleView {
     menuToggle = (event) => {
       event.preventDefault();
       if (this.drawerEl.classList.contains("show")) {
-        console.log("menu", this.drawerEl)
         this.drawerEl.classList.remove("show");
       } else {
         this.drawerEl.classList.add("show");

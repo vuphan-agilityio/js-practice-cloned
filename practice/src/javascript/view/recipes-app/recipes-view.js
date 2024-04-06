@@ -3,7 +3,6 @@ import {
   renderListRecipesByCollectionTemplate,
   renderListRecipesBySweetTemplate,
 } from "../../templates/recipes.js";
-import { bindEvent, delegate } from "../../helpers";
 
 export default class RecipesAppView {
   constructor() {
@@ -45,7 +44,6 @@ export default class RecipesAppView {
   // showRecipeById = (handler) => (event) => {
   //   const recipesId = event.target.closest(".latest-recipes").dataset.id;
   //   handler(recipesId);
-  //   console.log("(recipesId)",recipesId)
   // };
 
   /**
@@ -55,7 +53,7 @@ export default class RecipesAppView {
    * @param {string} recipeDetails.imageURL - The URL of the recipe's image.
    * @param {string} recipeDetails.name - The name of the recipe.
    * @param {string} recipeDetails.category - The category of the recipe.
-   * @param {string} recipeDetails.creator - The creator of the recipe.
+   * @param {string} recipeDetails.creator_id - The creator_id of the recipe.
    * @param {number} recipeDetails.ratings - The ratings of the recipe.
    * @param {string} recipeDetails.description - The description of the recipe.
    * @param {string} recipeDetails.instruction - The instruction for preparing the recipe.
@@ -68,7 +66,7 @@ export default class RecipesAppView {
     imageURL,
     name,
     category,
-    creator,
+    creator_id,
     ratings,
     description,
     instruction,
@@ -81,7 +79,7 @@ export default class RecipesAppView {
       imageURL,
       name,
       category,
-      creator,
+      creator_id,
       ratings,
       description,
       instruction,
