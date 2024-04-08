@@ -27,12 +27,12 @@ export default class RecipeView {
 
   bindCallback = (event, handler) => {
     switch (event) {
-      case "signIn":
-        bindEvent(this.signInFormEl, "submit", this.signIn(handler));
-        break;
-      case "signUp":
-        bindEvent(this.signUpFormEl, "submit", this.signUp(handler));
-        break;
+      // case "signIn":
+      //   bindEvent(this.signInFormEl, "submit", this.signIn(handler));
+      //   break;
+      // case "signUp":
+      //   bindEvent(this.signUpFormEl, "submit", this.signUp(handler));
+      //   break;
       case "navigationItem":
         delegate(
           this.navigationEl,
@@ -60,7 +60,7 @@ export default class RecipeView {
         this.sidebarDetailEl = document.getElementById("panel-details");
         delegate(
           this.sidebarDetailEl,
-          ".btn-edit-recipes",
+          ".btn-edit-recipe",
           "click",
           this.editRecipe(handler)
         );
@@ -143,13 +143,13 @@ export default class RecipeView {
    */
   editRecipe = (handler) => (event) => {
     const recipesImage = document.getElementById("image-input").value.trim();
-    const recipesName = document.getElementById("recipes-name-input").value.trim();
+    const recipesNameInput = document.getElementById("recipe-name-input").value.trim();
     const recipesCategory = document.getElementById("recipe-category-input").value.trim();
-    const recipesCreator = document.getElementById("ecipe-creator-input").value.trim();
+    const recipesCreator = document.getElementById("recipe-creator-input").value.trim();
     const recipesRatings = document.getElementById("recipe-ratings-input").value.trim();
     const recipesDes = document.getElementById("recipe-description-input").value.trim();
     const recipesId = document.querySelector(".panel__confirm").getAttribute("data-id");
-    handler(recipesImage, recipesName, recipesId, recipesCategory, recipesCreator, recipesRatings, recipesDes);
+    handler(recipesId,recipesImage, recipesNameInput, recipesCategory, recipesCreator, recipesRatings, recipesDes);
   };
 
   /**

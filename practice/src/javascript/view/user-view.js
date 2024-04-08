@@ -48,7 +48,7 @@ export default class UserView {
         this.sidebarDetailEl = document.getElementById("panel-details");
         delegate(
           this.sidebarDetailEl,
-          ".btn-edit-user",
+          ".btn-edit",
           "click",
           this.editUser(handler)
         );

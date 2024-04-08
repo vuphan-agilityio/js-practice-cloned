@@ -58,7 +58,7 @@ const renderUserDetails = (data) => {
 
     <div class="panel__confirm" data-id=${data.id}>
       <button class="btn__delete btn__save" id="delete-user">Delete</button>
-      <button class="btn__save btn-edit-user" id="save-edit">Save</button>
+      <button class="btn__save btn-edit" id="save-edit">Save</button>
     </div>
 
     <forrm class="panel__edit-profile">

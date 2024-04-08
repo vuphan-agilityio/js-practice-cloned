@@ -56,16 +56,28 @@ export default class RecipeController {
    * @param {string} recipeName - The name of the recipe.
    * @param {string} recipeId - The ID of the recipe to edit.
    */
-  handleEditRecipe = async (recipeImage, recipeName, recipeId) => {
+  handleEditRecipe = async (
+    recipeId,
+    newrRecipeImage,
+    newRecipeName,
+    newRecipeCategory,
+    newRecipeCreator,
+    newRecipeRating,
+    newRecipeDesciption,
+  ) => {
     try {
       const recipe = this.model.getRecipeById(recipeId);
       await RecipeService.editRecipe(recipeId, {
         ...recipe,
-        name: recipeName,
-        imageURL: recipeImage,
-
+        imageURL: newrRecipeImage,
+        name: newRecipeName,
+        category: newRecipeCategory,
+        creator: newRecipeCreator,
+        ratings: newRecipeRating,
+        description: newRecipeDesciption
       });
-      alert("Username updated successfully!");
+
+      alert("Updated recipe successfully!");
       this.handleViewRecipes();
     } catch (error) {
       alert("Failed to update user");
