@@ -17,7 +17,7 @@ const recipeRowTemplateRecipe = (data) => {
         <p class="table__title">${item.category}</p>
       </td>
       <td class="table__row__cell">
-        <p class="table__title">${item.creator_id}</p>
+        <p class="table__title">${item.creator}</p>
       </td>
       <td class="table__row__cell">
         <p class="table__title">${item.createdAt}</p>
@@ -97,7 +97,7 @@ const renderRecipeDetails = (data) => {
 
       <div class="panel__item">
         <label class="panel__label">Creator</label>
-        <input id="recipe-creator_id-input" type="text" class="panel__input" value=${data.creator_id}>
+        <input id="recipe-creator-input" type="text" class="panel__input" value=${data.creator}>
       </div>
 
       <div class="panel__item">
@@ -153,7 +153,7 @@ const renderRecipeDetailTemplate = (recipeItem) => {
             <ul class="recipes-detail__item-info">
               <li class="recipes-detail__user">
                 <span class="recipes-detail__icon-avata recipes-detail__icon"></span>
-                <p class="recipes-detail__name">${recipeItem.creator_id}</p>
+                <p class="recipes-detail__name">${recipeItem.creator}</p>
               </li>
               <li class="recipes-detail__user">
                 <span class="recipes-detail__icon-date recipes-detail__icon"></span>

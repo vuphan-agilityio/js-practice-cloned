@@ -94,7 +94,7 @@ export default class RecipeView {
     imageURL,
     name,
     category,
-    creator_id,
+    creator,
     ratings,
     description,
     instruction,
@@ -107,7 +107,7 @@ export default class RecipeView {
       imageURL,
       name,
       category,
-      creator_id,
+      creator,
       ratings,
       description,
       instruction,
@@ -145,7 +145,7 @@ export default class RecipeView {
     const recipesImage = document.getElementById("image-input").value.trim();
     const recipesName = document.getElementById("recipes-name-input").value.trim();
     const recipesCategory = document.getElementById("recipe-category-input").value.trim();
-    const recipesCreator = document.getElementById("ecipe-creator_id-input").value.trim();
+    const recipesCreator = document.getElementById("ecipe-creator-input").value.trim();
     const recipesRatings = document.getElementById("recipe-ratings-input").value.trim();
     const recipesDes = document.getElementById("recipe-description-input").value.trim();
     const recipesId = document.querySelector(".panel__confirm").getAttribute("data-id");
@@ -161,7 +161,7 @@ export default class RecipeView {
       name: this.nameEl.value,
       image: this.image.value,
       category: this.categoryEl.value,
-      creator_id: this.creatorEl.value,
+      creator: this.creatorEl.value,
       ratings: this.ratingEl.value,
       description: this.desEL.value,
     });

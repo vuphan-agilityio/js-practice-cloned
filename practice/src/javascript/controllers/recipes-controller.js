@@ -46,7 +46,7 @@ export default class RecipeController {
    */
   handleDeleteRecipe = async (recipeId) => {
     await RecipeService.deleteRecipe(recipeId);
-    alert("Delete successfully!");
+    alert("Delete recipe successfully!");
     this.handleViewRecipes();
   };
 
@@ -63,7 +63,7 @@ export default class RecipeController {
         ...recipe,
         name: recipeName,
         imageURL: recipeImage,
-        
+
       });
       alert("Username updated successfully!");
       this.handleViewRecipes();
@@ -78,7 +78,7 @@ export default class RecipeController {
    * @param {string} recipeData.name - The name of the recipe.
    * @param {string} recipeData.image - The image URL of the recipe.
    * @param {string} recipeData.category - The category of the recipe.
-   * @param {string} recipeData.creator_id - The creator_id of the recipe.
+   * @param {string} recipeData.creator - The creator of the recipe.
    * @param {number} recipeData.ratings - The ratings of the recipe.
    * @param {string} recipeData.description - The description of the recipe.
    * @param {string} recipeData.instruction - The instruction of the recipe.
@@ -90,7 +90,7 @@ export default class RecipeController {
     name,
     image,
     category,
-    creator_id,
+    creator,
     ratings,
     description,
     instruction,
@@ -102,7 +102,7 @@ export default class RecipeController {
       name,
       image,
       category,
-      creator_id,
+      creator,
       ratings,
       description,
       instruction,
