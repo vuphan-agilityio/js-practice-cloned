@@ -97,15 +97,6 @@ export default class UserView {
     handler(userId);
   };
 
-  // backToggle = (event) => {
-  //   event.preventDefault();
-  //   if (this.detailPanel.classList.contains("hindder-panel")) {
-  //     this.detailPanel.classList.remove("hindder-panel");
-  //   } else {
-  //     this.detailPanel.classList.add("hindder-panel");
-  //   }
-  // };
-
   /**
    * The redirectPage function redirects the website to another page.
    * @param {string} page - URL of the page you want to redirect to.

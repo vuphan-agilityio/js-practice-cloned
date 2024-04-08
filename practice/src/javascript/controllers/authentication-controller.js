@@ -1,4 +1,4 @@
-import AuthenticationServise from "../services/authentication-servise.js";
+import AuthenticationService from "../services/authentication-service.js";
 import { inValidEmail, inValidUsername, inValidPassword } from "../helpers/index.js";
 
 export default class AuthenticationController {
@@ -18,7 +18,7 @@ export default class AuthenticationController {
    * @param password {string} - User's password.
    */
    handleSignIn = async (email, password) => {
-    const user = await AuthenticationServise.signIn(email, password);
+    const user = await AuthenticationService.signIn(email, password);
 
     localStorage.setItem("user",user)
     if (user.role === "admin") {
@@ -58,14 +58,14 @@ export default class AuthenticationController {
       return;
     }
 
-    const isExits = await AuthenticationServise.findUserByEmail(email);
+    const isExits = await AuthenticationService.findUserByEmail(email);
 
     if (isExits) {
       alert("Email is already registered.");
       return;
     }
 
-    await AuthenticationServise.createUser({
+    await AuthenticationService.createUser({
       email,
       username,
       password,
@@ -86,7 +86,7 @@ export default class AuthenticationController {
    * @returns {boolean} - Returns true if the email address already exists in the system, otherwise returns false.
    */
   findUserByEmail = async (email) => {
-    const { result } = await AuthenticationServise.findUserByEmail(email);
+    const { result } = await AuthenticationService.findUserByEmail(email);
     return !!result?.length;
   };
 
@@ -97,7 +97,7 @@ export default class AuthenticationController {
    * @returns {boolean} - Returns true if authentication is successful, false otherwise.
    */
   signIn = async (email, password) => {
-    const { result } = await AuthenticationServise.signIn(email, password);
+    const { result } = await AuthenticationService.signIn(email, password);
     return !!result?.length;
   };
 }

@@ -1,4 +1,4 @@
-import RecipeService from "../services/reicpes-service.js";
+import RecipeService from "../services/recipe-service.js";
 
 export default class RecipeController {
   constructor(model, view, userController) {
@@ -58,23 +58,23 @@ export default class RecipeController {
    */
   handleEditRecipe = async (
     recipeId,
-    newrRecipeImage,
+    newRecipeImage,
     newRecipeName,
     newRecipeCategory,
     newRecipeCreator,
     newRecipeRating,
-    newRecipeDesciption,
+    newRecipeDescription,
   ) => {
     try {
       const recipe = this.model.getRecipeById(recipeId);
       await RecipeService.editRecipe(recipeId, {
         ...recipe,
-        imageURL: newrRecipeImage,
+        imageURL: newRecipeImage,
         name: newRecipeName,
         category: newRecipeCategory,
         creator: newRecipeCreator,
         ratings: newRecipeRating,
-        description: newRecipeDesciption
+        description: newRecipeDescription
       });
 
       alert("Updated recipe successfully!");

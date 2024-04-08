@@ -83,7 +83,7 @@ const renderUserDetails = (data) => {
 const renderUserEditor = (data) => {
   return `
   <div class="sidebar__header">
-    <h2 class="sidebar__title modal__title">User infomation</h2>
+    <h2 class="sidebar__title modal__title">User information</h2>
     <span class="sidebar__status">Not active</span>
     <span class="sidebar__icon-edit drawer__user-icon"></span>
   </div>
@@ -92,7 +92,6 @@ const renderUserEditor = (data) => {
     <ul>
       <li class="sidebar__list">
         <div class="sidebar__detail">
-          <span class="sidebar__icon-email drawer__user-icon"></span>
           <p>Email:</p>
 
         </div>
@@ -101,7 +100,6 @@ const renderUserEditor = (data) => {
 
       <li class="sidebar__list">
         <div class="sidebar__detail">
-          <span class="sidebar__icon-oclock drawer__user-icon"></span>
           <p>User Name: </p>
         </div>
         <p class="sidebar__desc">${data.userName}</p>

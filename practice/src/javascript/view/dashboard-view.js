@@ -67,12 +67,12 @@ export default class DashBoardView {
    * @param {object} event - Click event object.
    */
   backToggle = (event) => {
-    event.preventDefault();
-    if (this.detailPanel.classList.contains("hindder-panel")) {
-      this.detailPanel.classList.remove("hindder-panel");
-    } else {
-      this.detailPanel.classList.add("hindder-panel");
-    }
+    // event.preventDefault();
+    // if (this.detailPanel.classList.contains("hindder-panel")) {
+    //   this.detailPanel.classList.remove("hindder-panel");
+    // } else {
+    //   this.detailPanel.classList.add("hindder-panel");
+    // }
   };
 
   /**

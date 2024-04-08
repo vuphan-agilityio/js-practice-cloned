@@ -7,7 +7,7 @@ import RecipeModel from "./models/recipes-model.js";
 import { delegate } from "./helpers/index.js";
 import AuthenticationController from "./controllers/authentication-controller.js";
 import AuthenticationView from "./view/authentication-view.js";
-import DashBoardController from "./controllers/dashbord-controller.js";
+import DashBoardController from "./controllers/dashboard-controller.js";
 import DashBoardView from "./view/dashboard-view.js";
 import ToggleController from "./controllers/toggle-controller.js";
 import ToggleView from "./view/toggle-view.js";
