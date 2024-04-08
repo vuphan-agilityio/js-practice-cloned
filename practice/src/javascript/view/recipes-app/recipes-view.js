@@ -3,7 +3,6 @@ import {
   renderListRecipesByCollectionTemplate,
   renderListRecipesBySweetTemplate,
 } from "../../templates/recipes.js";
-import { bindEvent, delegate } from "../../helpers";
 
 export default class RecipesAppView {
   constructor() {
@@ -45,7 +44,6 @@ export default class RecipesAppView {
   // showRecipeById = (handler) => (event) => {
   //   const recipesId = event.target.closest(".latest-recipes").dataset.id;
   //   handler(recipesId);
-  //   console.log("(recipesId)",recipesId)
   // };
 
   /**

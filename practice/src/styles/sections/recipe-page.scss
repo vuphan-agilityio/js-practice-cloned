@@ -114,9 +114,9 @@
     line-height: 1.2;
     margin-top: toRem(27);
     font-weight: 500;
+    margin-bottom: toRem(26);
 
     @include tablet {
-      margin-top: toRem(52);
       font-size: $fs-xxl-large;
     }
   }

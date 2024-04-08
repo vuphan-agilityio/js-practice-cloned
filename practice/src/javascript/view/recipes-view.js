@@ -132,9 +132,7 @@ export default class RecipeView {
    * @param {Event} event - The event triggered by interacting with a DOM element.
    */
   deleteRecipe = (handler) => (event) => {
-    const recipesId = document
-      .querySelector(".panel__confirm")
-      .getAttribute("data-id");
+    const recipesId = document.querySelector(".panel__confirm").getAttribute("data-id");
     handler(recipesId);
   };
 
@@ -145,13 +143,13 @@ export default class RecipeView {
    */
   editRecipe = (handler) => (event) => {
     const recipesImage = document.getElementById("image-input").value.trim();
-    const recipesName = document
-      .getElementById("recipes-name-input")
-      .value.trim();
-    const recipesId = document
-      .querySelector(".panel__confirm")
-      .getAttribute("data-id");
-    handler(recipesImage, recipesName, recipesId);
+    const recipesName = document.getElementById("recipes-name-input").value.trim();
+    const recipesCategory = document.getElementById("recipe-category-input").value.trim();
+    const recipesCreator = document.getElementById("ecipe-creator-input").value.trim();
+    const recipesRatings = document.getElementById("recipe-ratings-input").value.trim();
+    const recipesDes = document.getElementById("recipe-description-input").value.trim();
+    const recipesId = document.querySelector(".panel__confirm").getAttribute("data-id");
+    handler(recipesImage, recipesName, recipesId, recipesCategory, recipesCreator, recipesRatings, recipesDes);
   };
 
   /**
@@ -166,9 +164,6 @@ export default class RecipeView {
       creator: this.creatorEl.value,
       ratings: this.ratingEl.value,
       description: this.desEL.value,
-      instruction: this.instructEL.value,
-      ingredient: this.ingredientEL.value,
-      nutrition: this.nutriEL.value,
     });
   };
 }

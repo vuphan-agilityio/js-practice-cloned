@@ -28,15 +28,6 @@ const recipeRowTemplateRecipe = (data) => {
       <td class="table__row__cell">
         <p class="table__title">${item.description}</p>
       </td>
-      <td class="table__row__cell">
-        <p class="table__title">${item.instruction}</p>
-      </td>
-      <td class="table__row__cell">
-        <p class="table__title">${item.ingredient}</p>
-      </td>
-      <td class="table__row__cell">
-        <p class="table__title">${item.nutrition}</p>
-      </td>
     </tr>
   `;}).join("") : "";
 };
@@ -58,9 +49,6 @@ const renderRecipeTableTemplate = (data) => {
           <th class="table__header__cell">createdAt</th>
           <th class="table__header__cell">Ratings</th>
           <th class="table__header__cell">Description</th>
-          <th class="table__header__cell">Instruction</th>
-          <th class="table__header__cell">Ingredients</th>
-          <th class="table__header__cell">Nutrition</th>
         </tr>
       </thead>
 
@@ -127,21 +115,6 @@ const renderRecipeDetails = (data) => {
         <label class="panel__label">Description</label>
         <input id="recipe-description-input" type="text" class="panel__input" value=${data.description}>
       </div>
-
-      <div class="panel__item">
-        <label class="panel__label">Instruction</label>
-        <input id="recipe-instruction-input" type="text" class="panel__input" value=${data.instruction}>
-      </div>
-
-      <div class="panel__item">
-        <label class="panel__label">Ingredients</label>
-        <input id="recipe-ingredient-input" type="text" class="panel__input" value=${data.ingredient}>
-      </div>
-
-      <div class="panel__item">
-        <label class="panel__label">Nutrition</label>
-        <input id="recipe-nutrition-input" type="text" class="panel__input" value=${data.nutrition}>
-      </div>
     </forrm>
   `;
 };
@@ -180,7 +153,7 @@ const renderRecipeDetailTemplate = (recipeItem) => {
             <ul class="recipes-detail__item-info">
               <li class="recipes-detail__user">
                 <span class="recipes-detail__icon-avata recipes-detail__icon"></span>
-                <p class="recipes-detail__name">${recipeItem.creator_id}</p>
+                <p class="recipes-detail__name">${recipeItem.creator}</p>
               </li>
               <li class="recipes-detail__user">
                 <span class="recipes-detail__icon-date recipes-detail__icon"></span>
@@ -269,7 +242,7 @@ const renderListRecipesBySweetTemplate = (data) => {
       </li>
     </a>
     `;}).join(""): "";
-}; 
+};
 
 export {
   renderRecipeTableTemplate,

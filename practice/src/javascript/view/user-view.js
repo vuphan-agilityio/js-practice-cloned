@@ -93,9 +93,7 @@ export default class UserView {
  * @param {function} handler - The handler function to be invoked with the user ID.
  */
   deleteUser = (handler) => (event) => {
-    const userId = document
-      .querySelector(".panel__confirm")
-      .getAttribute("data-id");
+    const userId = document.querySelector(".panel__confirm").getAttribute("data-id");
     handler(userId);
   };
 

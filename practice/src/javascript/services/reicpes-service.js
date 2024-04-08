@@ -62,9 +62,6 @@ export default class RecipeService {
     creator,
     ratings,
     description,
-    instruction,
-    ingredient,
-    nutrition,
     createdAt,
   }) => {
     return await APIHelper.createRequest(
@@ -77,9 +74,6 @@ export default class RecipeService {
         creator,
         ratings,
         description,
-        instruction,
-        ingredient,
-        nutrition,
         createdAt,
       }
     );

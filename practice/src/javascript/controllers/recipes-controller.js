@@ -22,13 +22,6 @@ export default class RecipeController {
     this.view.bindCallback("recipeRowClick", this.handleShowRecipeDetails);
   };
 
-  // handleViewRecipeHome = async () => {
-  //   const { data } = await this.getRecipes();
-  //   this.model.setRecipes(data);
-  //   this.view.renderListRecipesTemplate(data);
-  //   console.log("data-controller", data);
-  // };
-
   /**
    * The getRecipes function retrieves a list of recipes from the server through UserService.
    *
@@ -53,7 +46,7 @@ export default class RecipeController {
    */
   handleDeleteRecipe = async (recipeId) => {
     await RecipeService.deleteRecipe(recipeId);
-    alert("Delete successfully!");
+    alert("Delete recipe successfully!");
     this.handleViewRecipes();
   };
 
@@ -70,6 +63,7 @@ export default class RecipeController {
         ...recipe,
         name: recipeName,
         imageURL: recipeImage,
+
       });
       alert("Username updated successfully!");
       this.handleViewRecipes();

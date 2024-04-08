@@ -16,46 +16,20 @@ export default class UserController {
     this.view.bindCallback("closeToggle");
     this.view.bindCallback("editUser", this.handleEditUser);
     this.view.bindCallback("deleteUser", this.handleDeleteUser);
-    // this.view.bindCallback("editRecipe", this.handleEditRecipe);
-    // this.view.bindCallback("deleteRecipe", this.handleDeleteRecipe);
-
 
     this.urlParams = new URLSearchParams(window.location.search);
-
 
     if (this.urlParams.get("nav") === "recipes") {
       this.handleViewRecipes();
       this.view.setNavigationActive("recipes");
     } else if (this.urlParams.get("nav") === "users") {
-      console.log("handle user");
       await this.handleViewUsers();
       this.view.setNavigationActive("users");
     }
 
     this.view.bindCallback("displayPanel");
-    // this.view.bindCallback("addRecipe", this.handleAddRecipe);
     this.view.bindCallback("backToggle");
   };
-
-  // /**
-  //  * Function to perform signIn during the login process.
-  //  * @param {string} email - User's email address.
-  //  * @param password {string} - User's password.
-  //  */
-  // handleSignIn = async (email, password) => {
-  //   const user = await UserService.signIn(email, password);
-
-  //   localStorage.setItem("user",user)
-  //   if (user.role === "admin") {
-  //     this.view.redirectPage("dashboard.html");
-  //   } else if (user.role === "user") {
-  //     this.view.redirectPage("index.html");
-  //     this.view.renderListRecipesTemplate;
-
-  //   } else {
-  //     alert("Invalid email or password. Please try again.");
-  //   }
-  // };
 
   /**
    * The handleEditUser function performs the process of editing user information.
@@ -77,17 +51,6 @@ export default class UserController {
     }
   };
 
-  // handleEditRecipe = async (recipeImage, recipeName, recipeId) => {
-  //   try {
-  //     const recipe = this.model.getRecipeById(recipeId);
-  //     await UserService.editRecipe(recipeId, { ...recipe, name: recipeName, imageURL: recipeImage });
-  //     alert("Username updated successfully!");
-  //     this.handleViewRecipes();
-  //   } catch (error) {
-  //     alert("Failed to update user");
-  //   }
-  // }
-
   /**
    * The handleDeleteUser function initiates the deletion of a user from the server and updates the UI accordingly.
    * @param {string} userId - The ID of the user to be deleted.
@@ -95,15 +58,9 @@ export default class UserController {
   handleDeleteUser = async (userId) => {
     const user = this.model.getUserById(userId);
     await UserService.deleteUser(userId, { ...user });
-    alert("Delete successfully!");
+    alert("Delete user successfully!");
     this.handleViewUsers();
   };
-
-  // handleDeleteRecipe = async (recipesId) => {
-  //   await UserService.deleteRecipe(recipeId);
-  //   alert("Delete successfully!");
-  //   this.handleViewRecipes();
-  // };
 
   /**
    * The handleViewUsers function displaying the list of users.
@@ -141,41 +98,4 @@ export default class UserController {
     // this.view.renderTableRecipes(data);
     // this.view.bindCallback("recipeRowClick", this.handleShowRecipeDetails);
   };
-
-
-  // /**
-  //  * The findUserByEmail function checks whether an email address exists in the system or not.
-  //  * @param {string} email - Email address to check.
-  //  * @returns {boolean} - Returns true if the email address already exists in the system, otherwise returns false.
-  //  */
-  // findUserByEmail = async (email) => {
-  //   const { result } = await UserService.findUserByEmail(email);
-  //   return !!result?.length;
-  // };
-
-  // /**
-  //  * The signIn function performs user authentication using email address and password.
-  //  * @param {string} email - User's email address.
-  //  * @param {string} password - User's password.
-  //  * @returns {boolean} - Returns true if authentication is successful, false otherwise.
-  //  */
-  // signIn = async (email, password) => {
-  //   const { result } = await UserService.signIn(email, password);
-  //   return !!result?.length;
-  // };
-
-  // createUser = async ({ email, username, password, passwordConfirm }) => {
-  //   const response = await UserService.createUser({
-  //     email,
-  //     username,
-  //     password,
-  //     passwordConfirm,
-  //   });
-  // };
-
-  // handleAddRecipe = async ({name, image, category, creator, ratings, description, instruction, ingredient, nutrition}) => {
-  //   await UserService.createRecipe({name, image, category, creator, ratings, description, instruction, ingredient, nutrition})
-  //   this.handleViewRecipes()
-  // }
-
 }

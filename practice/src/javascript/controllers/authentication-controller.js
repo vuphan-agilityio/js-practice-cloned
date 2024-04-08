@@ -1,5 +1,4 @@
 import AuthenticationServise from "../services/authentication-servise.js";
-
 import { inValidEmail, inValidUsername, inValidPassword } from "../helpers/index.js";
 
 export default class AuthenticationController {
@@ -20,11 +19,9 @@ export default class AuthenticationController {
    */
    handleSignIn = async (email, password) => {
     const user = await AuthenticationServise.signIn(email, password);
-    console.log("email", email)
 
     localStorage.setItem("user",user)
     if (user.role === "admin") {
-      console.log("passss",user)
       this.view.redirectPage("dashboard.html");
     } else if (user.role === "user") {
       this.view.redirectPage("index.html");
@@ -33,7 +30,7 @@ export default class AuthenticationController {
       alert("Invalid email or password. Please try again.");
     }
   };
-  
+
   /**
    * The signUp function performs the new user registration process.
    * @param {object} userData - New user information including email, username, password, and passwordConfirm.
