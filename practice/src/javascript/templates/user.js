@@ -57,11 +57,11 @@ const renderUserDetails = (data) => {
     </div>
 
     <div class="panel__confirm" data-id=${data.id}>
-      <button class="btn__delete btn__save" id="delete-user">Delete</button>
+      <button class="btn__delete btn__save btn-delete-user" id="delete-user">Delete</button>
       <button class="btn__save btn-edit" id="save-edit">Save</button>
     </div>
 
-    <forrm class="panel__edit-profile">
+    <form class="panel__edit-profile">
       <div class="panel__item">
         <label class="panel__label">Full Name</label>
         <input id="name-input" type="text" class="panel__input" value=${data.username}>
@@ -71,7 +71,7 @@ const renderUserDetails = (data) => {
         <label class="panel__label">Email</label>
         <input id="mail-input" type="text" class="panel__input" value=${data.email}>
       </div>
-    </forrm>
+    </form>
   `;
 };
 

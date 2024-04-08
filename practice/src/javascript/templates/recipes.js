@@ -71,7 +71,7 @@ const renderRecipeDetails = (data) => {
       <button class="btn__save btn-edit-recipe" id="save-edit">Save</button>
     </div>
 
-    <forrm class="panel__edit-profile">
+    <form class="panel__edit-profile">
       <div class="panel__item">
         <label class="panel__label">Image</label>
         <input id="image-input" type="text" class="panel__input" value=${data.imageURL}>
@@ -115,7 +115,7 @@ const renderRecipeDetails = (data) => {
         <label class="panel__label">Description</label>
         <input id="recipe-description-input" type="text" class="panel__input" value=${data.description}>
       </div>
-    </forrm>
+    </form>
   `;
 };
 

@@ -41,9 +41,6 @@
       "password": "password1",
       "id": "71db",
       "role": "user"
-    },
-    {
-      "id": "7853"
     }
   ],
   "recipes": [
@@ -508,25 +505,7 @@
       "description": "Panna Cotta. This classic Italian dessert is rich, creamy, and velvety smooth, making it a perfect ending to any meal or a delightful treat on its own."
     },
     {
-      "id": "8ee3",
-      "name": "",
-      "imageURL": "",
-      "category": "",
-      "creator": "",
-      "ratings": "1",
-      "description": ""
-    },
-    {
       "id": "f020",
-      "name": "",
-      "imageURL": "",
-      "category": "",
-      "creator": "",
-      "ratings": "1",
-      "description": ""
-    },
-    {
-      "id": "4b02",
       "name": "",
       "imageURL": "",
       "category": "",
