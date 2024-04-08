@@ -39,7 +39,7 @@ export default class RecipeModel {
   /**
    * The getRecipeById function retrieves a recipes from the application model based on its ID.
    * @param {string} id - The ID of the recipes to retrieve
-   * @returns {object|undefined} - Therecipes object if found, or undefined if not found
+   * @returns {object|undefined} - The recipes object if found, or undefined if not found
    */
   getRecipeById = (id) => {
     return this.recipes.find((recipes) => recipes.id === id);

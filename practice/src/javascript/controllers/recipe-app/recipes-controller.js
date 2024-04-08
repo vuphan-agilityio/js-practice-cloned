@@ -1,4 +1,4 @@
-import RecipeService from "../../services/reicpes-service.js";
+import RecipeService from "../../services/recipe-service.js";
 
 export default class RecipeController {
   constructor(model, view) {

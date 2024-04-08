@@ -2,10 +2,8 @@ import { bindEvent } from "../helpers";
 
 export default class ToggleView {
   constructor() {
-    // Toggle menu
   this.selectEl = document.querySelector(".navbar-user__icon-menu");
   this.drawerEl = document.querySelector(".drawer");
-  this.isShowDrawer = false;
   }
 
   bindCallback = (event, handler) => {

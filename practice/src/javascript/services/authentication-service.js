@@ -1,7 +1,7 @@
 import { API } from "../constants/url";
 import APIHelper from "./helper";
 
-export default class AuthenticationServise {
+export default class AuthenticationService {
   /**
    * Handle API response
    * @param {Response} res The response object from the API

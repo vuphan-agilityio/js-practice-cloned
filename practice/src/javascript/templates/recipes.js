@@ -126,7 +126,7 @@ const renderListRecipesTemplate = (data) => {
         <li class="recipes__food" data-id=${item.id}>
           <article class="card">
             <img class="card__image" src="${item.imageURL}"
-              alt="Pictire cashew-vegan-rice" />
+              alt="Picture cashew-vegan-rice" />
             <p class="card__name recipes__name">${item.name}</p>
           </article>
         </li>
