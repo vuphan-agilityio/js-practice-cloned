@@ -27,12 +27,6 @@ export default class RecipeView {
 
   bindCallback = (event, handler) => {
     switch (event) {
-      // case "signIn":
-      //   bindEvent(this.signInFormEl, "submit", this.signIn(handler));
-      //   break;
-      // case "signUp":
-      //   bindEvent(this.signUpFormEl, "submit", this.signUp(handler));
-      //   break;
       case "navigationItem":
         delegate(
           this.navigationEl,
@@ -42,10 +36,7 @@ export default class RecipeView {
         );
         break;
       case "addRecipe":
-        bindEvent(this.selectAddEl, "submit", (event) => {
-          event.preventDefault();
-          this.addRecipe(handler);
-        });
+        bindEvent(this.selectAddEl, "submit", this.addRecipe(handler));
         break;
       case "recipeRowClick":
         this.tBodyEl = document.querySelector(".table-body__recipe");
@@ -156,7 +147,8 @@ export default class RecipeView {
    * The addRecipe function extracts information from input fields and invokes a handler function to add a new recipe.
    * @param {function} handler - The handler function to be invoked with the new recipe information.
    */
-  addRecipe = (handler) => {
+  addRecipe = (handler) => (event) =>  {
+    event.preventDefault();
     handler({
       name: this.nameEl.value,
       image: this.image.value,
@@ -165,5 +157,7 @@ export default class RecipeView {
       ratings: this.ratingEl.value,
       description: this.desEL.value,
     });
+    this.selectAddEl.classList.add("show-form");
+     alert("Recipe added successfully!");
   };
 }
