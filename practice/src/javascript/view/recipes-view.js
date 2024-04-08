@@ -60,7 +60,7 @@ export default class RecipeView {
         this.sidebarDetailEl = document.getElementById("panel-details");
         delegate(
           this.sidebarDetailEl,
-          ".btn-delete-recipes",
+          ".btn-delete-recipe",
           "click",
           this.deleteRecipe(handler)
         );

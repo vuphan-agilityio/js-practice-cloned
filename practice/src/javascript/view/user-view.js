@@ -57,7 +57,7 @@ export default class UserView {
         this.sidebarDetailEl = document.getElementById("panel-details");
         delegate(
           this.sidebarDetailEl,
-          ".btn__delete",
+          ".btn-delete-user",
           "click",
           this.deleteUser(handler)
         );
