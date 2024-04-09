@@ -56,7 +56,7 @@
       "category": "Smoothies",
       "ratings": 5,
       "createdAt": "04 April",
-      "imageURL": "http://localhost:1234/caramel-strawberry-milkshake.48e6cb47.png"
+      "imageURL": "/caramel-strawberry-milkshake.48e6cb47.png"
     },
     {
       "id": "2",
@@ -70,7 +70,7 @@
       "category": "Breakfast",
       "ratings": 4,
       "createdAt": "04 May",
-      "imageURL": "http://localhost:1234/cashew-vegan-rice.24fc4212.png"
+      "imageURL": "/cashew-vegan-rice.24fc4212.png"
     },
     {
       "id": "3",
@@ -84,7 +84,7 @@
       "category": "Breakfast",
       "ratings": 3,
       "createdAt": "14 May",
-      "imageURL": "http://localhost:1234/smoked-salmon-salad-sandwich.63ea2613.png"
+      "imageURL": "/smoked-salmon-salad-sandwich.63ea2613.png"
     },
     {
       "id": "4",
@@ -98,7 +98,7 @@
       "category": "Breakfast",
       "ratings": 4,
       "createdAt": "24 Jun",
-      "imageURL": "http://localhost:1234/salmon-in-sreamy-sun-dried-tomato-sauce.166eb915.png"
+      "imageURL": "/salmon-in-sreamy-sun-dried-tomato-sauce.166eb915.png"
     },
     {
       "id": "5",
@@ -112,7 +112,7 @@
       "category": "Breakfast",
       "ratings": 3,
       "createdAt": "20 Dem",
-      "imageURL": "http://localhost:1234/cashew-vegan-rice.24fc4212.png"
+      "imageURL": "/cashew-vegan-rice.24fc4212.png"
     },
     {
       "id": "6",
@@ -126,7 +126,7 @@
       "category": "Desserts",
       "ratings": 5,
       "createdAt": "30 May",
-      "imageURL": "http://localhost:1234/chocolate-and-jar-care.33e4ef01.png"
+      "imageURL": "/chocolate-and-jar-care.33e4ef01.png"
     },
     {
       "id": "7",
@@ -140,7 +140,7 @@
       "category": "Desserts",
       "ratings": 3,
       "createdAt": "29 Bar",
-      "imageURL": "http://localhost:1234/caramel-blueberry-scones.dcbb5518.png"
+      "imageURL": "/caramel-blueberry-scones.dcbb5518.png"
     },
     {
       "id": "8",
@@ -154,7 +154,7 @@
       "category": "Desserts",
       "ratings": 1,
       "createdAt": "26 Sep",
-      "imageURL": "http://localhost:1234/blueberry-carrot-cake.8e510fff.png"
+      "imageURL": "/blueberry-carrot-cake.8e510fff.png"
     },
     {
       "id": "9",
@@ -168,7 +168,7 @@
       "category": "Vegan",
       "ratings": 3,
       "createdAt": "22 Oct",
-      "imageURL": "http://localhost:1234/vegan-cauliflower-salad.ef5b206e.png"
+      "imageURL": "/vegan-cauliflower-salad.ef5b206e.png"
     },
     {
       "id": "10",
@@ -182,7 +182,7 @@
       "category": "Breakfast",
       "ratings": 4,
       "createdAt": "28 May",
-      "imageURL": "http://localhost:1234/roasted-red-pepper-soup.66430eda.png"
+      "imageURL": "/roasted-red-pepper-soup.66430eda.png"
     },
     {
       "id": "11",
@@ -196,7 +196,7 @@
       "category": "Breakfast",
       "ratings": 3,
       "createdAt": "07 July",
-      "imageURL": "http://localhost:1234/eggs-and-avocado-toast.6ea15491.png"
+      "imageURL": "/eggs-and-avocado-toast.6ea15491.png"
     },
     {
       "id": "12",
@@ -210,7 +210,7 @@
       "category": "Pasta",
       "ratings": 2,
       "createdAt": "30 April",
-      "imageURL": "http://localhost:1234/pork-shoulder-cashew-noodles.38ff0de2.png"
+      "imageURL": "/pork-shoulder-cashew-noodles.38ff0de2.png"
     },
     {
       "id": "13",
@@ -224,7 +224,7 @@
       "category": "Pasta",
       "ratings": 4,
       "createdAt": "28 May",
-      "imageURL": "http://localhost:1234/toasted-farfalle-in-pesto-sauce.9ec2b210.png"
+      "imageURL": "/toasted-farfalle-in-pesto-sauce.9ec2b210.png"
     },
     {
       "id": "14",
@@ -238,7 +238,7 @@
       "category": "Breakfast",
       "ratings": 3,
       "createdAt": "11 Sep",
-      "imageURL": "http://localhost:1234/cheesy-bacon-burger-sdliders.feedd8fa.png"
+      "imageURL": "/cheesy-bacon-burger-sdliders.feedd8fa.png"
     },
     {
       "id": "15",
@@ -252,7 +252,7 @@
       "category": "Breakfast",
       "ratings": 4,
       "createdAt": "04 Jun",
-      "imageURL": "http://localhost:1234/Ffig-and-raisins-oatmeal.d665c3ad.png"
+      "imageURL": "/Ffig-and-raisins-oatmeal.d665c3ad.png"
     },
     {
       "id": "16",
@@ -266,7 +266,7 @@
       "category": "Desserts",
       "ratings": 2,
       "createdAt": "11 May",
-      "imageURL": "http://localhost:1234/silky-smooth-panacotta.df31fe18.png"
+      "imageURL": "/silky-smooth-panacotta.df31fe18.png"
     },
     {
       "id": "17",
@@ -280,7 +280,7 @@
       "category": "Desserts",
       "ratings": 3,
       "createdAt": "22 July",
-      "imageURL": "http://localhost:1234/triple-decker-cranberry-cake.2c3b909f.png"
+      "imageURL": "/triple-decker-cranberry-cake.2c3b909f.png"
     },
     {
       "id": "18",
@@ -294,7 +294,7 @@
       "category": "Smoothies",
       "ratings": 2,
       "createdAt": "26 May",
-      "imageURL": "http://localhost:1234/very-berry-healthy-summer-smoothie.3bf9d105.png"
+      "imageURL": "/very-berry-healthy-summer-smoothie.3bf9d105.png"
     },
     {
       "id": "19",
@@ -308,7 +308,7 @@
       "category": "Desserts",
       "ratings": 4,
       "createdAt": "22 Sep",
-      "imageURL": "http://localhost:1234/crispy-orange-chips.b68941c3.png"
+      "imageURL": "/crispy-orange-chips.b68941c3.png"
     },
     {
       "id": "20",
@@ -322,7 +322,7 @@
       "category": "Desserts",
       "ratings": 3,
       "createdAt": "22 Oct",
-      "imageURL": "http://localhost:1234/tumeric-lavendar-tea.d2fbaec9.png"
+      "imageURL": "/tumeric-lavendar-tea.d2fbaec9.png"
     },
     {
       "id": "21",
@@ -336,7 +336,7 @@
       "category": "Desserts",
       "ratings": 2,
       "createdAt": "10 Oct",
-      "imageURL": "http://localhost:1234/blue-velvet-brownies.0eb258e7.png"
+      "imageURL": "/blue-velvet-brownies.0eb258e7.png"
     },
     {
       "id": "22",
@@ -350,7 +350,7 @@
       "category": "Desserts",
       "ratings": 4,
       "createdAt": "10 Sep",
-      "imageURL": "http://localhost:1234/birthday-cupcakes.34bdd0b2.png"
+      "imageURL": "/birthday-cupcakes.34bdd0b2.png"
     },
     {
       "id": "23",
@@ -364,7 +364,7 @@
       "category": "Breakfast",
       "ratings": 4,
       "createdAt": "13 Nov",
-      "imageURL": "http://localhost:1234/gourmet-fillet-in-roasted-almond-sauce.a5f070e7.png"
+      "imageURL": "/gourmet-fillet-in-roasted-almond-sauce.a5f070e7.png"
     },
     {
       "id": "24",
@@ -378,7 +378,7 @@
       "category": "Desserts",
       "ratings": 2,
       "createdAt": "22 Nov",
-      "imageURL": "http://localhost:1234/four-ingredient-oatmeal-pancakes.794cbf46.png"
+      "imageURL": "/four-ingredient-oatmeal-pancakes.794cbf46.png"
     },
     {
       "id": "25",
@@ -392,7 +392,7 @@
       "category": "Pasta",
       "ratings": 5,
       "createdAt": "18 Oct",
-      "imageURL": "http://localhost:1234/spinach-and-cheese-pasta.ec522a1c.png"
+      "imageURL": "/spinach-and-cheese-pasta.ec522a1c.png"
     },
     {
       "id": "26",
@@ -406,7 +406,7 @@
       "category": "Desserts",
       "ratings": 5,
       "createdAt": "09 Nov",
-      "imageURL": "http://localhost:1234/fancty-glazed-dounts.0bfa4c3f.png"
+      "imageURL": "/fancty-glazed-dounts.0bfa4c3f.png"
     },
     {
       "id": "27",
@@ -420,7 +420,7 @@
       "category": "Breakfast",
       "ratings": 5,
       "createdAt": "12 Oct",
-      "imageURL": "http://localhost:1234/mighty-cheesy-breakfast-burger.83f6d7f2.png"
+      "imageURL": "/mighty-cheesy-breakfast-burger.83f6d7f2.png"
     },
     {
       "id": "28",
@@ -434,7 +434,7 @@
       "category": "Desserts",
       "ratings": 5,
       "createdAt": "21 Sep",
-      "imageURL": "http://localhost:1234/berry-maddness-biscuts.6ccee5c3.png"
+      "imageURL": "/berry-maddness-biscuts.6ccee5c3.png"
     },
     {
       "id": "29",
@@ -448,12 +448,12 @@
       "category": 1,
       "ratings": 5,
       "createdAt": "27 Bar",
-      "imageURL": "http://localhost:1234/gourmet-fillet-in-roasted-almond-sauce.a5f070e7.png"
+      "imageURL": "/gourmet-fillet-in-roasted-almond-sauce.a5f070e7.png"
     },
     {
       "id": "6a92",
       "name": "a",
-      "imageURL": "http://localhost:1234/gourmet-fillet-in-roasted-almond-sauce.a5f070e7.png",
+      "imageURL": "/gourmet-fillet-in-roasted-almond-sauce.a5f070e7.png",
       "category": "Pasta",
       "creator": "Henk Fortuin",
       "ratings": "1",
@@ -489,7 +489,7 @@
     {
       "id": "fc5d",
       "name": "Pizzabb",
-      "imageURL": "http://localhost:1234/fancty-glazed-dounts.0bfa4c3f.png",
+      "imageURL": "/fancty-glazed-dounts.0bfa4c3f.png",
       "category": "Pizza",
       "creator": "Jenninebb",
       "ratings": "4",
@@ -498,7 +498,7 @@
     {
       "id": "31c8",
       "name": "Fig and Raisins Oatmeal",
-      "imageURL": "http://localhost:1234/Ffig-and-raisins-oatmeal.d665c3ad.png",
+      "imageURL": "/Ffig-and-raisins-oatmeal.d665c3ad.png",
       "category": "Smoothies",
       "creator": "Henk Fortuin",
       "ratings": "4",
@@ -525,7 +525,7 @@
     {
       "id": "8c61",
       "name": "b",
-      "imageURL": "http://localhost:1234/fancty-glazed-dounts.0bfa4c3f.png",
+      "imageURL": "/fancty-glazed-dounts.0bfa4c3f.png",
       "category": "",
       "creator": "",
       "ratings": "1",
@@ -534,7 +534,7 @@
     {
       "id": "0d31",
       "name": "b",
-      "imageURL": "http://localhost:1234/fancty-glazed-dounts.0bfa4c3f.png",
+      "imageURL": "/fancty-glazed-dounts.0bfa4c3f.png",
       "category": "",
       "creator": "",
       "ratings": "1",
@@ -543,7 +543,7 @@
     {
       "id": "b2cf",
       "name": "b",
-      "imageURL": "http://localhost:1234/fancty-glazed-dounts.0bfa4c3f.png",
+      "imageURL": "/fancty-glazed-dounts.0bfa4c3f.png",
       "category": "",
       "creator": "",
       "ratings": "1",
@@ -552,7 +552,7 @@
     {
       "id": "7abf",
       "name": "Fig and Raisins Oatmeal",
-      "imageURL": "http://localhost:1234/for-the-love-of-donuts.cf4d0f4b.png",
+      "imageURL": "/for-the-love-of-donuts.cf4d0f4b.png",
       "category": "",
       "creator": "",
       "ratings": "1",
@@ -561,7 +561,7 @@
     {
       "id": "859a",
       "name": "Pizza",
-      "imageURL": "http://localhost:1234/for-the-love-of-donuts.cf4d0f4b.png",
+      "imageURL": "/for-the-love-of-donuts.cf4d0f4b.png",
       "category": "",
       "creator": "",
       "ratings": "1",
@@ -570,7 +570,7 @@
     {
       "id": "7068",
       "name": "Fig and Raisins Oatmeal",
-      "imageURL": "http://localhost:1234/spinach-and-cheese-pasta.ec522a1c.png",
+      "imageURL": "/spinach-and-cheese-pasta.ec522a1c.png",
       "category": "",
       "creator": "",
       "ratings": "1",
@@ -588,7 +588,7 @@
     {
       "id": "8eb9",
       "name": "Banana",
-      "imageURL": "http://localhost:1234/spinach-and-cheese-pasta.ec522a1c.png",
+      "imageURL": "/spinach-and-cheese-pasta.ec522a1c.png",
       "category": "Smoothies",
       "creator": "Jennine",
       "ratings": "4",
