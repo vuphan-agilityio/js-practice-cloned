@@ -91,9 +91,5 @@ export default class UserController {
   //  * The handleViewRecipes function displays the recipes list on the interface.
   //  */
   handleViewRecipes = async () => {
-    // const { data } = await this.getRecipes();
-    // this.model.setRecipes(data);
-    // this.view.renderTableRecipes(data);
-    // this.view.bindCallback("recipeRowClick", this.handleShowRecipeDetails);
   };
 }

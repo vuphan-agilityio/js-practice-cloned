@@ -27,14 +27,6 @@ export default class UserView {
         const selectPanelEl = document.getElementById("user-body");
         bindEvent(selectPanelEl, "click", this.displayPanel); // DisplayPanel
         break;
-      // case "backToggle":
-      //   const selectBackEl = document.getElementById("icon-back");
-      //   bindEvent(selectBackEl, "click", this.backToggle);
-      //   break;
-
-      // case "addRecipe":
-      //   bindEvent(this.selectAddEl, "submit", this.addRecipe(handler)); // Toggle icon recipes
-      //   break;
       case "userRowClick":
         this.tBodyEl = document.querySelector(".table__body");
         delegate(

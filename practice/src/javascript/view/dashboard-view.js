@@ -27,10 +27,6 @@ export default class DashBoardView {
         const selectPanelEl = document.getElementById("user-body");
         bindEvent(selectPanelEl, "click", this.displayPanel); // DisplayPanel
         break;
-      // case "backToggle":
-      //   const selectBackEl = document.getElementById("icon-back");
-      //   bindEvent(selectBackEl, "click", this.backToggle);
-      //   break;
       default:
         break;
     }
@@ -62,18 +58,6 @@ export default class DashBoardView {
     }
   };
 
-  /**
-   * The backToggle function changes the display state of a panel when a click event occurs.
-   * @param {object} event - Click event object.
-   */
-  backToggle = (event) => {
-    // event.preventDefault();
-    // if (this.detailPanel.classList.contains("hindder-panel")) {
-    //   this.detailPanel.classList.remove("hindder-panel");
-    // } else {
-    //   this.detailPanel.classList.add("hindder-panel");
-    // }
-  };
 
   /**
    * The displayPanel function displays or hides a panel on the user interface when a click event occurs.
