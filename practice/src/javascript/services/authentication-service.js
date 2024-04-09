@@ -56,4 +56,35 @@ export default class AuthenticationService {
     }
     return "Signed in failed!";
   };
+
+   /**
+   * Method to create new users on the server.
+   * @param {object} userData - Object containing the new user's information including email, username, password and passwordConfirm.
+   * @returns {Promise} - Promise is resolved with the result of the new user request.
+   */
+   static createUser = async ({
+    email,
+    username,
+    password,
+    passwordConfirm,
+    role,
+  }) => {
+    return await APIHelper.createRequest(
+      `${API.BASE_URL}${API.CREATE_USER}`,
+      "POST",
+      { email, username, password, passwordConfirm, role}
+    );
+  };
+
+    /**
+   * Method to search for users by email address on the server.
+   * @param {string} email - The email address of the user to search for.
+   * @returns {Promise} - Promise resolved with the results of the user search request.
+   */
+    static findUserByEmail = async (email) => {
+      return await APIHelper.createRequest(
+        `${API.BASE_URL}${API.CREATE_USER}?email=${email}`,
+        "GET"
+      );
+    };
 }

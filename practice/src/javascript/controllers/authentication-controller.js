@@ -59,13 +59,15 @@ export default class AuthenticationController {
     }
 
     const isExits = await AuthenticationService.findUserByEmail(email);
+    console.log("isE", isExits)
+    console.log("email", email)
 
-    if (isExits) {
+    if (isExits.result.length > 0) {
       alert("Email is already registered.");
       return;
     }
 
-    await AuthenticationService.createUser({
+    const response = await AuthenticationService.createUser({
       email,
       username,
       password,
@@ -75,17 +77,19 @@ export default class AuthenticationController {
 
     if (!response.error) {
       this.view.redirectPage("login.html");
+      alert("Sign Up successfully!")
     } else {
       alert("Something went wrong!");
     }
   };
 
-  /**
+
+   /**
    * The findUserByEmail function checks whether an email address exists in the system or not.
    * @param {string} email - Email address to check.
    * @returns {boolean} - Returns true if the email address already exists in the system, otherwise returns false.
    */
-  findUserByEmail = async (email) => {
+   findUserByEmail = async (email) => {
     const { result } = await AuthenticationService.findUserByEmail(email);
     return !!result?.length;
   };
