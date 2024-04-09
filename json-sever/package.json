@@ -1,10 +1,10 @@
 {
-  "name": "json-server",
+  "name": "json-sever",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "Json-server",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "json-server --watch db.json"
   },
   "author": "",
   "license": "ISC",

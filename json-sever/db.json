@@ -41,6 +41,28 @@
       "password": "password1",
       "id": "71db",
       "role": "user"
+    },
+    {
+      "email": "123a@gmail.com",
+      "username": "diep",
+      "password": "password1",
+      "passwordConfirm": "password1",
+      "id": "r5hGeyo"
+    },
+    {
+      "email": "abc@gmail.com",
+      "username": "abc",
+      "password": "password1",
+      "passwordConfirm": "password1",
+      "id": "0wsapnB"
+    },
+    {
+      "email": "123@gmail.com",
+      "username": "diep",
+      "password": "password1",
+      "passwordConfirm": "password1",
+      "role": "user",
+      "id": "6hKUBkk"
     }
   ],
   "recipes": [
