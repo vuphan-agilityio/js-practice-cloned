@@ -1,7 +1,7 @@
 {
-  "name": "json-sever",
+  "name": "json-server",
   "version": "1.0.0",
-  "description": "Json-server",
+  "description": "",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -9,6 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "json-server": "^1.0.0-alpha.23"
+    "@ptkdev/logger": "^1.8.0",
+    "cors": "^2.8.5",
+    "json-serve": "^0.1.0",
+    "json-server": "^0.17.4",
+    "local-ip-address": "^1.0.0"
   }
 }
