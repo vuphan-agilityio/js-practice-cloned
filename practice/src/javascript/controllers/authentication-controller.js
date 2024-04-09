@@ -59,8 +59,7 @@ export default class AuthenticationController {
     }
 
     const isExits = await AuthenticationService.findUserByEmail(email);
-    console.log("isE", isExits)
-    console.log("email", email)
+
 
     if (isExits.result.length > 0) {
       alert("Email is already registered.");

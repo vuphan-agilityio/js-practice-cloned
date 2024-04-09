@@ -107,8 +107,7 @@ export default class RecipeController {
     description,
     instruction,
     ingredient,
-    nutrition,
-    createdAt,
+    nutrition
   }) => {
     await RecipeService.createRecipe({
       name,

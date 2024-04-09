@@ -43,7 +43,6 @@ export default class AuthenticationService {
    * @returns {Promise} - Promise resolved with the result of the user login request.
    */
   static signIn = async (email, password) => {
-    console.log(API.BASE_UR)
     const response = await APIHelper.createRequest(
       `${API.BASE_URL}${API.CREATE_USER}?email=${email}&password=${password}`,
       "GET"
