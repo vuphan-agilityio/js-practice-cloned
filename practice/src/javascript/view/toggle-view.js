@@ -28,5 +28,4 @@ export default class ToggleView {
         this.drawerEl.classList.add("show");
       }
     };
-
 }
