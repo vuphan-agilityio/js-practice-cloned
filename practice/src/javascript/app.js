@@ -1,3 +1,4 @@
+import dotenv from 'dotenv';
 import UserModel from "./models/user-model.js";
 import UserView from "./view/user-view.js";
 import UserController from "./controllers/user-controller.js";
@@ -12,6 +13,7 @@ import DashBoardView from "./view/dashboard-view.js";
 import ToggleController from "./controllers/toggle-controller.js";
 import ToggleView from "./view/toggle-view.js";
 
+dotenv.config();
 window.addEventListener("load", () => {
   const authenticationController = new AuthenticationController(
     new UserModel(),
