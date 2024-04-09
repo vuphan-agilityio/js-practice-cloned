@@ -5,9 +5,9 @@
 ## Team size
 - 1 developer (Diep Phan)
 ## Timeline
-9 days (08 March 2024 - 20 March 2024)
+- 9 days (08 March 2024 - 20 March 2024)
 ## Timeline supplement
-04 days 4 days (02 April  2024 - 05 April 2024)
+- 04 days (02 April  2024 - 05 April 2024)
 ## Technical and tools note
 - HTML
 - CSS
@@ -19,17 +19,17 @@
 - Understand and apply MVC pattern
 - Understand and apply DOM manipulation, form validation
 ## Requirement
-Admin:
-- Sign In with admin account:
-    - email: "user1@example.com"
-    - password: "password1"
-- View list of users, edit and delete users
-- View recipe list, create, edit and delete recipes
-- Render data to the dashboard and app
-User:
-- Sign In with a registered account on json-server or create a new account
-- View a list of recipes by rating
-- See detailed recipes
+- Admin:
+    - Sign In with admin account:
+        - email: "user1@example.com"
+        - password: "password1"
+    - View list of users, edit and delete users
+    - View recipe list, create, edit and delete recipes
+    - Render data to the dashboard and app
+- User:
+    - Sign In with a registered account on json-server or create a new account
+    - View a list of recipes by rating
+    - See detailed recipes
 ## Devices
 - Desktop
 - Tablet
