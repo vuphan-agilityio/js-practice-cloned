@@ -4,8 +4,8 @@ const server = jsonServer.create();
 // allow write operations
 const fs = require("fs");
 const path = require("path");
-const filePath = path.join(process.cwd(), "db.json")
-const data = fs.readFileSync(filePath, "utf-8");
+// const filePath = path.join(__dirname + "db.json")
+const data = fs.readFileSync(__dirname + "/db.json", "utf-8");
 const db = JSON.parse(data);
 const router = jsonServer.router(db);
 
