@@ -1,9 +1,0 @@
-{
-    "installCommand": "pnpm install && pnpm start",
-    "rewrites": [
-        {
-            "source": "/(.*)",
-            "destination": "server.js"
-        }
-    ]
-}
